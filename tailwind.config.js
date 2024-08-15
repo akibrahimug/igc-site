@@ -20,6 +20,7 @@ module.exports = {
           900: "#2e7d32",
           950: "#044517",
         },
+
         brown: {
           100: "#f0ebe6",
           200: "#e0d1c2",
@@ -31,6 +32,18 @@ module.exports = {
           800: "#483522",
           900: "#241a11",
         },
+        // black: {
+        //   100: "#e6e6e6",
+        //   200: "#cccccc",
+        //   300: "#b3b3b3",
+        //   400: "#999999",
+        //   500: "#808080",
+        //   600: "#666666",
+        //   700: "#4d4d4d",
+        //   800: "#333333",
+        //   900: "#1a1a1a",
+        //   950: "#0d0d0d",
+        // },
       },
       textShadow: {
         default: "2px 2px 4px rgba(0, 0, 0, 0.5)",
@@ -49,9 +62,22 @@ module.exports = {
           "80%": { transform: "translateX(-10%)" },
           "100%": { transform: "translateX(0)" },
         },
+        slideInTop: {
+          "0%": { transform: "translateY(-100%)" },
+          "70%": { transform: "translateY(-45%)" },
+          "80%": { transform: "translateY(10)" },
+          // "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "slide-in": "slideIn 0.5s ease-out",
+        "slide-in-top": "slideInTop 2s ease-out",
+      },
+      scrollSnapType: {
+        y: "y mandatory",
+      },
+      scrollSnapAlign: {
+        start: "start",
       },
     },
   },
@@ -64,4 +90,10 @@ module.exports = {
       });
     },
   ],
+  variants: {
+    extend: {
+      scroll: ["responsive"],
+      scrollSnap: ["responsive"],
+    },
+  },
 };

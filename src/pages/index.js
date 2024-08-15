@@ -1,11 +1,15 @@
+"use client";
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
+import HomeSection from "../components/HomeSection2";
+import ScrollIndicator from "../components/Indicators";
 import {
   getStoryblokApi,
   useStoryblokState,
   StoryblokComponent,
 } from "@storyblok/react";
+
 export default function Home(props) {
   const story = useStoryblokState(props.story);
   return (
@@ -14,7 +18,11 @@ export default function Home(props) {
         <title>{story ? story.name : "IGC Home"}</title>
       </Head>
       <Navigation />
-      <Hero blok={story?.content} />
+      <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
+        <Hero blok={story?.content} />
+        <HomeSection blok={story?.content} />
+      </div>
+      <ScrollIndicator />
       <StoryblokComponent blok={story?.content} />
     </>
   );
