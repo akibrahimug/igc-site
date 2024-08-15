@@ -64,7 +64,7 @@ const Navigation = () => {
                 <li key={item.id} className="relative">
                   <a
                     href={item.id === "home" ? item.href : "#"}
-                    className={`text-brown-100 px-3 hover:bg-green-950 hover:text-brown-200 py-2 rounded-t-md text-sm font-medium transition-colors duration-200`}
+                    className={`text-brown-100 px-3 hover:bg-green-950 hover:text-brown-200 py-2 rounded-t-md text-lg font-bold transition-colors duration-200`}
                     onMouseEnter={(e) => handleMouseEnter(item.id, e)}
                     onMouseLeave={handleMouseLeave}
                     onClick={() => {
