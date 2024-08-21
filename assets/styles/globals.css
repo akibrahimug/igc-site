@@ -24,7 +24,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
-    font-family: "IgcFont", sans-serif;
+  overflow: hidden;
 }
 
 @layer utilities {
@@ -35,11 +35,30 @@ body {
 
 @font-face {
   font-family: "IgcFont";
-  src: url("/fonts/IgcFont-Regular.otf")
+  src: url("https://storage.googleapis.com/my-rest-api-2022-kasoma/igcfashion/fonts/IgcFont-Regular.otf")
       format("opentype"),
-    url("/fonts/IgcFont-Regular.ttf")
+    url("https://storage.googleapis.com/my-rest-api-2022-kasoma/igcfashion/fonts/IgcFont-Regular.ttf")
       format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+html {
+  scroll-behavior: smooth;
 }

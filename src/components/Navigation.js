@@ -55,7 +55,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-10" ref={menuRef}>
+    <nav className="absolute top-0 left-0 right-0 z-10 " ref={menuRef}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="hidden md:block">
