@@ -3,6 +3,9 @@ import HomeSection from "@/components/HomeSection2";
 import ScrollIndicator from "@/components/Indicators";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 
+export const metadata = {
+	title: "IGC Home",
+}
 export default async function Home() {
 	const {	data: { story } } = await fetchData();
 
