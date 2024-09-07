@@ -13,7 +13,19 @@ const MegaMenu = ({
   const menuContent = {
     home: {
       title: "HOME",
-      columns: [],
+      columns: [
+        {
+          title: 'Quick links',
+          items: [
+            { name: "Home", href: "/" },
+            { name: "Events", href: "/events" },
+            { name: "Shop", href: "/shop" },
+            { name: "About us", href: "/about-us" },
+            { name: "Brand Principles", href: "/brand-principles" },
+            { name: "Portfolio", href: "/portfolio" },
+          ]
+        }
+      ]
     },
     events: {
       title: "UPCOMING EVENTS / NEWSLETTER",
