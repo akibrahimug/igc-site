@@ -8,19 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: {
-          100: "#e8f5e9",
-          200: "#c8e6c9",
-          300: "#a5d6a7",
-          400: "#81c784",
-          500: "#66bb6a",
-          600: "#4caf50",
-          700: "#43a047",
-          800: "#388e3c",
-          900: "#2e7d32",
-          950: "#044517",
+        black: {
+          100: "#e6e6e6",
+          200: "#cccccc",
+          300: "#b3b3b3",
+          400: "#999999",
+          500: "#808080",
+          600: "#666666",
+          700: "#4d4d4d",
+          800: "#333333",
+          900: "#1a1a1a",
+          950: "#0d0d0d", // Charcoal black
         },
-
         brown: {
           100: "#f0ebe6",
           200: "#e0d1c2",
@@ -32,18 +31,6 @@ module.exports = {
           800: "#483522",
           900: "#241a11",
         },
-        // black: {
-        //   100: "#e6e6e6",
-        //   200: "#cccccc",
-        //   300: "#b3b3b3",
-        //   400: "#999999",
-        //   500: "#808080",
-        //   600: "#666666",
-        //   700: "#4d4d4d",
-        //   800: "#333333",
-        //   900: "#1a1a1a",
-        //   950: "#0d0d0d",
-        // },
       },
       textShadow: {
         default: "2px 2px 4px rgba(0, 0, 0, 0.5)",
@@ -68,10 +55,24 @@ module.exports = {
           "80%": { transform: "translateY(10)" },
           // "100%": { transform: "translateY(0)" },
         },
+        fadeInUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "slide-in": "slideIn 0.5s ease-out",
         "slide-in-top": "slideInTop 2s ease-out",
+        fadeInUp: "fadeInUp 1s ease forwards",
+      },
+      transitionProperty: {
+        opacityTransform: "opacity, transform",
       },
       scrollSnapType: {
         y: "y mandatory",

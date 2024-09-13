@@ -64,7 +64,7 @@ const Navigation = () => {
                 <li key={item.id} className="relative">
                   <a
                     href={item.id === "home" ? item.href : "#"}
-                    className={`text-brown-100 px-3 hover:bg-green-950 hover:text-brown-200 py-2 rounded-t-md text-lg font-bold transition-colors duration-200`}
+                    className={`text-brown-100 px-3 hover:bg-black-950 hover:text-brown-200 py-2 rounded-t-md text-sm font-medium transition-colors duration-200`}
                     onMouseEnter={(e) => handleMouseEnter(item.id, e)}
                     onMouseLeave={handleMouseLeave}
                     onClick={() => {
@@ -83,9 +83,9 @@ const Navigation = () => {
             <input
               type="text"
               placeholder="Search..."
-              className="bg-green-950 bg-opacity-50 text-brown-100 placeholder-brown-200 px-3 py-1 rounded-md mr-4 focus:outline-none focus:ring-2 focus:ring-brown-300"
+              className="bg-black-950 bg-opacity-50 text-brown-100 placeholder-brown-200 px-3 py-1 rounded-md mr-4 focus:outline-none focus:ring-2 focus:ring-brown-300"
             />
-            <button className="bg-brown-100 text-green-950 px-4 py-2 rounded-md hover:bg-brown-300 transition-colors duration-200 shadow-md">
+            <button className="bg-brown-100 text-black-950 px-4 py-2 rounded-md hover:bg-brown-300 transition-colors duration-200 shadow-md">
               Contact Us
             </button>
           </div>

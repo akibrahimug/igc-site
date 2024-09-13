@@ -225,7 +225,7 @@ const MegaMenu = ({
       className={`${
         isMobile
           ? "fixed inset-x-0 top-0 bg-brown-100 z-50 overflow-y-auto max-h-screen"
-          : `absolute bg-green-950 shadow-lg z-20 rounded-b-2xl megaMenuFadeIn ${
+          : `absolute bg-black-950 shadow-lg z-20 rounded-b-2xl megaMenuFadeIn ${
               isVisible ? "visible" : ""
             }`
       }`}
@@ -245,12 +245,12 @@ const MegaMenu = ({
           <div className="flex flex-col">
             <button
               onClick={onClose}
-              className="text-green-950 hover:text-green-800 self-end mb-4"
+              className="text-black-950 hover:text-black-800 self-end mb-4"
             >
               <FaTimes className="h-6 w-6" />
             </button>
             <div className="px-4">
-              <h3 className="text-lg font-semibold mb-4 text-green-950">
+              <h3 className="text-lg font-semibold mb-4 text-black-950">
                 Quick links
               </h3>
               <ul className="space-y-2">
@@ -260,7 +260,7 @@ const MegaMenu = ({
                     <li key={index}>
                       <a
                         href={item.href}
-                        className="block pb-2 rounded transition-colors duration-200 text-sm font-light text-green-950 hover:text-green-800"
+                        className="block pb-2 rounded transition-colors duration-200 text-sm font-light text-black-950 hover:text-black-800"
                         onClick={onClose}
                       >
                         {item.name}
@@ -293,7 +293,7 @@ const MegaMenu = ({
                   <h3
                     className={`text-lg font-semibold mb-4 ${
                       column.title === "Quick links"
-                        ? "text-green-950"
+                        ? "text-black-950"
                         : "text-brown-100"
                     }`}
                   >
@@ -310,12 +310,12 @@ const MegaMenu = ({
                           placeholder="Enter your email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                          className="bg-brown-100 text-green-950 px-3 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-brown-300 w-full"
+                          className="bg-brown-100 text-black-950 px-3 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-brown-300 w-full"
                           required
                         />
                         <button
                           type="submit"
-                          className="bg-brown-200 text-green-950 px-4 py-2 rounded-r-md hover:bg-brown-300 transition-colors duration-200"
+                          className="bg-brown-200 text-black-950 px-4 py-2 rounded-r-md hover:bg-brown-300 transition-colors duration-200"
                         >
                           Subscribe
                         </button>
@@ -329,7 +329,7 @@ const MegaMenu = ({
                             href={item.href}
                             className={`block pb-2 rounded transition-colors duration-200 text-sm font-light ${
                               column.title === "Quick links"
-                                ? "text-green-950  hover:text-green-800"
+                                ? "text-black-950  hover:text-black-800"
                                 : "text-brown-300  hover:text-brown-100"
                             }`}
                           >
