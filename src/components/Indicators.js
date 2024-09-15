@@ -22,7 +22,7 @@ const ScrollIndicator = () => {
   return (
     <>
       <div className="fixed left-4 bottom-4 md:bottom-8 animate-bounce ">
-        <FaArrowDown className="w-6 h-6 text-brown-300 transition-transform duration-100 hover:scale-125 cursor-pointer" />
+        <FaArrowDown className="w-6 h-6 text-brown-300 transition-transform duration-10 hover:scale-125 cursor-pointer" />
       </div>
 
       <div

@@ -30,8 +30,8 @@ const Hero = (props) => {
         onLoadingComplete={() => setImageLoaded(true)}
         className="z-0"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-green-950 opacity-70 "></div>
-      <div className="absolute inset-0 bg-black bg-opacity-30 flex justify-between md:p-8 ">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black-950 opacity-70"></div>
+      <div className="absolute inset-0 bg-black-900 bg-opacity-30 flex justify-between md:p-8 ">
         <div className="flex flex-col justify-between flex-grow">
           <div className="flex justify-between items-center ">
             <h2 className="text-2xl font-thin text-brown-100 absolute md:top-24 top-20 left-4 md:left-8">
@@ -49,7 +49,7 @@ const Hero = (props) => {
             <p className="text-l md:text-2xl text-brown-100 mb-4 md:mb-8 max-w-2xl shadow-text">
               {blok.Description}
             </p>
-            <button className="bg-brown-100 text-green-950 px-8 py-3 rounded-full text-lg font-semibold hover:bg-brown-200 transition-colors duration-300 shadow-lg font-igc">
+            <button className="bg-brown-100 text-black-950 px-8 py-3 rounded-full text-lg font-semibold hover:bg-brown-200 transition-colors duration-300 shadow-lg font-igc">
               {blok.ButtonText}
             </button>
           </div>

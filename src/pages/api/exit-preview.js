@@ -3,5 +3,5 @@ export default async function exit(_, res) {
   res.clearPreviewData();
 
   // Redirect the user back to the index page.
-  res.redirect('/');
+  res.redirect("/");
 }
