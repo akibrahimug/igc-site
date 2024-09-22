@@ -2,8 +2,8 @@
 import Head from "next/head";
 import Navigation from "../components/Navigation";
 import Hero from "../components/Hero";
-import HomeSection from "../components/HomeSection2";
 import ScrollIndicator from "../components/Indicators";
+import Gallery from "../components/Gallery";
 import {
   getStoryblokApi,
   useStoryblokState,
@@ -20,7 +20,7 @@ export default function Home(props) {
       <Navigation />
       <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
         <Hero blok={story?.content} />
-        <HomeSection blok={story?.content} />
+        <Gallery blok={story?.content} />
       </div>
       <ScrollIndicator />
       <StoryblokComponent blok={story?.content} />
