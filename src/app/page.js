@@ -7,7 +7,7 @@ export const metadata = {
 	title: "IGC Home",
 }
 export default async function Home() {
-	const {	data: { story } } = await fetchData();
+	const {	data: { story } } = await getStoryblokApi().get(`cdn/stories/igc/home`, { version: "draft" });
 
 	return (
 		<>
@@ -20,9 +20,4 @@ export default async function Home() {
 	);
 }
 
-export async function fetchData() {
-	let sbParams = { version: "draft" };
 
-	const storyblokApi = getStoryblokApi();
-	return storyblokApi.get(`cdn/stories/igc/home`, sbParams, { cache: "no-store" });
-}
