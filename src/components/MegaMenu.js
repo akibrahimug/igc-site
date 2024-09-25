@@ -56,29 +56,29 @@ const MegaMenu = ({
         {
           title: "Ready to wear",
           items: [
-            { name: "Men", href: "/pages/marketing/men" },
-            { name: "Women", href: "/pages/marketing/women" },
-            { name: "Unisex", href: "/pages/marketing/unisex" },
+            { name: "Men", href: "/marketing/men" },
+            { name: "Women", href: "/marketing/women" },
+            { name: "Unisex", href: "/marketing/unisex" },
           ],
         },
         {
           title: "Costumes",
           items: [
-            { name: "Back cloth", href: "/pages/travel/landing" },
-            { name: "Second hand fabrics", href: "/pages/travel/tours" },
-            { name: "Recycled fabrics", href: "/pages/travel/tour" },
-            { name: "Mix and match", href: "/pages/travel/checkout" },
+            { name: "Back cloth", href: "/travel/landing" },
+            { name: "Second hand fabrics", href: "/travel/tours" },
+            { name: "Recycled fabrics", href: "/travel/tour" },
+            { name: "Mix and match", href: "/travel/checkout" },
             {
               name: "Miscellaneous",
-              href: "/pages/travel/order-completed",
+              href: "/travel/order-completed",
             },
-            { name: "Designs principles", href: "/pages/travel/blog" },
-            { name: "Costume stories", href: "/pages/travel/blog-post" },
+            { name: "Designs principles", href: "/travel/blog" },
+            { name: "Costume stories", href: "/travel/blog-post" },
           ],
         },
         {
           title: "Curation",
-          items: [{ name: "Fashion showcase", href: "/pages/career/landing" }],
+          items: [{ name: "Fashion showcase", href: "/career/landing" }],
         },
       ],
       image: {
