@@ -36,16 +36,16 @@ const Navigation = () => {
     };
   }, []);
 
-  const handleMouseEnter = (itemId, e) => {
-    clearTimeout(timeoutRef.current);
-    setHoveredItem(itemId);
-    setActiveMenu(itemId);
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMenuPosition({ top: rect.bottom, left: rect.left });
-    timeoutRef.current = setTimeout(() => {
-      setIsMegaMenuVisible(true);
-    }, 3000);
-  };
+  // const handleMouseEnter = (itemId, e) => {
+  //   clearTimeout(timeoutRef.current);
+  //   setHoveredItem(itemId);
+  //   setActiveMenu(itemId);
+  //   const rect = e.currentTarget.getBoundingClientRect();
+  //   setMenuPosition({ top: rect.bottom, left: rect.left });
+  //   timeoutRef.current = setTimeout(() => {
+  //     setIsMegaMenuVisible(true);
+  //   }, 3000);
+  // };
 
   const handleMouseLeave = () => {
     timeoutRef.current = setTimeout(() => {
@@ -56,10 +56,10 @@ const Navigation = () => {
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-10 " ref={menuRef}>
-      <div className="container mx-auto px-4">
+      <div className="container  px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="hidden md:block">
-            <ul className="flex">
+          {/* <div className="hidden md:block"> */}
+          {/* <ul className="flex">
               {menuItems.map((item) => (
                 <li key={item.id} className="relative">
                   <a
@@ -77,9 +77,9 @@ const Navigation = () => {
                   </a>
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className="hidden md:flex items-center">
+            </ul> */}
+          {/* </div> */}
+          {/* <div className="hidden md:flex items-center">
             <input
               type="text"
               placeholder="Search..."
@@ -88,21 +88,21 @@ const Navigation = () => {
             <button className="bg-brown-100 text-black-950 px-4 py-2 rounded-md hover:bg-brown-300 transition-colors duration-200 shadow-md">
               Contact Us
             </button>
-          </div>
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-brown-100 hover:text-brown-200 focus:outline-none"
-            >
-              {isMobileMenuOpen ? (
-                <FaTimes className="h-6 w-6" />
-              ) : (
-                <FaBars className="h-6 w-6 " />
-              )}
-            </button>
-          </div>
+          </div> */}
+          {/* <div className="md:hidden"> */}
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-brown-100 hover:text-brown-200 focus:outline-none"
+          >
+            {isMobileMenuOpen ? (
+              <FaTimes className="h-6 w-6" />
+            ) : (
+              <FaBars className="h-6 w-6 " />
+            )}
+          </button>
         </div>
       </div>
+      {/* </div> */}
       {activeMenu && activeMenu !== "home" && menuPosition && (
         <div
           onMouseEnter={() => {
@@ -126,7 +126,7 @@ const Navigation = () => {
         </div>
       )}
       {isMobileMenuOpen && (
-        <div className="md:hidden">
+        <div>
           <MegaMenu
             menuId="home"
             isMobile={true}
