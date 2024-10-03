@@ -1,24 +1,47 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import MegaMenu from "./MegaMenu";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { MenuIcon } from "lucide-react";
+import { Button } from "./ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { usePathname } from "next/navigation";
+import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 const Navigation = () => {
-  const [activeMenu, setActiveMenu] = useState(null);
-  const [hoveredItem, setHoveredItem] = useState(null);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
-  const [isMegaMenuVisible, setIsMegaMenuVisible] = useState(false);
-  const menuRef = useRef(null);
-  const timeoutRef = useRef(null);
-
-  const menuItems = [
-    { title: "Home", id: "home", href: "/" },
-    { title: "Events", id: "events" },
-    { title: "Shop", id: "shop" },
-    { title: "About us", id: "about_us" },
-    { title: "Brand Principles", id: "brand_principles" },
-    { title: "Portfolio", id: "portfolio" },
+  const SIDENAV_ITEMS= [
+    {
+      title: 'HOME',
+      path: '/',
+    },
+    {
+      title: 'BRAND PRINCIPLES',
+      submenu: true,
+      subMenuItems: [
+        { title: 'Environment', path: '/brand-principles/environment' },
+        { title: 'Culture', path: '/brand-principles/web-design/culture' },
+        { title: 'Community', path: '/brand-principles/community' },
+      ],
+    },
+    {
+      title: 'SERVICES',
+      path: '/services',
+    },
+    {
+      title: 'PORTFOLIO',
+      path: '/portfolio',
+    },
+    {
+      title: 'SHOP',
+      submenu: true,
+      subMenuItems: [
+        { title: 'Shop all', path: '/shop/account' },
+        { title: 'Shipping and Returns', path: '/shop/privacy' },
+        { title: 'Size Guide', path: '/shop/size-guide' },
+        { title: 'Terms and Conditions', path: '/shop/terms and conditions' },
   ],
     },
     {
@@ -54,7 +77,7 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-10 " ref={menuRef}>
+		<nav className="absolute top-0 left-0 right-0 z-10">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
 					<div className="md:block">
