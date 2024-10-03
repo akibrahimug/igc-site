@@ -19,121 +19,67 @@ const Navigation = () => {
     { title: "About us", id: "about_us" },
     { title: "Brand Principles", id: "brand_principles" },
     { title: "Portfolio", id: "portfolio" },
+  ],
+    },
+    {
+      title: 'FASHION CYPHER',
+      submenu: true,
+      subMenuItems: [
+        { title: 'Workshops', path: '/fashion-cypher/workshops' },
+        { title: 'Kazo', path: '/fashion-cypher/kazo' },
+        { title: 'Gugumuka Mu Kazo', path: '/fashion-cypher/gugumuka' },
+        { title: 'Networking', path: '/fashion-cypher/networking' },
+      ],
+    },
+    {
+      title: 'KWETU KWANZA',
+      path: '/kwetu-kwanza',
+    },
+    {
+      title: 'EVENTS',
+      path: '/events',
+    },
+    {
+      title: 'PRESS',
+      path: '/press',
+    },
+    {
+      title: 'ABOUT US',
+      path: '/about',
+    },
+    {
+      title: 'CONTACT US',
+      path: '/contact',
+    },
   ];
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setActiveMenu(null);
-        setHoveredItem(null);
-        setIsMobileMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
-  const handleMouseEnter = (itemId, e) => {
-    clearTimeout(timeoutRef.current);
-    setHoveredItem(itemId);
-    setActiveMenu(itemId);
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMenuPosition({ top: rect.bottom, left: rect.left });
-    timeoutRef.current = setTimeout(() => {
-      setIsMegaMenuVisible(true);
-    }, 3000);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setHoveredItem(null);
-      setActiveMenu(null);
-    }, 100); // Small delay to allow moving to the MegaMenu
-  };
 
   return (
     <nav className="absolute top-0 left-0 right-0 z-10 " ref={menuRef}>
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <div className="hidden md:block">
-            <ul className="flex">
-              {menuItems.map((item) => (
-                <li key={item.id} className="relative">
-                  <a
-                    href={item.id === "home" ? item.href : "#"}
-                    className={`text-brown-100 px-3 hover:bg-green-950 hover:text-brown-200 py-2 rounded-t-md text-lg font-bold transition-colors duration-200`}
-                    onMouseEnter={(e) => handleMouseEnter(item.id, e)}
-                    onMouseLeave={handleMouseLeave}
-                    onClick={() => {
-                      if (item.id !== "home") {
-                        setActiveMenu(activeMenu === item.id ? null : item.id);
-                      }
-                    }}
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
+					<div className="md:block">
+            <p className="text-3xl font-bold">Logo</p>
           </div>
-          <div className="hidden md:flex items-center">
-            <input
-              type="text"
-              placeholder="Search..."
-              className="bg-green-950 bg-opacity-50 text-brown-100 placeholder-brown-200 px-3 py-1 rounded-md mr-4 focus:outline-none focus:ring-2 focus:ring-brown-300"
-            />
-            <button className="bg-brown-100 text-green-950 px-4 py-2 rounded-md hover:bg-brown-300 transition-colors duration-200 shadow-md">
-              Contact Us
-            </button>
-          </div>
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-brown-100 hover:text-brown-200 focus:outline-none"
-            >
-              {isMobileMenuOpen ? (
-                <FaTimes className="h-6 w-6" />
-              ) : (
-                <FaBars className="h-6 w-6 " />
-              )}
-            </button>
+					<div className="flex md:flex items-center">
+						<Sheet>
+							<SheetTrigger asChild>
+								<Button><MenuIcon  className="h-12 w-12" aria-hidden="true" /></Button>
+							</SheetTrigger>
+							<SheetContent>
+								<div className="h-screen flex-1  flex md:flex w-full">
+									<div className="flex flex-col space-y-6 w-full">
+										<div className="flex flex-col space-y-2 md:px-6 ">
+											{SIDENAV_ITEMS.map((item, idx) => {
+												return <MenuItem key={idx} item={item} />;
+											})}
           </div>
         </div>
       </div>
-      {activeMenu && activeMenu !== "home" && menuPosition && (
-        <div
-          onMouseEnter={() => {
-            clearTimeout(timeoutRef.current);
-            setIsMegaMenuVisible(true);
-          }}
-          onMouseLeave={() => {
-            handleMouseLeave();
-            setIsMegaMenuVisible(false);
-          }}
-        >
-          <MegaMenu
-            menuId={activeMenu}
-            onClose={() => {
-              setActiveMenu(null);
-              setIsMegaMenuVisible(false);
-            }}
-            position={menuPosition}
-            isVisible={isMegaMenuVisible}
-          />
+							</SheetContent>
+						</Sheet>
+					</div>
         </div>
-      )}
-      {isMobileMenuOpen && (
-        <div className="md:hidden">
-          <MegaMenu
-            menuId="home"
-            isMobile={true}
-            onClose={() => setIsMobileMenuOpen(false)}
-          />
         </div>
-      )}
     </nav>
   );
 };
