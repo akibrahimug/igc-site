@@ -9,6 +9,18 @@ module.exports = {
   theme: {
   	extend: {
   		colors: {
+			black: {
+				100: "#e6e6e6",
+				200: "#cccccc",
+				300: "#b3b3b3",
+				400: "#999999",
+				500: "#808080",
+				600: "#666666",
+				700: "#4d4d4d",
+				800: "#333333",
+				900: "#1a1a1a",
+				950: "#0d0d0d", // Charcoal black
+			  },
   			green: {
   				'100': '#e8f5e9',
   				'200': '#c8e6c9',
@@ -109,8 +121,12 @@ module.exports = {
   		},
   		animation: {
   			'slide-in': 'slideIn 0.5s ease-out',
-  			'slide-in-top': 'slideInTop 2s ease-out'
+  			'slide-in-top': 'slideInTop 2s ease-out',
+			fadeInUp: 'fadeInUp 1s ease forwards'
   		},
+		transitionProperty: {
+			opacityTransform: 'opacity, transform'
+		},
   		scrollSnapType: {
   			y: 'y mandatory'
   		},
