@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero";
-import HomeSection from "@/components/HomeSection2";
+import NewsSection from "@/components/NewsSection";
 import ScrollIndicator from "@/components/Indicators";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 
@@ -13,7 +13,7 @@ export default async function Home() {
 		<>
 			<div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
 				<Hero blok={story?.content} />
-				<HomeSection blok={story?.content} />
+				<NewsSection />
 			</div>
 			<ScrollIndicator />
 		</>
