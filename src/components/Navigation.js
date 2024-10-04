@@ -10,6 +10,7 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 const Navigation = () => {
   const SIDENAV_ITEMS= [
@@ -81,7 +82,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
 					<div className="md:block">
-            <p className="text-3xl font-bold">Logo</p>
+            <Image src="/images/igc-logo.PNG" width={50} height={50} alt="igc-logo" />
           </div>
 					<div className="flex md:flex items-center">
 						<Sheet>
