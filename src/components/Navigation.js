@@ -79,10 +79,10 @@ const Navigation = () => {
 
   return (
 		<nav className="absolute top-0 left-0 right-0 z-10">
-      <div className="container mx-auto px-4">
+      <div className="container mx-0 px-4">
         <div className="flex items-center justify-between h-16">
-					<div className="md:block">
-            <Image src="/images/igc-logo.PNG" width={50} height={50} alt="igc-logo" />
+					<div className="md:block mt-16">
+            <Image src="/images/igc-logo.PNG" width={100} height={100} alt="igc-logo" />
           </div>
 					<div className="flex md:flex items-center">
 						<Sheet>
