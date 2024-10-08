@@ -55,7 +55,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="absolute top-0 left-0 right-0 z-10 " ref={menuRef}>
+    <nav className="absolute top-0  right-10 z-10 " ref={menuRef}>
       <div className="container  px-4">
         <div className="flex items-center justify-between h-16">
           {/* <div className="hidden md:block"> */}
@@ -95,9 +95,9 @@ const Navigation = () => {
             className="text-brown-100 hover:text-brown-200 focus:outline-none"
           >
             {isMobileMenuOpen ? (
-              <FaTimes className="h-6 w-6" />
+              <FaTimes className="h-8 w-8" />
             ) : (
-              <FaBars className="h-6 w-6 " />
+              <FaBars className="h-8 w-8 " />
             )}
           </button>
         </div>

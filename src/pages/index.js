@@ -18,7 +18,7 @@ export default function Home(props) {
         <title>{story ? story.name : "IGC Home"}</title>
       </Head>
       <Navigation />
-      <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
+      <div className="h-screen overflow-y-scroll  relative z-0">
         <Hero blok={story?.content} />
         <Gallery blok={story?.content} />
       </div>

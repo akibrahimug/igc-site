@@ -12,10 +12,10 @@ const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
     {caption && <p className="text-sm mt-2 text-left">{caption}</p>}
   </div>
 );
-function Gallery() {
+function Gallery({ blok }) {
   const sectionRef = useRef(null);
   const [additionalSets, setAdditionalSets] = useState(0);
-
+  console.log(blok);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,43 +56,41 @@ function Gallery() {
     { id: 8, src: "https://picsum.photos/600/800", alt: "Look 8" },
     { id: 9, src: "https://picsum.photos/600/800", alt: "Look 9" },
   ];
-
   return (
     <section
       ref={sectionRef}
-      className="section bg-black-950 opacity-0 flex justify-center -mt-20 relative text-brown-200"
+      className="section bg-black-950 opacity-0 flex justify-center -mt-20 relative text-brown-200 "
     >
-      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
+      <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-transparent to-black-950 z-10 "></div>
       <div className="text-center z-20">
-        <div className="container mx-auto mt-60">
-          <h1 className="text-4xl font-bold mb-8">FALL/WINTER 2022</h1>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-            <div className="md:col-span-1">
+        <div className="mt-60  mx-auto">
+          <h1 className="text-8xl text-left font-bold mb-10 mx-4 font-igc">
+            {blok.section2Title}
+          </h1>
+          <div className="grid grid-cols-1 lg:grid-cols-4 lg:gap-10 mb-10 md:max-w-[70%] 2xl:max-w-[60%] md:mx-auto ">
+            <div className="lg:col-span-1">
               <ImageWithCaption
                 src={galleryItems[0].src}
-                width={300}
-                height={400}
+                width={450}
+                height={600}
                 alt="Look 1"
-                className="w-full h-auto"
-                caption="LOOK 1"
+                className="w-full h-auto object-cover min-w-[250px] min-h-[250px]"
+                // caption="LOOK 1"
               />
             </div>
-            <div className="md:col-span-1 relative">
-              <p className="text-sm mb-4 text-left md:absolute bottom-10 left-0">
-                Carefully hand-distressed materials and details, combined with a
-                modern, oversized silhouette, create a look that is both edgy
-                and sophisticated. Distressed knit sweaters are paired with
-                tailored trousers for a perfectly undone look.
+            <div className="lg:col-span-1 relative">
+              <p className="xl:text-2xl mx-8 text-lg my-6 text-left  lg:absolute  2xl:bottom-[50px] bottom-[-30px] left-[-250px]">
+                {blok.GalleryText1}
               </p>
             </div>
-            <div className="md:col-span-2">
+            <div className="lg:col-span-2">
               <ImageWithCaption
                 src={galleryItems[1].src}
                 width={450}
                 height={600}
                 alt="Look 2"
-                className="w-full h-auto"
-                caption="LOOK 2"
+                className="w-full h-auto object-cover"
+                // caption="LOOK 2"
               />
             </div>
           </div>
@@ -109,7 +107,7 @@ function Gallery() {
                       width={225}
                       height={300}
                       alt={item.alt}
-                      className="w-[355px] h-[470px]"
+                      className="w-[355px] h-[470px] object-cover"
                     />
                   ))}
               </div>
@@ -118,11 +116,11 @@ function Gallery() {
 
           <div className="mb-10">
             <ImageWithCaption
-              src={galleryItems[4].src}
+              src={`https:${blok.secondSectionImage1}`}
               width={1200}
               height={400}
               alt="Look 5"
-              className="w-full h-[500px]"
+              className="w-[100vw] h-[700px] object-cover"
             />
           </div>
 
