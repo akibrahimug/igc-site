@@ -33,19 +33,7 @@ const Hero = (props) => {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black-950 opacity-70"></div>
       <div className="absolute inset-0 bg-black-900 bg-opacity-30 flex justify-between md:p-8 ">
         <div className="flex flex-col justify-between flex-grow">
-          {/* <div className="flex justify-between items-center ">
-            <h2 className="text-2xl font-thin text-brown-100 absolute md:top-24 top-20 left-4 md:left-8">
-              {blok.subtitle}
-            </h2>
-            <div className="absolute md:top-24  right-4 md:right-8 text-4xl font-bold text-brown-100 top-20 ">
-              {blok.number}
-            </div>
-          </div>
-          <div></div>
-        </div>
       </div>
-      <div className="absolute md:left-4 md:right-4 transition-all duration-500   ">
-        {/* <SocailMedia isVisible={isVisible} /> */}
       </div>
     </section>
   );
