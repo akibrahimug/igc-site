@@ -26,23 +26,23 @@ export default async function Environment() {
 					<div class="flex flex-1 justify-center mt-2">
 						<img class="h-48 w-full object-cover" src="https://picsum.photos/id/11/2500/1667.jpg" />
 					</div>
-					<div className="flex flex-col m-8 items-center justify-center space-x-2 md:flex-row md:justify-between">
+					<div className="flex flex-row items-center m-8 justify-between space-x-5 md:flex-row md:justify-between md:items-center">
 						<div>
 							<p className="md:text-6xl text-3xl">99%</p>
 						</div>
 						<div>
 							<p className="md:text-6xl text-3xl">100%</p>
 						</div>
-						<div>
-							<img className="w-full h-48" src="https://picsum.photos/id/11/2500/1667.jpg" alt="Environment" />
+						<div className="flex-auto md:flex-none">
+							<img className="w-full md:h-48" src="https://picsum.photos/id/11/2500/1667.jpg" alt="Environment" />
 						</div>
 					</div>
-					<div className="flex flex-col md:flex-row items-center justify-center space-x-16">
+					<div className="flex flex-col md:flex-row items-center justify-center md:space-x-16 space-y-2">
 						<div>
 							<img className="w-full object-cover" src="https://picsum.photos/id/11/2500/1667.jpg" alt="Environment" />
 						</div>
 						<div>
-							<p>
+							<p className="text-justify">
 								We use 99% natural or upcycled materials, promoting traditional materials like Lubugo (barkcloth). This 100% natural, renewable material is
 								sourced from self-regenerative Mutuba trees, preserving ancient forests alongside cultural heritage. Our fully traceable supply chain ensures
 								we're not contributing to deforestation.
@@ -50,8 +50,8 @@ export default async function Environment() {
 							<p className="mt-8">"Our solution is rooted in sustainable, culturally significant practices."</p>
 						</div>
 					</div>
-					<div className="flex flex-col md:flex-row md:space-x-48 space-x-12 items-center mt-4">
-						<div className="text-center w-7/12">
+					<div className="flex flex-col md:flex-row md:space-x-48 items-center mt-4">
+						<div className="text-center md:w-7/12">
 							<p className="text-justify">
 								Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae, distinctio voluptas aliquid quisquam praesentium assumenda consequuntur in
 								alias optio numquam accusamus dolore sint provident maxime repellendus quo corporis. Eius, minus? Lorem ipsum dolor sit amet consectetur
@@ -64,7 +64,7 @@ export default async function Environment() {
 						</div>
 					</div>
 					{/* <img className="w-full h-48 mx-8 object-cover" src="https://picsum.photos/id/11/2500/1667.jpg" alt="Environment"/> */}
-					<div className="flex flex-col md:flex-row md:justify-between space-x-12 my-8 space-y-8">
+					<div className="flex flex-col md:flex-row md:justify-between md:space-x-12 my-8 space-y-8">
 						<div className="md:w-1/2">
 							<img className="w-full h-96" src="https://picsum.photos/id/11/2500/1667.jpg" alt="" />
 							<p>
@@ -82,7 +82,7 @@ export default async function Environment() {
          <button className="bg-green-700 px-24 py-4">Kwetu kwanza</button>
         </div>
 
-        <div className="flex justify-center space-x-32 my-4">
+        <div className="flex justify-center md:space-x-32 my-4">
         <div>
           <p>IGC FASHION</p>
           <p>@IGCFASHION</p>
