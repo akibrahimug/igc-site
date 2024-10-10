@@ -98,7 +98,7 @@ const Navigation = () => {
                   <div className="flex flex-col space-y-6 w-full">
                     <div className="flex flex-col space-y-2 md:px-6">
                       {SIDENAV_ITEMS.map((item, idx) => (
-                        <MenuItem key={idx} item={item} />
+                        <MenuItem key={idx} item={item} isOpen={isOpen} />
                       ))}
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const Navigation = () => {
 
 export default Navigation;
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, isOpen }) => {
   const pathname = usePathname();
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const toggleSubMenu = () => {
@@ -151,6 +151,7 @@ const MenuItem = ({ item }) => {
                     className={`${
                       subItem.path === pathname ? 'font-bold' : ''
                     }`}
+                    onClick={() => isOpen(false)}
                   >
                     <span>{subItem.title}</span>
                   </Link>
