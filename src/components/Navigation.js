@@ -78,34 +78,36 @@ const Navigation = () => {
   ];
 
   return (
-		<nav className="absolute top-0 left-0 right-0 z-10">
-      <div className="container mx-0 px-4">
+<nav className="absolute top-0 left-0 right-0 z-10 mt-8">
+      <div className="container mx-auto px-0">
         <div className="flex items-center justify-between h-16">
-					<div className="md:block mt-16">
-            <Image src="/images/igc-logo.PNG" width={100} height={100} alt="igc-logo" />
+          <div className="pl-0 ml-0">
+            <img className="h-12 w-auto md:h-24" src="/images/igc-logo.PNG" alt="igc-logo" />
           </div>
-					<div className="flex md:flex items-center">
-						<Sheet>
-							<SheetTrigger asChild>
-								<Button><MenuIcon  className="h-12 w-12" aria-hidden="true" /></Button>
-							</SheetTrigger>
-							<SheetContent>
-								<div className="h-screen flex-1  flex md:flex w-full">
-									<div className="flex flex-col space-y-6 w-full">
-										<div className="flex flex-col space-y-2 md:px-6 ">
-											{SIDENAV_ITEMS.map((item, idx) => {
-												return <MenuItem key={idx} item={item} />;
-											})}
+          <div className="pr-0 mr-0">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="text-primary">
+                  <MenuIcon className="size-12" aria-hidden="true" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <div className="h-full flex flex-col mt-8">
+                  <div className="flex flex-col space-y-6 w-full">
+                    <div className="flex flex-col space-y-2 md:px-6">
+                      {SIDENAV_ITEMS.map((item, idx) => (
+                        <MenuItem key={idx} item={item} />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
-							</SheetContent>
-						</Sheet>
-					</div>
-        </div>
-        </div>
     </nav>
-  );
+	);
 };
 
 export default Navigation;
