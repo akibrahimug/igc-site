@@ -74,7 +74,6 @@ function Gallery() {
                 height={400}
                 alt="Look 1"
                 className="w-full h-auto"
-                caption="LOOK 1"
               />
             </div>
             <div className="md:col-span-1 relative">
@@ -92,7 +91,6 @@ function Gallery() {
                 height={600}
                 alt="Look 2"
                 className="w-full h-auto"
-                caption="LOOK 2"
               />
             </div>
           </div>
@@ -134,7 +132,6 @@ function Gallery() {
                 height={400}
                 alt="Look 7"
                 className="w-full h-auto"
-                caption="LOOK 7"
               />
             </div>
             <div className="md:col-span-1 relative">
@@ -152,7 +149,6 @@ function Gallery() {
                 height={600}
                 alt="Look 6"
                 className="w-full h-auto"
-                caption="LOOK 6"
               />
             </div>
           </div>
@@ -185,7 +181,6 @@ function Gallery() {
                     height={400}
                     alt={`Look ${8 + index * 2}`}
                     className="w-full h-auto"
-                    caption={`LOOK ${8 + index * 2}`}
                   />
                 </div>
                 <div className="md:col-span-1 relative">
@@ -203,7 +198,6 @@ function Gallery() {
                     height={600}
                     alt={`Look ${9 + index * 2}`}
                     className="w-full h-auto"
-                    caption={`LOOK ${9 + index * 2}`}
                   />
                 </div>
               </div>
@@ -231,31 +225,6 @@ function Gallery() {
               </div>
             </React.Fragment>
           ))}
-
-          <div className="text-center mb-8">
-            <button
-              onClick={handleLoadMore}
-              className="border-2 border-brown-200 text-brown-200 px-4 py-2 hover:bg-brown-200 hover:text-black-950 hover:scale-105 transition-all duration-300"
-            >
-              LOAD MORE
-            </button>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1, 2, 3, 4].map((item) => (
-              <div key={item} className="text-center">
-                <ImageWithCaption
-                  src={galleryItems[item].src}
-                  width={225}
-                  height={300}
-                  alt={`Product ${item}`}
-                  className="w-full h-auto mb-2 hover:scale-105 transition-all duration-300 cursor-pointer"
-                />
-                <h3 className="font-semibold">THE STYLE {item}</h3>
-                <p className="text-sm">$1,000</p>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

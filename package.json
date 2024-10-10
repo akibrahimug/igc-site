@@ -25,11 +25,16 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-slot": "^1.1.0",
     "@storyblok/react": "^3.0.10",
     "axios": "^0.27.2",
     "buffer": "^6.0.3",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
     "fs": "^0.0.2",
+    "lucide-react": "^0.447.0",
     "next": "14.2.5",
     "react": "^18",
     "react-cookie": "^4.1.1",
@@ -42,7 +47,9 @@
     "storyblok-js-client": "^4.5.8",
     "storyblok-react": "^0.1.2",
     "storyblok-rich-text-react-renderer": "^2.8.0",
-    "swiper": "^8.4.6"
+    "swiper": "^8.4.6",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.4",
