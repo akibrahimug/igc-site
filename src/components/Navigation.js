@@ -11,8 +11,10 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const SIDENAV_ITEMS= [
     {
       title: 'HOME',
@@ -82,12 +84,12 @@ const Navigation = () => {
       <div className="container mx-auto px-0">
         <div className="flex items-center justify-between h-16">
           <div className="pl-0 ml-0">
-            <img className="h-12 w-auto md:h-24" src="/images/igc-logo.PNG" alt="igc-logo" />
+            <img className="h-12 w-auto md:h-24" src="/images/igc-logo-white.PNG" alt="igc-logo" />
           </div>
           <div className="pr-0 mr-0">
-            <Sheet>
+            <Sheet onOpenChange={() => setIsOpen(!isOpen)}>
               <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-primary">
+                <Button variant="ghost" size="icon" className={cn("block", isOpen && "hidden")}>
                   <MenuIcon className="size-12" aria-hidden="true" />
                 </Button>
               </SheetTrigger>
