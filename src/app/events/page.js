@@ -1,6 +1,9 @@
+"use client"
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 import Link from "next/link"
 import Image from "next/image"
+import Autoplay from "embla-carousel-autoplay"
+
 
 const images = [
     {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 1'},
@@ -17,7 +20,18 @@ const images = [
 export default function Events() {
   return (
     <div className="h-screen overflow-auto snap-y scroll-smooth overscroll-contain bg-black-950">
-      <Carousel className="w-full">
+      <Carousel 
+      className="w-full"
+        plugins={[
+            Autoplay({
+            delay: 5000,
+            }),
+        ]}
+
+        opts={{
+            loop: true,
+        }}
+      >
         <CarouselContent>
           <CarouselItem>
             <div className="relative h-64 md:h-[500px] w-full">
