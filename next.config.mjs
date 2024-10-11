@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["picsum.photos", "a.storyblok.com"],
+    domains: ["picsum.photos", "fastly.picsum.photos", "a.storyblok.com"],
   },
   trailingSlash: true,
   swcMinify: true,
