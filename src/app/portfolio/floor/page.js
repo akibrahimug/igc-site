@@ -3,12 +3,12 @@ import Image from "next/image";
 export default function FloorMoves() {
 	return (
 		<div className="h-screen overflow-auto snap-y scroll-smooth overscroll-contain bg-black-950">
-			<div className="bg-black text-white p-4 md:mx-32 lg:mx-48 ">
+			<div className="bg-black text-white p-4 mx-8 md:mx-32 lg:mx-48 ">
 				<div className="max-w-6xl mx-auto">
 					<h1 className="text-5xl md:text-6xl font-bold mb-4">
-						FLOOR MOVES TO
-						<br />
-						SLOW FASHION
+						FLOOR MOVES TO SLOW FASHION
+						{/* <br /> */} 
+						{/* SLOW FASHION */}
 					</h1>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<p className="text-justify">
@@ -53,30 +53,30 @@ export default function FloorMoves() {
 								both personal and collective narratives in dance and global issues like fast fashion.
 							</p>
 						</div>
-                        <div className="flex flex-row">
-                            <div className="md:w-2/3"></div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <Image
+                                src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
+                                alt="People on floor with FLOOR text"
+                                width={1200}
+                                height={300}
+                                className="w-full h-64 object-cover md:row-start-2"
+                            />
                             <Image
                                 src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
                                 alt="Breakdancer mid-air"
                                 width={800}
                                 height={800}
-                                className="w-full h-[500px] object-cover"
+                                className="w-full h-[500px] object-cover md:row-span-2"
                             />
                         </div>
 					</div>
 
 					<div className="mt-8 space-y-4">
-						<Image
-							src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
-							alt="People on floor with FLOOR text"
-							width={1200}
-							height={300}
-							className="w-full h-64 object-cover"
-						/>
+						
 
 						<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 							<div className="p-4 flex items-center">
-								<p className="text-sm">
+								<p className="text-justify">
 									IGC's commitment to sustainability is evident in sourcing materials solely from some of 2000 local vendors in Uganda's largest second-hand
 									market, Owino. By setting a new standard for sustainable sportswear, these uniforms empower Uganda's breakdance team to showcase their talent
 									while igniting crucial conversations about the environmental impact of textile waste, 70% of which is discarded in Africa, through a process
