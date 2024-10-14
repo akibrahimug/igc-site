@@ -1,13 +1,14 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Portfolio() {
   const projects = [
-    { title: "FLOOR MOVES TO SLOW FASHION", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "GUGUMUKA", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "WE ARE GOING TO MARS", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "MISTAKEN FABRICS", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "MUNSIKO", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "KAMPALA DISASTERS", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "FLOOR MOVES TO SLOW FASHION", href:"/portfolio/floor",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "GUGUMUKA", href:"/portfolio/gugumuka",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "WE ARE GOING TO MARS", href:"/portfolio/mars",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "MISTAKEN FABRICS", href:"/portfolio/",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "MUNSIKO", href:"/portfolio/",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "KAMPALA DISASTERS", href:"/portfolio/",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
   ]
 
   return (
@@ -22,18 +23,20 @@ export default function Portfolio() {
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {projects.map((project, index) => (
-          <div key={index} className="relative h-[500px] overflow-hidden">
-            <Image
-              src={project.image}
-              alt={project.title}
-              layout="fill"
-              objectFit="cover"
-              className="rounded-lg"
-            />
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-              <h2 className="text-white text-2xl font-bold text-center px-4">{project.title}</h2>
+          <Link href={project.href} key={index}>
+            <div key={index} className="relative h-[500px] overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <h2 className="text-white text-2xl font-bold text-center px-4">{project.title}</h2>
+              </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       </div>
