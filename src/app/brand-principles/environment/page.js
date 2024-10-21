@@ -1,8 +1,7 @@
 export default async function Environment() {
 	return (
 		<>
-				<div className=" md:mx-32 mx-4">
-				
+		<div>
 					<h1 className="text-5xl md:text-6xl font-bold mb-12 text-center">ENVIRONMENT</h1>
 					<div className="flex flex-col md:flex-row justify-center items-center space-x-16">
 						<div className="text-center mx-8">
