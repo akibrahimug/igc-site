@@ -1,7 +1,6 @@
 export default async function Environment() {
 	return (
 		<>
-			<div className="h-screen overflow-auto snap-y">
 				<div className=" md:mx-32 mx-4">
 				
 					<h1 className="text-5xl md:text-6xl font-bold mb-12 text-center">ENVIRONMENT</h1>
@@ -79,7 +78,6 @@ export default async function Environment() {
 						</div>
 					</div>
 				</div>
-		</div>
 		</>
 	);
 }

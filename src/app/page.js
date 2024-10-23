@@ -10,11 +10,9 @@ export default async function Home() {
 
 	return (
 		<>
-			<div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
 				<Hero blok={story?.content} />
 				<Gallery blok={story?.content}/>
 				<NewsSection />
-			</div>
 			<ScrollIndicator />
 		</>
 	);

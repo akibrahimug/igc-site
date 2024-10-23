@@ -3,7 +3,6 @@ import Image from "next/image";
 
 function Mars() {
 	return (
-		<div className="h-screen overflow-auto snap-y scroll-smooth overscroll-contain bg-black-950">
 			<div className="bg-black text-white p-4 md:mx-32 lg:mx-48">
 				<h1 className="text-5xl md:text-7xl font-bold mb-4">WE ARE GOING TO MARS</h1>
 				<div className="flex flex-col md:flex-row md:space-x-8">
@@ -114,7 +113,6 @@ function Mars() {
 					</div>
 				</div>
 			</div>
-		</div>
 	);
 }
 

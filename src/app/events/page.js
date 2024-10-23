@@ -19,7 +19,7 @@ const images = [
 
 export default function Events() {
   return (
-    <div className="h-screen overflow-auto snap-y scroll-smooth overscroll-contain bg-black-950">
+    <div>
       <Carousel 
       className="w-full"
         plugins={[

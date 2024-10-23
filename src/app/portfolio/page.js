@@ -12,16 +12,14 @@ export default function Portfolio() {
   ]
 
   return (
-    <div className="h-screen overflow-auto snap-y scroll-smooth overscroll-contain bg-black-950">
-
     <div className="bg-black text-white p-4 md:mx-32 lg:mx-48">      
       <h1 className="text-5xl md:text-6xl font-bold mb-6 text-center">PORTFOLIO</h1>
       
-      <p className="mb-8 max-w-4xl text-justify">
+      <p className="mb-8 max-w-lg text-justify">
         By transforming waste materials into unique products, we minimise environmental impact and avoid intensive manufacturing processes. We collaborate with local artists to amplify voices from regions disproportionately affected by climate change. Through education and promotion of circular fashion practices, we're fostering a generation of conscious 'wastepreneurs'.
       </p>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24">
         {projects.map((project, index) => (
           <Link href={project.href} key={index}>
             <div key={index} className="relative h-[500px] overflow-hidden">
@@ -40,6 +38,5 @@ export default function Portfolio() {
         ))}
       </div>
       </div>
-    </div>
   )
 }

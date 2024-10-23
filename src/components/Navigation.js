@@ -12,9 +12,29 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-
+import { useScrollPosition } from "@/hooks/useScrollPosition";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollPosition = useScrollPosition();
+
+  console.log(scrollPosition);
+
+  const [isPageScrolled, setIsPageScrolled] = useState(false);
+
+useEffect(() => {
+  const checkScroll = () => {
+    setIsPageScrolled(window.scrollY !== 0);
+    console.log(window.scrollY);
+  };
+  window.addEventListener("scroll", checkScroll);
+
+  // NEW: cleanup function
+  return () => {
+    window.removeEventListener("scroll", checkScroll);
+  };
+}, [isPageScrolled]);
+
+
   const SIDENAV_ITEMS= [
     {
       title: 'HOME',
@@ -93,7 +113,7 @@ const Navigation = () => {
                   <MenuIcon className="size-12" aria-hidden="true" />
                 </Button>
               </SheetTrigger>
-              <SheetContent>
+              <SheetContent className="bg-black-900">
                 <div className="h-full flex flex-col mt-8">
                   <div className="flex flex-col space-y-6 w-full">
                     <div className="flex flex-col space-y-2 md:px-6">
