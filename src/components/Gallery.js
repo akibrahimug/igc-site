@@ -63,21 +63,21 @@ function Gallery() {
       className="section bg-black-950 opacity-0 flex justify-center -mt-20 relative text-brown-200"
     >
       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
-      <div className="text-center z-20">
+      <div className="text-center z-20 mx-2">
         <div className="container mx-auto mt-60">
           <h1 className="text-4xl font-bold mb-8">FALL/WINTER 2022</h1>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-            <div className="md:col-span-1">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_100px_400px_3fr] gap-10 mb-10 relative md:ml-2 lg:ml-8 ">
+            <div>
               <ImageWithCaption
                 src={galleryItems[0].src}
-                width={300}
-                height={400}
+                width={400}
+                height={533}
                 alt="Look 1"
-                className="w-full h-auto"
+                className="object-cover w-full h-auto md:min-w-[250px] md:min-h-[300px] lg:min-w-[350px] lg:min-h-[470px]"
               />
             </div>
-            <div className="md:col-span-1 relative">
-              <p className="text-sm mb-4 text-left md:absolute bottom-10 left-0">
+            <div>
+              <p className="text-sm lg:text-lg md:mb-4 text-left md:absolute bottom-0 xl:bottom-[9rem] left-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px]">
                 Carefully hand-distressed materials and details, combined with a
                 modern, oversized silhouette, create a look that is both edgy
                 and sophisticated. Distressed knit sweaters are paired with
@@ -90,13 +90,13 @@ function Gallery() {
                 width={450}
                 height={600}
                 alt="Look 2"
-                className="w-full h-auto"
+                className="object-cover w-full h-auto 2xl:w-[800px] 2xl:h-[800px]"
               />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-10">
-            <div className="md:col-span-2 space-y-4">
+          <div className="md:grid md:grid-cols-1 md:grid-rows-2 mb-10">
+            <div className="md:col-span-2 space-y-4 md:row-span-2">
               <div className="flex justify-center gap-8">
                 {galleryItems
                   .filter((item) => [2, 3].includes(item.id))
@@ -104,10 +104,10 @@ function Gallery() {
                     <ImageWithCaption
                       key={item.id}
                       src={item.src}
-                      width={225}
-                      height={300}
+                      width={500}
+                      height={800}
                       alt={item.alt}
-                      className="w-[355px] h-[470px]"
+                      className="object-cover w-[500px] h-auto"
                     />
                   ))}
               </div>
@@ -120,40 +120,41 @@ function Gallery() {
               width={1200}
               height={400}
               alt="Look 5"
-              className="w-full h-[500px]"
+              className="object-cover w-full h-[500px]"
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr_1fr_1fr] xl:grid-cols-[3fr_100px_30px_1fr] gap-10 mb-10 relative">
             <div className="md:col-span-2">
               <ImageWithCaption
-                src={galleryItems[6].src}
-                width={300}
-                height={400}
-                alt="Look 7"
-                className="w-full h-auto"
+                src={galleryItems[1].src}
+                width={450}
+                height={600}
+                alt="Look 2"
+                className="object-cover w-full h-auto 2xl:w-[900px] 2xl:h-[800px]"
               />
             </div>
-            <div className="md:col-span-1 relative">
-              <p className="text-sm mb-4 text-left md:absolute bottom-10 left-0">
+            <div>
+              <p className="text-sm lg:text-lg md:mb-4 text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px]">
+                {" "}
                 Carefully hand-distressed materials and details, combined with a
                 modern, oversized silhouette, create a look that is both edgy
                 and sophisticated. Distressed knit sweaters are paired with
                 tailored trousers for a perfectly undone look.
               </p>
             </div>
-            <div className="md:col-span-1">
+            <div className="">
               <ImageWithCaption
-                src={galleryItems[5].src}
-                width={450}
-                height={600}
-                alt="Look 6"
-                className="w-full h-auto"
+                src={galleryItems[0].src}
+                width={400}
+                height={533}
+                alt="Look 1"
+                className="object-cover w-full h-auto md:min-w-[250px] md:min-h-[300px] lg:min-w-[350px] lg:min-h-[470px]"
               />
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-10">
-            <div className="md:col-span-2 space-y-4">
+          <div className="md:grid md:grid-cols-1 md:grid-rows-2 mb-10">
+            <div className="md:col-span-2 space-y-4 md:row-span-2">
               <div className="flex justify-center gap-8">
                 {galleryItems
                   .filter((item) => [6, 7].includes(item.id))
@@ -161,70 +162,15 @@ function Gallery() {
                     <ImageWithCaption
                       key={item.id}
                       src={item.src}
-                      width={225}
-                      height={300}
+                      width={500}
+                      height={800}
                       alt={item.alt}
-                      className="w-[355px] h-[470px]"
+                      className="object-cover w-[500px] h-auto"
                     />
                   ))}
               </div>
             </div>
           </div>
-
-          {[...Array(additionalSets)].map((_, index) => (
-            <React.Fragment key={index}>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
-                <div className="md:col-span-2">
-                  <ImageWithCaption
-                    src={galleryItems[6].src}
-                    width={300}
-                    height={400}
-                    alt={`Look ${8 + index * 2}`}
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="md:col-span-1 relative">
-                  <p className="text-sm mb-4 text-left md:absolute bottom-10 left-0">
-                    Carefully hand-distressed materials and details, combined
-                    with a modern, oversized silhouette, create a look that is
-                    both edgy and sophisticated. Distressed knit sweaters are
-                    paired with tailored trousers for a perfectly undone look.
-                  </p>
-                </div>
-                <div className="md:col-span-1">
-                  <ImageWithCaption
-                    src={galleryItems[5].src}
-                    width={450}
-                    height={600}
-                    alt={`Look ${9 + index * 2}`}
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-1 gap-4 mb-10">
-                <div className="md:col-span-2 space-y-4">
-                  <div className="flex justify-center gap-8">
-                    {galleryItems
-                      .filter((item) =>
-                        [8 + index * 2, 9 + index * 2].includes(
-                          item.id % galleryItems.length
-                        )
-                      )
-                      .map((item) => (
-                        <ImageWithCaption
-                          key={item.id}
-                          src={item.src}
-                          width={225}
-                          height={300}
-                          alt={item.alt}
-                          className="w-[355px] h-[470px]"
-                        />
-                      ))}
-                  </div>
-                </div>
-              </div>
-            </React.Fragment>
-          ))}
         </div>
       </div>
     </section>
