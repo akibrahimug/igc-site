@@ -19,7 +19,7 @@ jobs:
           node-version: "20" # Use the Node.js version your project requires
 
       - name: Install Vercel CLI
-        run: npm install -g vercel
+        run: yarn global add vercel
 
       - name: Deploy to Vercel
         env:
