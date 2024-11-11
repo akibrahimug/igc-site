@@ -2,25 +2,22 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Banner from '../Banner-fullscreen'
 
-export default function Template3({projects, title, description }) {
+export default function Template3({projects, title, description, image }) {
 
   return (
     <div className="bg-black text-white">      
-        <Banner title={title} />
-      
-      
-      {/* <p className="mb-8 max-w-lg text-justify">
-        By transforming waste materials into unique products, we minimise environmental impact and avoid intensive manufacturing processes. We collaborate with local artists to amplify voices from regions disproportionately affected by climate change. Through education and promotion of circular fashion practices, we're fostering a generation of conscious 'wastepreneurs'.
-      </p> */}
+        <Banner title={title} image={image} />
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
         {projects.map((project, index) => (
           <Link href={project.href} key={index}>
-            <div key={index} className="relative h-128 overflow-hidden">
+            <div key={index} className="relative overflow-hidden">
               <Image
                 src={project.image}
                 alt={project.title}
-                layout="fill"
+                // layout="fill"
+                width={600}
+								height={1200}
                 objectFit="cover"
                 className="rounded-lg"
               />
