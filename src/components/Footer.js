@@ -24,21 +24,21 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className="bg-white z-10" aria-labelledby="footer-heading">
+      <footer className="bg-black-950 z-10" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8">
-             <h2 className="font-bold leading-6 text-gray-600">IGC Studios</h2>
-              <p className="text-sm leading-6 text-gray-600">
+             <h2 className="font-bold leading-6 text-white-400">IGC Studios</h2>
+              <p className="text-sm leading-6 text-gray-400">
                 PO BOX 164 304
               </p>
-              <p className="text-sm leading-6 text-gray-600">
+              <p className="text-sm leading-6 text-gray-400">
                 KAMPALA GPO
               </p>
-              <p className="text-sm leading-6 text-gray-600">
+              <p className="text-sm leading-6 text-gray-400">
                 Uganda
               </p>
 
@@ -46,11 +46,11 @@ const navigation = {
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">Solutions</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white-900">Solutions</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.company.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
                           {item.name}
                         </a>
                       </li>
@@ -58,11 +58,11 @@ const navigation = {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">Support</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white-900">Support</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation["follow us"].map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
                           {item.name}
                         </a>
                       </li>
@@ -72,11 +72,11 @@ const navigation = {
               </div>
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">Company</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white-900">Company</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.contact.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
                           {item.name}
                         </a>
                       </li>
@@ -88,7 +88,7 @@ const navigation = {
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.legal.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-600 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
                           {item.name}
                         </a>
                       </li>
