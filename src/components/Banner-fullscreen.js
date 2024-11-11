@@ -2,14 +2,14 @@ import React from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 
-function Banner({title}) {
+function Banner({title, image}) {
   return (
     <Carousel className="w-full">
     <CarouselContent>
         <CarouselItem>
             <div className="relative h-screen w-full">
                 <img
-                    src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
+                    src={image}
                     alt="Banner 1"
                     className="h-full w-full object-cover"
                 />
