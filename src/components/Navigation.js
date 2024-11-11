@@ -15,24 +15,24 @@ import { cn } from "@/lib/utils";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const scrollPosition = useScrollPosition();
+  // const scrollPosition = useScrollPosition();
 
-  console.log(scrollPosition);
+  // console.log(scrollPosition);
 
-  const [isPageScrolled, setIsPageScrolled] = useState(false);
+  // const [isPageScrolled, setIsPageScrolled] = useState(false);
 
-useEffect(() => {
-  const checkScroll = () => {
-    setIsPageScrolled(window.scrollY !== 0);
-    console.log(window.scrollY);
-  };
-  window.addEventListener("scroll", checkScroll);
+// useEffect(() => {
+//   const checkScroll = () => {
+//     setIsPageScrolled(window.scrollY !== 0);
+//     console.log(window.scrollY);
+//   };
+//   window.addEventListener("scroll", checkScroll);
 
-  // NEW: cleanup function
-  return () => {
-    window.removeEventListener("scroll", checkScroll);
-  };
-}, [isPageScrolled]);
+//   // NEW: cleanup function
+//   return () => {
+//     window.removeEventListener("scroll", checkScroll);
+//   };
+// }, [isPageScrolled]);
 
 
   const SIDENAV_ITEMS= [
