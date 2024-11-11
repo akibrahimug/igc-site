@@ -1,27 +1,33 @@
-"use client"
+"use client";
+import Template3 from '@/components/template-3'
+import Image from 'next/image'
+import Link from 'next/link'
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
-import Link from "next/link"
-import Image from "next/image"
 import Autoplay from "embla-carousel-autoplay"
+import Banner from '@/components/Banner-fullscreen';
 
-
-const images = [
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 1'},
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 2'},  
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 3'},
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 4'},
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 5'},  
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 6'},
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 7'},
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 8'},  
-    {src: 'https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0', alt: 'Event 9'},
-]
+var image = "https://igcfashion.africa/images/folio/sample/AW19/aw1.jpg"
 
 export default function Events() {
+  const projects = [
+    { title: "GZANGS: AFTERNATIVEREALITIES", href: "/events/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "GUGUMUKA MU KAZO", href: "/events/gugumuka", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "KWETU KWANZA", href: "/events/mars", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "NDERE CENTRE", href: "/events/ndere-centre", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "SOCREATIVE SUMMIT JOHANNESBURG", href: "/events/so-creative", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "SENEGAL", href: "/events/senegal", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "IATF CAMEX 23", href: "/events/iatf-camex", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "LONDON FASHION WEEK 2023", href: "/events/london-fashion-week", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+];
+
+  // const image = "https://media.canva.com/v2/image-resize/format:JPG/height:533/quality:92/uri:s3%3A%2F%2Fmedia-private.canva.com%2FtPDUk%2FMAGTRGtPDUk%2F1%2Fp.jpg/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAEvhqh583vISUyPAIWjAtkEYFYdkIosW4CYQYtuJG3cE&exp=1731179777&osig=AAAAAAAAAAAAAAAAAAAAAB9dMoT-sTaHt9tIUJP8WQSsft1bsqA4wXZBZ1cAIOPo&signer=media-rpc&x-canva-quality=screen"
+  const title = "EVENTS"
   return (
-    <div>
-      <Carousel 
-      className="w-full"
+    <div className="bg-black text-white">      
+    <Banner title={title} image={image} />
+
+    <Carousel 
+      className="w-full pt-4"
         plugins={[
             Autoplay({
             delay: 5000,
@@ -34,7 +40,7 @@ export default function Events() {
       >
         <CarouselContent>
           <CarouselItem>
-            <div className="relative h-64 md:h-[500px] w-full">
+            <div className="relative h-32 md:h-[500px] w-full">
               <img
                 src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
                 alt="Banner 1"
@@ -45,13 +51,6 @@ export default function Events() {
                   <h2 className="text-4xl font-bold">UPCOMING EVENTS</h2>
                   <p className="mt-2 text-lg">Checkout our upcoming events</p>
                 </div>
-                <Link
-                  href="#"
-                  className="inline-flex h-10 items-center justify-center bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                  prefetch={false}
-                >
-                  Get Started
-                </Link>
               </div>
             </div>
           </CarouselItem>
@@ -100,31 +99,31 @@ export default function Events() {
           <ChevronRightIcon className="h-6 w-6 text-primary" />
         </CarouselNext>
       </Carousel>
-      <section className="w-full py-4 md:py-8">
-      <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold text-center mb-4 md:mb-8">EVENT ARCHIVE</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {images.map((image, index) => (
-            <div key={index} className="relative overflow-hidden rounded-lg shadow-lg">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={400}
-                height={800}
-                className="w-full h-auto object-cover"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-                <p className="text-white text-xl font-semibold">{image.alt}</p>
-              </div>
-            </div>
-          ))}
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
+    {projects.map((project, index) => (
+      <Link href={project.href} key={index}>
+        <div key={index} className="relative overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            // layout="fill"
+            width={600}
+            height={1200}
+            objectFit="cover"
+            className="rounded-lg"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+            <h2 className="text-white text-2xl font-bold text-center px-4">{project.title}</h2>
+          </div>
         </div>
-      </div>
-    </section>
-      
-    </div>
+      </Link>
+    ))}
+  </div>
+  </div>
   )
 }
+
 
 function ChevronLeftIcon(props) {
   return (
