@@ -18,10 +18,10 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <Navigation />
-          <div className="h-screen overflow-y-scroll snap-y snap-mandatory scroll-smooth relative z-0">
+          <main>
           {children}
           <Footer />
-          </div>
+          </main>
         </body>
       </html>
     </StoryblokProvider>
