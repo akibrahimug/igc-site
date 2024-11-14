@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { MenuIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import {
@@ -10,101 +10,97 @@ import {
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { useScrollPosition } from "@/hooks/useScrollPosition";
+
+const SIDENAV_ITEMS= [
+  {
+    title: 'HOME',
+    path: '/',
+  },
+  {
+    title: 'BRAND PRINCIPLES',
+    submenu: true,
+    subMenuItems: [
+      { title: 'Environment', path: '/brand-principles/environment' },
+      { title: 'Culture', path: '/brand-principles/web-design/culture' },
+      { title: 'Community', path: '/brand-principles/community' },
+    ],
+  },
+  {
+    title: 'SERVICES',
+    path: '/services',
+  },
+  {
+    title: 'PORTFOLIO',
+    path: '/portfolio',
+  },
+  {
+    title: 'SHOP',
+    submenu: true,
+    subMenuItems: [
+      { title: 'Shop all', path: '/shop/account' },
+      { title: 'Shipping and Returns', path: '/shop/privacy' },
+      { title: 'Size Guide', path: '/shop/size-guide' },
+      { title: 'Terms and Conditions', path: '/shop/terms and conditions' },
+],
+  },
+  {
+    title: 'FASHION CYPHER',
+    submenu: true,
+    subMenuItems: [
+      { title: 'Workshops', path: '/fashion-cypher/workshops' },
+      { title: 'Kazo', path: '/fashion-cypher/kazo' },
+      { title: 'Gugumuka Mu Kazo', path: '/fashion-cypher/gugumuka' },
+      { title: 'Networking', path: '/fashion-cypher/networking' },
+    ],
+  },
+  {
+    title: 'KWETU KWANZA',
+    path: '/kwetu-kwanza',
+  },
+  {
+    title: 'EVENTS',
+    path: '/events',
+  },
+  {
+    title: 'PRESS',
+    path: '/press',
+  },
+  {
+    title: 'ABOUT US',
+    path: '/about',
+  },
+  {
+    title: 'CONTACT US',
+    path: '/contact',
+  },
+];
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const scrollPosition = useScrollPosition();
+  const [scrolled, setIsPageScrolled] = useState(false);
 
-  // console.log(scrollPosition);
+  const handleScroll = () => {
+    if(window.scrollY > 0){
+      setIsPageScrolled(true);
+    } else {
+      setIsPageScrolled(false);
+    }
+  }
 
-  // const [isPageScrolled, setIsPageScrolled] = useState(false);
-
-// useEffect(() => {
-//   const checkScroll = () => {
-//     setIsPageScrolled(window.scrollY !== 0);
-//     console.log(window.scrollY);
-//   };
-//   window.addEventListener("scroll", checkScroll);
-
-//   // NEW: cleanup function
-//   return () => {
-//     window.removeEventListener("scroll", checkScroll);
-//   };
-// }, [isPageScrolled]);
-
-
-  const SIDENAV_ITEMS= [
-    {
-      title: 'HOME',
-      path: '/',
-    },
-    {
-      title: 'BRAND PRINCIPLES',
-      submenu: true,
-      subMenuItems: [
-        { title: 'Environment', path: '/brand-principles/environment' },
-        { title: 'Culture', path: '/brand-principles/web-design/culture' },
-        { title: 'Community', path: '/brand-principles/community' },
-      ],
-    },
-    {
-      title: 'SERVICES',
-      path: '/services',
-    },
-    {
-      title: 'PORTFOLIO',
-      path: '/portfolio',
-    },
-    {
-      title: 'SHOP',
-      submenu: true,
-      subMenuItems: [
-        { title: 'Shop all', path: '/shop/account' },
-        { title: 'Shipping and Returns', path: '/shop/privacy' },
-        { title: 'Size Guide', path: '/shop/size-guide' },
-        { title: 'Terms and Conditions', path: '/shop/terms and conditions' },
-  ],
-    },
-    {
-      title: 'FASHION CYPHER',
-      submenu: true,
-      subMenuItems: [
-        { title: 'Workshops', path: '/fashion-cypher/workshops' },
-        { title: 'Kazo', path: '/fashion-cypher/kazo' },
-        { title: 'Gugumuka Mu Kazo', path: '/fashion-cypher/gugumuka' },
-        { title: 'Networking', path: '/fashion-cypher/networking' },
-      ],
-    },
-    {
-      title: 'KWETU KWANZA',
-      path: '/kwetu-kwanza',
-    },
-    {
-      title: 'EVENTS',
-      path: '/events',
-    },
-    {
-      title: 'PRESS',
-      path: '/press',
-    },
-    {
-      title: 'ABOUT US',
-      path: '/about',
-    },
-    {
-      title: 'CONTACT US',
-      path: '/contact',
-    },
-  ];
+  useEffect(() => {
+    console.log(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
 
   return (
-<nav className="absolute top-0 left-0 right-0 z-10 md:mt-8 mt-2">
-      <div className="container mx-auto px-0">
+<nav className={`absolute top-0 left-0 right-0 md:my-8 mt-2 z-50 transition-colors duration-100 ${scrolled ? 'sticky top-0 bg-black shadow-lg' : 'bg-transparent'}`}>
+ <div className="container mx-4 md:mx-auto px-0">
         <div className="flex items-center justify-between h-16">
           <div className="pl-0 ml-0">
-            <img className="h-12 w-auto md:h-24" src="/images/igc-logo-white.PNG" alt="igc-logo" />
+            <img className="h-12 w-auto md:h-16" src="/images/igc-logo-white.PNG" alt="igc-logo" />
           </div>
           <div className="pr-0 mr-0">
             <Sheet onOpenChange={() => setIsOpen(!isOpen)}>
