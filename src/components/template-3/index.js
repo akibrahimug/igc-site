@@ -8,7 +8,7 @@ export default function Template3({projects, title, description, image }) {
     <div className="bg-black text-white">      
         <Banner title={title} image={image} />
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
+      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 p-4">
         {projects.map((project, index) => (
           <Link href={project.href} key={index}>
             <div key={index} className="relative overflow-hidden">
