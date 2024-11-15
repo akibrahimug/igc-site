@@ -6,7 +6,8 @@ export default function Template4({ title, description, image, projects }) {
 	return (
 		<div className="bg-black text-white mt-0">
 			<Banner title={title} image={image} />
-			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
+		<div className="p-2 md:p-4">
+		<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-24">
         {projects.map((project, index) => (
           <Link href={project.href} key={index}>
             <div key={index} className="relative overflow-hidden">
@@ -50,8 +51,8 @@ export default function Template4({ title, description, image, projects }) {
 					/>
 				</div>
 			</div> */}
-			<div className="mx-auto grid grid-cols-6 gap-4 md:gap-8">
-				<div className="col-span-2">
+			<div className="mx-auto grid md:grid-cols-6 gap-4 md:gap-8">
+				<div className="md:col-span-2">
 					<Image
 						src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
 						alt="Person in brown coat on rocky shore"
@@ -61,8 +62,8 @@ export default function Template4({ title, description, image, projects }) {
 					/>
 					
 				</div>
-				<div className="col-span-2"></div>
-				<div className="col-span-2 relative">
+				<div className="md:col-span-2"></div>
+				<div className="md:col-span-2 relative">
 					<Image
 						src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
 						alt="Close-up of person in textured garment"
@@ -109,6 +110,8 @@ export default function Template4({ title, description, image, projects }) {
 					/>
 				</div>
 			</div>
+		</div>
+	
 		</div>
 	);
 }
