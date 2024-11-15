@@ -6,7 +6,7 @@ function Template6({ title, description, image }) {
 	return (
 		<>
 			<Banner title={title} image={image} />
-			<div className="p-4">
+			<div className="p-2 md:p-4">
 				<div className="grid grid-cols-1 md:grid-cols-12 gap-4">
 					<div className="md:col-span-4">
 						<div className="flex flex-col gap-4 justify-between align-baseline">
