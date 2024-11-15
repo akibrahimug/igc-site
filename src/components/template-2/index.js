@@ -9,6 +9,7 @@ export default function Template2({ title, description, image }) {
 			{/* <p className="my-6 max-w-3xl text-justify">
 				{description}
 			</p> */}
+			<div className="p-2 md:p-4">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
 				<div className="flex items-center justify-between rounded-lg p-4">
 					<p className="md:max-w-xl text-justify">
@@ -91,6 +92,7 @@ export default function Template2({ title, description, image }) {
 						className="h-96 w-full object-cover"
 					/>
 				</div>
+			</div>
 			</div>
 		</div>
 	);
