@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Template4({ title, description, image, projects }) {
 	return (
-		<div className="bg-black text-white p-4 mt-0">
+		<div className="bg-black text-white mt-0">
 			<Banner title={title} image={image} />
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
         {projects.map((project, index) => (

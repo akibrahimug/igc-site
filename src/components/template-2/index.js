@@ -3,7 +3,7 @@ import Banner from "../Banner-fullscreen";
 
 export default function Template2({ title, description, image }) {
 	return (
-		<div className="bg-black text-white p-4 mt-0">
+		<div className=" text-white mt-0">
 			<Banner title={title} image={"https://www.igcfashion.africa/images/home3.png"} />
 
 			{/* <p className="my-6 max-w-3xl text-justify">
