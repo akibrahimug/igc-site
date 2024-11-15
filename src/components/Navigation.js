@@ -96,32 +96,33 @@ const Navigation = () => {
   }, []);
 
   return (
-<nav className={`absolute top-0 left-0 right-0 md:my-8 mt-2 z-50 transition-colors duration-100 ${scrolled ? 'sticky top-0 bg-black shadow-lg' : 'bg-transparent'}`}>
- <div className="container mx-4 md:mx-auto px-0">
-        <div className="flex items-center justify-between h-16">
-          <div className="pl-0 ml-0">
-            <img className="h-12 w-auto md:h-16" src="/images/igc-logo-white.PNG" alt="igc-logo" />
-          </div>
-          <div className="pr-0 mr-0">
-            <Sheet onOpenChange={() => setIsOpen(!isOpen)}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn("block", isOpen && "hidden")}>
-                  <MenuIcon className="size-12" aria-hidden="true" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent className="bg-black-900">
-                <div className="h-full flex flex-col mt-8">
-                  <div className="flex flex-col space-y-6 w-full">
-                    <div className="flex flex-col space-y-2 md:px-6">
-                      {SIDENAV_ITEMS.map((item, idx) => (
-                        <MenuItem key={idx} item={item} isOpen={isOpen} />
-                      ))}
-                    </div>
+    <nav className={cn(
+      "fixed left-0 right-0 transition-colors duration-100 z-50", 
+      scrolled ? 'bg-black-900 shadow-lg' : 'bg-transparent'
+    )}>
+      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:py-12">
+        <div>
+          <img className="h-12 w-auto md:h-24" src="/images/igc-logo-white.PNG" alt="igc-logo" />
+        </div>
+        <div>
+          <Sheet onOpenChange={() => setIsOpen(!isOpen)}>
+            <SheetTrigger asChild className="">
+              <Button variant="ghost" size="icon" className={cn("block", isOpen && "hidden", "w-16 h-16 flex items-center justify-center" )}>
+                <MenuIcon className="size-10 md:size-16" aria-hidden="true" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="bg-black-900">
+              <div className="h-full flex flex-col mt-8">
+                <div className="flex flex-col space-y-6 w-full">
+                  <div className="flex flex-col space-y-2 md:px-6">
+                    {SIDENAV_ITEMS.map((item, idx) => (
+                      <MenuItem key={idx} item={item} isOpen={isOpen} />
+                    ))}
                   </div>
                 </div>
-              </SheetContent>
-            </Sheet>
-          </div>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </nav>
