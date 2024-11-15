@@ -40,21 +40,6 @@ export default function Events() {
       >
         <CarouselContent>
           <CarouselItem>
-            <div className="relative h-32 md:h-[500px] w-full">
-              <img
-                src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
-                alt="Banner 1"
-                className="h-full w-full object-cover"
-              />
-              <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
-                <div className="text-center text-white">
-                  <h2 className="text-4xl font-bold">UPCOMING EVENTS</h2>
-                  <p className="mt-2 text-lg">Checkout our upcoming events</p>
-                </div>
-              </div>
-            </div>
-          </CarouselItem>
-          <CarouselItem>
             <div className="relative h-64 md:h-[500px] w-full overflow-hidden">
               <img
                 src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
@@ -99,8 +84,8 @@ export default function Events() {
           <ChevronRightIcon className="h-6 w-6 text-primary" />
         </CarouselNext>
       </Carousel>
-  
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-24 p-4">
+  <div className="p-2 md:p-4">
+  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-24">
     {projects.map((project, index) => (
       <Link href={project.href} key={index}>
         <div key={index} className="relative overflow-hidden">
@@ -119,6 +104,7 @@ export default function Events() {
         </div>
       </Link>
     ))}
+  </div>
   </div>
   </div>
   )
