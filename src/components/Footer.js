@@ -20,6 +20,11 @@ const navigation = {
     contact: [
       { name: 'igccommunityfashion@gmail.com', href: '#' },
     ],
+    address: [
+      { name: 'P. O. Box 123', href: '#' },
+      { name: 'KAMPALA', href: '#' },
+      { name: 'UGANDA', href: '#' },
+    ],
   }
   
   export default function Footer() {
@@ -28,23 +33,20 @@ const navigation = {
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-          <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="space-y-8">
-             <h2 className="font-bold leading-6 text-white-400">IGC Studios</h2>
-              <p className="text-sm leading-6 text-gray-400">
-                PO BOX 164 304
-              </p>
-              <p className="text-sm leading-6 text-gray-400">
-                KAMPALA GPO
-              </p>
-              <p className="text-sm leading-6 text-gray-400">
-                Uganda
-              </p>
-
-            </div>
-            <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-2 lg:px-8 lg:pt-32">
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
+            <div>
+                  <h3 className="text-sm font-semibold leading-6 text-white-900">IGC Studios</h3>
+                  <ul role="list" className="mt-6 space-y-4">
+                    {navigation.address.map((item) => (
+                      <li key={item.name}>
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
+                          {item.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <div>
                   <h3 className="text-sm font-semibold leading-6 text-white-900">Solutions</h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -57,7 +59,7 @@ const navigation = {
                     ))}
                   </ul>
                 </div>
-                <div className="mt-10 md:mt-0">
+                <div className="md:mt-0">
                   <h3 className="text-sm font-semibold leading-6 text-white-900">Support</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation["follow us"].map((item) => (
@@ -69,36 +71,20 @@ const navigation = {
                     ))}
                   </ul>
                 </div>
-              </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
                   <h3 className="text-sm font-semibold leading-6 text-white-900">Company</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.contact.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900 truncate ...">
                           {item.name}
                         </a>
                       </li>
                     ))}
                   </ul>
                 </div>
-                {/* <div className="mt-10 md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-gray-900">Legal</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {navigation.legal.map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div> */}
-              </div>
             </div>
-          </div>
-          <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <div className="mt-10 flex justify-center">
             <p className="text-xs leading-5 text-gray-500">&copy; 2024 IGC FASHION AFRICA. All rights reserved.</p>
           </div>
         </div>
