@@ -97,7 +97,7 @@ const Navigation = () => {
 
   return (
     <nav className={cn(
-      "fixed left-0 right-0 transition-colors duration-100 z-50", 
+      "fixed left-0 right-0 transition-colors duration-2000 z-50", 
       scrolled ? 'bg-black-950 shadow-lg' : 'bg-transparent'
     )}>
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:py-12">

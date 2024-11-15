@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
   	extend: {
+		transitionDuration: {
+			'2000': '2000ms',
+		  },
 		height: {
 			'128': '32rem',
 		  },
