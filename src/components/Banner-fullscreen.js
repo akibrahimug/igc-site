@@ -15,7 +15,7 @@ function Banner({title, image}) {
                 />
                 <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
                     <div className="text-center text-white">
-                        <h1 className="text-5xl text-center md:text-6xl font-bold mb-6">{title.toUpperCase()}</h1>
+                        <h1 className="text-5xl text-center md:text-[200px] mb-6 tracking-widest font-igc">{title.toUpperCase()}</h1>
                     </div>
                         {/* <p className="mt-2 text-lg">Checkout our upcoming events</p>
                     <Link
