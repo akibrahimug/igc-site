@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <StoryblokProvider>
       <html lang="en">
-        <body>
+        <body className="font-ubuntu">
           <Navigation />
           <main>
           {children}
