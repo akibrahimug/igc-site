@@ -154,7 +154,7 @@ const MenuItem = ({ item, onClose }) => {
           >
             <div className="flex flex-row space-x-4 items-center">
               {item.icon}
-              <span className="font-semibold text-xl  flex">{item.title}</span>
+              <span className="flex tracking-wider font-bebas-neue text-2xl">{item.title}</span>
             </div>
 
             <div className={`${subMenuOpen ? 'rotate-180' : ''} flex`}>
@@ -174,7 +174,7 @@ const MenuItem = ({ item, onClose }) => {
                       subItem.path === pathname ? 'font-bold' : ''
                     }`}
                   >
-                    <span className="hover:opacity-70">{subItem.title}</span>
+                    <span className="font-bebas-neue text-xl tracking-wider hover:opacity-70">{subItem.title}</span>
                   </Link>
                 );
               })}
@@ -190,7 +190,7 @@ const MenuItem = ({ item, onClose }) => {
           }`}
         >
           {item.icon}
-          <span className="font-semibold text-xl flex">{item.title}</span>
+          <span className="tracking-wider font-bebas-neue text-2xl flex">{item.title}</span>
         </Link>
       )}
     </div>
