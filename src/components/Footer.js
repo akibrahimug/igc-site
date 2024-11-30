@@ -30,17 +30,14 @@ const navigation = {
   export default function Footer() {
     return (
       <footer className="bg-black-950 z-10" aria-labelledby="footer-heading">
-        <h2 id="footer-heading" className="sr-only">
-          Footer
-        </h2>
-        <div className="mx-auto max-w-7xl px-6 pb-8 pt-2 lg:px-8 lg:pt-32">
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 xl:col-span-2 xl:mt-0">
+        <div className="mx-auto max-w-7xl px-6 pb-8 pt-2 lg:px-8 lg:pt-16">
+            <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0 text-center">
             <div>
                   <h3 className="text-sm font-semibold leading-6 text-white-900">IGC Studios</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.address.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-white transition-colors">
                           {item.name}
                         </a>
                       </li>
@@ -52,19 +49,7 @@ const navigation = {
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.company.map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
-                          {item.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="md:mt-0">
-                  <h3 className="text-sm font-semibold leading-6 text-white-900">Support</h3>
-                  <ul role="list" className="mt-6 space-y-4">
-                    {navigation["follow us"].map((item) => (
-                      <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-white transition-colors">
                           {item.name}
                         </a>
                       </li>
@@ -72,11 +57,11 @@ const navigation = {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white-900">Company</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white-900">Support</h3>
                   <ul role="list" className="mt-6 space-y-4">
-                    {navigation.contact.map((item) => (
+                    {navigation["follow us"].map((item) => (
                       <li key={item.name}>
-                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-gray-900 truncate ...">
+                        <a href={item.href} className="text-sm leading-6 text-gray-400 hover:text-white transition-colors">
                           {item.name}
                         </a>
                       </li>
@@ -91,4 +76,3 @@ const navigation = {
       </footer>
     )
   }
-  
