@@ -38,14 +38,14 @@ export default function Template2({ title, description, image }) {
 						height={800}
 						className="h-128 w-full object-cover"
 					/>
-					<div className="md:col-span-3 bg-black text-white p-4">
+					<div className="md:col-span-3 text-white p-4">
 						<p className="md:max-w-xl text-justify">
 						We use 99% natural or upcycled materials, promoting traditional materials like Lubugo (barkcloth). This 100% natural, renewable material is sourced from self-regenerative Mutuba trees, preserving ancientWe address this by championing indigenous materials in our fashion designs, conducting and sharing research on forgotten histories, and engaging in educational initiatives. Our approach intertwines cultural preservation with environmental sustainability, what we call "Afro-sustainability," recognizing that ancestral knowledge often holds solutions to contemporary challenges. By creating demand for materials like Lubugo, we support local artisans, preserve cultural practices, and even contribute to language preservation. Through these efforts, we aim to renew pride in Ugandan culture, protect indigenous knowledge from biopiracy, and counter the dominance of imported second-hand clothing that dilutes local fashion traditions.
 						forests alongside cultural heritage. Our fully traceable supply chain ensures we're not contributing to deforestation.
 						</p>
 					</div>
 				</div>
-				<div className="md:col-span-3 flex items-center bg-black text-white p-4 -order-1 md:order-none">
+				<div className="md:col-span-3 flex items-center text-white p-4 -order-1 md:order-none">
 					<p className="text-lg md:text-3xl font-bold md:max-w-sm">“Ultimately, our work will elevate Lubugo, positioning it as a crucial element in the dialogue on sustainable fashion and cultural preservation.
 					”</p>
 				</div>
