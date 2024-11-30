@@ -115,7 +115,7 @@ const Navigation = () => {
                 <MenuIcon className="size-10 md:size-10" aria-hidden="true" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-black-900 border-l-0">
+            <SheetContent className="bg-black-950 border-l-0">
               <div className="h-full flex flex-col mt-8">
                 <div className="flex flex-col space-y-6 w-full">
                   <div className="flex flex-col space-y-2 md:px-6">
