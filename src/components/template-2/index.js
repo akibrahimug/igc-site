@@ -46,7 +46,7 @@ export default function Template2({ title, description, image }) {
 					</div>
 				</div>
 				<div className="md:col-span-3 flex items-center text-white p-4 -order-1 md:order-none">
-					<p className="text-lg md:text-3xl font-bold md:max-w-sm">“Ultimately, our work will elevate Lubugo, positioning it as a crucial element in the dialogue on sustainable fashion and cultural preservation.
+					<p className="text-lg md:text-5xl font-bold md:max-w-md">“Ultimately, our work will elevate Lubugo, positioning it as a crucial element in the dialogue on sustainable fashion and cultural preservation.
 					”</p>
 				</div>
 				<div className="md:col-span-3">

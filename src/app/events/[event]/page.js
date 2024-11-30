@@ -3,7 +3,7 @@ import React from "react";
 
 function Event({ params }) {
     const events = [
-        { title: "GZANGS: AFTERNATIVEREALITIES", href: "/portfolio/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+        { title: "GZANGS: AFTER NATIVE REALITIES", href: "/portfolio/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "GUGUMUKA MU KAZO", href: "/portfolio/gugumuka", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "KWETU KWANZA", href: "/portfolio/mars", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "NDERE CENTRE", href: "/portfolio/ndere-centre", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },

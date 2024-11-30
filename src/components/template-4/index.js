@@ -51,7 +51,7 @@ export default function Template4({ title, description, image, projects }) {
 					/>
 				</div>
 			</div> */}
-			<div className="mx-auto grid md:grid-cols-6 gap-4 md:gap-8">
+			<div className="mx-auto grid md:grid-cols-6 gap-4 md:gap-24 md:mt-16">
 				<div className="md:col-span-2">
 					<Image
 						src="https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg"
@@ -74,7 +74,7 @@ export default function Template4({ title, description, image, projects }) {
 					<div className="absolute inset-0 border-4 border-purple-500 pointer-events-none"></div>
 				</div>
 				<div className="col-span-3 flex items-center bg-black text-white p-4">
-					<p className="text-lg md:text-3xl font-bold justify-center">
+					<p className="text-lg md:text-5xl font-bold justify-center">
 						"Gugumuka urges us to recognize overlooked histories, emphasising Lubugo's role in resistance—historically against colonialism, and today against
 						climate change."
 					</p>
@@ -97,7 +97,7 @@ export default function Template4({ title, description, image, projects }) {
                 className="rounded-lg"
               />
 					<div className="col-span-3 flex items-center justify-center bg-black text-white p-4">
-						<p className="text-lg md:text-3xl font-bold text-right max-w-xl">"Gugumuka means 'wake-up'. Wake up to the history. Wake up to your roots."</p>
+						<p className="text-lg md:text-5xl font-bold text-right max-w-xl">"Gugumuka means 'wake-up'. Wake up to the history. Wake up to your roots."</p>
 					</div>
 				</div>
 				<div className="col-span-3">
