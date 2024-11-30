@@ -87,6 +87,10 @@ const Navigation = () => {
     }
   }
 
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     console.log(window.scrollY);
     window.addEventListener("scroll", handleScroll);
@@ -105,7 +109,7 @@ const Navigation = () => {
           <img className="h-12 w-auto md:h-24" src="/images/igc-logo-white.PNG" alt="igc-logo" />
         </div>
         <div>
-          <Sheet onOpenChange={() => setIsOpen(!isOpen)}>
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="">
               <Button variant="ghost" size="icon" className={cn("block", isOpen && "hidden", "w-16 h-16 flex items-center justify-center" )}>
                 <MenuIcon className="size-10 md:size-16" aria-hidden="true" />
@@ -116,7 +120,7 @@ const Navigation = () => {
                 <div className="flex flex-col space-y-6 w-full">
                   <div className="flex flex-col space-y-2 md:px-6">
                     {SIDENAV_ITEMS.map((item, idx) => (
-                      <MenuItem key={idx} item={item} isOpen={isOpen} />
+                      <MenuItem key={idx} item={item} onClose={handleClose} />
                     ))}
                   </div>
                 </div>
@@ -131,7 +135,7 @@ const Navigation = () => {
 
 export default Navigation;
 
-const MenuItem = ({ item, isOpen }) => {
+const MenuItem = ({ item, onClose }) => {
   const pathname = usePathname();
   const [subMenuOpen, setSubMenuOpen] = useState(false);
   const toggleSubMenu = () => {
@@ -165,10 +169,10 @@ const MenuItem = ({ item, isOpen }) => {
                   <Link
                     key={idx}
                     href={subItem.path}
+                    onClick={() => onClose()}
                     className={`${
                       subItem.path === pathname ? 'font-bold' : ''
                     }`}
-                    onClick={() => isOpen(false)}
                   >
                     <span>{subItem.title}</span>
                   </Link>
@@ -180,6 +184,7 @@ const MenuItem = ({ item, isOpen }) => {
       ) : (
         <Link
           href={item.path}
+          onClick={() => onClose()}
           className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-opacity-20 ${
             item.path === pathname ? 'bg-opacity-20' : ''
           }`}
