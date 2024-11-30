@@ -148,7 +148,7 @@ const MenuItem = ({ item, onClose }) => {
         <>
           <button
             onClick={toggleSubMenu}
-            className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:opacity-50 ${
+            className={`flex flex-row items-center p-2 rounded-lg hover-bg-zinc-100 w-full justify-between hover:opacity-70 ${
               pathname.includes(item.path) ? 'bg-opacity-50' : ''
             }`}
           >
@@ -174,7 +174,7 @@ const MenuItem = ({ item, onClose }) => {
                       subItem.path === pathname ? 'font-bold' : ''
                     }`}
                   >
-                    <span>{subItem.title}</span>
+                    <span className="hover:opacity-70">{subItem.title}</span>
                   </Link>
                 );
               })}
@@ -185,7 +185,7 @@ const MenuItem = ({ item, onClose }) => {
         <Link
           href={item.path}
           onClick={() => onClose()}
-          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:bg-opacity-20 ${
+          className={`flex flex-row space-x-4 items-center p-2 rounded-lg hover:opacity-70 ${
             item.path === pathname ? 'bg-opacity-20' : ''
           }`}
         >
