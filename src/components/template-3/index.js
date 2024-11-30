@@ -21,7 +21,7 @@ export default function Template3({projects, title, description, image }) {
                 objectFit="cover"
                 className="rounded-lg"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center">
                 <h2 className="text-white text-2xl font-bold text-center px-4">{project.title}</h2>
               </div>
             </div>
