@@ -26,7 +26,7 @@ const ScrollIndicator = () => {
       </div>
 
       <div
-        className={`fixed left-[4.8%] md:left-5 lg:text-2xl md:text-xl md:top-[37%] top-20 transform -translate-y-1/2  text-brown-200 text-center font-igc transition-all animate-slide-in ${
+        className={`z-50 fixed left-[4.8%] md:left-5 lg:text-2xl md:text-xl md:top-[37%] top-20 transform -translate-y-1/2  text-brown-200 text-center font-igc transition-all animate-slide-in ${
           isVisible
             ? "animate-slide-in-top opacity-100"
             : "opacity-0 -translate-y-full"

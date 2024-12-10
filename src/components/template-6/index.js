@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Template6({ title, description, image }) {
 	return (
-		<>
+		<div className="bg-black text-white">
 			<Banner title={title} image={image} />
 			<div className="p-2 md:p-4">
 				<div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-24">
@@ -38,7 +38,7 @@ function Template6({ title, description, image }) {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

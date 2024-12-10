@@ -29,11 +29,11 @@ const navigation = {
   
   export default function Footer() {
     return (
-      <footer className="bg-black-950 z-10" aria-labelledby="footer-heading">
+      <footer className="bg-black-950 text-white z-10" aria-labelledby="footer-heading">
         <div className="mx-auto max-w-7xl px-6 pb-8 pt-2 lg:px-8 lg:pt-16">
             <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-8 xl:col-span-2 xl:mt-0 text-center">
             <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white-900">IGC Studios</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">IGC Studios</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.address.map((item) => (
                       <li key={item.name}>
@@ -45,7 +45,7 @@ const navigation = {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white-900">Solutions</h3>
+                  <h3 className="text-sm font-semibold leading-6">Solutions</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation.company.map((item) => (
                       <li key={item.name}>
@@ -57,7 +57,7 @@ const navigation = {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold leading-6 text-white-900">Support</h3>
+                  <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
                   <ul role="list" className="mt-6 space-y-4">
                     {navigation["follow us"].map((item) => (
                       <li key={item.name}>

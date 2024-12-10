@@ -9,12 +9,12 @@ export default async function Home() {
 	const {	data: { story } } = await getStoryblokApi().get(`cdn/stories/igc/home`, { version: "draft" });
 
 	return (
-		<>
+		<div className="bg-black">
 				<Hero blok={story?.content} />
 				<Gallery blok={story?.content}/>
 				<NewsSection />
 			<ScrollIndicator />
-		</>
+		</div>
 	);
 }
 

@@ -10,11 +10,11 @@ var image = "https://igcfashion.africa/images/folio/sample/AW19/aw1.jpg"
 
 export default function Events() {
   const projects = [
-    { title: "GZANGS: AFTERNATIVEREALITIES", href: "/events/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "ALTERNATIVE REALITIES", href: "/events/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "GUGUMUKA MU KAZO", href: "/events/gugumuka", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "KWETU KWANZA", href: "/events/mars", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "NDERE CENTRE", href: "/events/ndere-centre", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "SOCREATIVE SUMMIT JOHANNESBURG", href: "/events/so-creative", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "SOCREATIVE SUMMIT 24", href: "/events/so-creative", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "SENEGAL", href: "/events/senegal", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "IATF CAMEX 23", href: "/events/iatf-camex", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "LONDON FASHION WEEK 2023", href: "/events/london-fashion-week", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },

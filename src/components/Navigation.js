@@ -102,20 +102,20 @@ const Navigation = () => {
   return (
     <nav className={cn(
       "fixed left-0 right-0 z-50", 
-      scrolled ? 'bg-black-950 shadow-lg' : 'bg-transparent'
+      scrolled ? 'bg-black shadow-lg' : 'bg-transparent'
     )}>
-      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:py-12">
+      <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-16 md:py-12 md:pt-14">
         <div>
           <img className="h-12 w-auto md:h-24" src="/images/igc-logo-white.PNG" alt="igc-logo" />
         </div>
         <div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="">
-              <Button variant="ghost" size="icon" className={cn("block", isOpen && "hidden", "w-16 h-16 flex items-center justify-center" )}>
+              <Button variant="ghost" size="icon" className={cn("block text-white hover:text-zinc-300", isOpen && "hidden", "w-16 h-16 flex items-center justify-center" )}>
                 <MenuIcon className="size-10 md:size-10" aria-hidden="true" />
               </Button>
             </SheetTrigger>
-            <SheetContent className="bg-black-950 border-l-0">
+            <SheetContent className="bg-black border-l-0 text-white">
               <div className="h-full flex flex-col mt-8">
                 <div className="flex flex-col space-y-6 w-full">
                   <div className="flex flex-col space-y-2 md:px-6">

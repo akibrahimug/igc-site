@@ -1,13 +1,14 @@
+import Template2 from "@/components/template-2";
 import Template4 from "@/components/template-4";
 
 export default function PortfolioProjectPage({ params }) {
     const projects = [
-        { title: "FLOOR MOVES TO SLOW FASHION", href:"/portfolio/floor",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+        { title: "FLOOR MOVES TO SLOW FASHION", href:"/portfolio/floor/floor",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg", template: Template2 },
         { title: "GUGUMUKA", href:"/portfolio/gugumuka",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "WE ARE GOING TO MARS", href:"/portfolio/mars",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
       ]
     const portfolio = [
-        { title: "FLOOR MOVES TO SLOW FASHION", href: "/portfolio/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+        { title: "FLOOR MOVES TO SLOW FASHION", href: "/portfolio/floor/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "GUGUMUKA", href: "/portfolio/gugumuka", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "WE ARE GOING TO MARS", href: "/portfolio/mars", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
         { title: "MISTAKEN FABRICS", href: "/portfolio/mistaken-fabrics", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },

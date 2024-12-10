@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function Portfolio() {
   const projects = [
-    { title: "FLOOR MOVES TO SLOW FASHION", href:"/portfolio/floor",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
+    { title: "FLOOR MOVES TO SLOW FASHION", href:"/portfolio/floor/floor",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "GUGUMUKA", href:"/portfolio/gugumuka",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "WE ARE GOING TO MARS", href:"/portfolio/mars",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
     { title: "MISTAKEN FABRICS", href:"/portfolio/",image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },

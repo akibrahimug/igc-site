@@ -53,7 +53,7 @@ const NewsSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="section bg-black-950 opacity-0 min-h-screen flex justify-center -mt-20 relative"
+      className="section bg-black opacity-0 min-h-screen flex justify-center -mt-20 relative"
     >
       <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
       <div className="text-center z-20">
