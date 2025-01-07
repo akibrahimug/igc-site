@@ -1,41 +1,78 @@
 "use client";
-import Template3 from '@/components/template-3'
-import Image from 'next/image'
-import Link from 'next/link'
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
-import Autoplay from "embla-carousel-autoplay"
-import Banner from '@/components/Banner-fullscreen';
+import Template3 from "@/components/template-3";
+import Image from "next/image";
+import Link from "next/link";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import Banner from "@/components/Bloks/Banner-fullscreen";
 
-var image = "https://igcfashion.africa/images/folio/sample/AW19/aw1.jpg"
+var image = "https://igcfashion.africa/images/folio/sample/AW19/aw1.jpg";
 
 export default function Events() {
   const projects = [
-    { title: "ALTERNATIVE REALITIES", href: "/events/floor", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "GUGUMUKA MU KAZO", href: "/events/gugumuka", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "KWETU KWANZA", href: "/events/mars", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "NDERE CENTRE", href: "/events/ndere-centre", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "SOCREATIVE SUMMIT 24", href: "/events/so-creative", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "SENEGAL", href: "/events/senegal", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "IATF CAMEX 23", href: "/events/iatf-camex", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-    { title: "LONDON FASHION WEEK 2023", href: "/events/london-fashion-week", image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg" },
-];
+    {
+      title: "ALTERNATIVE REALITIES",
+      href: "/events/floor",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "GUGUMUKA MU KAZO",
+      href: "/events/gugumuka",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "KWETU KWANZA",
+      href: "/events/mars",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "NDERE CENTRE",
+      href: "/events/ndere-centre",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "SOCREATIVE SUMMIT 24",
+      href: "/events/so-creative",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "SENEGAL",
+      href: "/events/senegal",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "IATF CAMEX 23",
+      href: "/events/iatf-camex",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+    {
+      title: "LONDON FASHION WEEK 2023",
+      href: "/events/london-fashion-week",
+      image: "https://igcfashion.africa/images/folio/sample/AW19/aw2.jpg",
+    },
+  ];
 
   // const image = "https://media.canva.com/v2/image-resize/format:JPG/height:533/quality:92/uri:s3%3A%2F%2Fmedia-private.canva.com%2FtPDUk%2FMAGTRGtPDUk%2F1%2Fp.jpg/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAEvhqh583vISUyPAIWjAtkEYFYdkIosW4CYQYtuJG3cE&exp=1731179777&osig=AAAAAAAAAAAAAAAAAAAAAB9dMoT-sTaHt9tIUJP8WQSsft1bsqA4wXZBZ1cAIOPo&signer=media-rpc&x-canva-quality=screen"
-  const title = "EVENTS"
+  const title = "EVENTS";
   return (
-    <div className="bg-black text-white">      
-    <Banner title={title} image={image} />
+    <div className="bg-black text-white">
+      <Banner title={title} image={image} />
 
-    <Carousel 
-      className="w-full pt-4"
+      <Carousel
+        className="w-full pt-4"
         plugins={[
-            Autoplay({
+          Autoplay({
             delay: 5000,
-            }),
+          }),
         ]}
-
         opts={{
-            loop: true,
+          loop: true,
         }}
       >
         <CarouselContent>
@@ -49,7 +86,9 @@ export default function Events() {
               <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
                 <div className="text-center text-white">
                   <h2 className="text-4xl font-bold">Discover the Future</h2>
-                  <p className="mt-2 text-lg">Innovative solutions for your business</p>
+                  <p className="mt-2 text-lg">
+                    Innovative solutions for your business
+                  </p>
                 </div>
                 <Link
                   href="#"
@@ -71,7 +110,9 @@ export default function Events() {
               <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
                 <div className="text-center text-white">
                   <h2 className="text-4xl font-bold">Discover the Future</h2>
-                  <p className="mt-2 text-lg">Innovative solutions for your business</p>
+                  <p className="mt-2 text-lg">
+                    Innovative solutions for your business
+                  </p>
                 </div>
               </div>
             </div>
@@ -84,31 +125,32 @@ export default function Events() {
           <ChevronRightIcon className="h-6 w-6 text-primary" />
         </CarouselNext>
       </Carousel>
-  <div className="p-2 md:p-4">
-  <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 p-4">
-        {projects.map((project, index) => (
-          <Link href={project.href} key={index}>
-            <div key={index} className="relative overflow-hidden group">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={1200}
-                objectFit="cover"
-                className="rounded-lg transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-10">
-                <h2 className="text-white text-2xl font-bold text-center px-4 transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">{project.title}</h2>
+      <div className="p-2 md:p-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 p-4">
+          {projects.map((project, index) => (
+            <Link href={project.href} key={index}>
+              <div key={index} className="relative overflow-hidden group">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={600}
+                  height={1200}
+                  objectFit="cover"
+                  className="rounded-lg transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-10">
+                  <h2 className="text-white text-2xl font-bold text-center px-4 transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2">
+                    {project.title}
+                  </h2>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
-  </div>
-  </div>
-  )
+    </div>
+  );
 }
-
 
 function ChevronLeftIcon(props) {
   return (
@@ -126,9 +168,8 @@ function ChevronLeftIcon(props) {
     >
       <path d="m15 18-6-6 6-6" />
     </svg>
-  )
+  );
 }
-
 
 function ChevronRightIcon(props) {
   return (
@@ -146,5 +187,5 @@ function ChevronRightIcon(props) {
     >
       <path d="m9 18 6-6-6-6" />
     </svg>
-  )
+  );
 }
