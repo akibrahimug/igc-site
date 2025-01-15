@@ -8,7 +8,6 @@ export function useIgcData() {
 }
 
 export default function IgcProvider({ data, story, children }) {
-  // 'data' is the data you fetched in your layout or page
   return (
     <IgcContext.Provider value={{ data, story }}>
       {children}

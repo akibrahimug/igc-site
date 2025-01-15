@@ -3,7 +3,6 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 const HomeLastSection = ({ blok }) => {
   const sectionRef = useRef(null);
-  console.log(blok);
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {

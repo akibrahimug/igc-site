@@ -10,7 +10,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import Banner from "@/components/Bloks/Banner-fullscreen";
+import PagesHero from "@/components/Bloks/PagesHero";
 
 var image = "https://igcfashion.africa/images/folio/sample/AW19/aw1.jpg";
 
@@ -62,7 +62,7 @@ export default function Events() {
   const title = "EVENTS";
   return (
     <div className="bg-black text-white">
-      <Banner title={title} image={image} />
+      <PagesHero title={title} image={image} />
 
       <Carousel
         className="w-full pt-4"
@@ -80,7 +80,7 @@ export default function Events() {
             <div className="relative h-64 md:h-[500px] w-full overflow-hidden">
               <img
                 src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
-                alt="Banner 1"
+                alt="PagesHero 1"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
@@ -104,7 +104,7 @@ export default function Events() {
             <div className="relative h-64 md:h-[500px] w-full overflow-hidden">
               <img
                 src="https://fastly.picsum.photos/id/22/4434/3729.jpg?hmac=fjZdkSMZJNFgsoDh8Qo5zdA_nSGUAWvKLyyqmEt2xs0"
-                alt="Banner 1"
+                alt="PagesHero 1"
                 className="h-full w-full object-cover"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">

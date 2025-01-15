@@ -1,7 +1,5 @@
 import Navigation from "@/components/Bloks/Navigation";
 import Footer from "@/components/Sections/Footer";
-import StoryblokProvider from "@/components/StoryblokProvider";
-
 import "../global.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import { components } from "@/lib/storyblokComponents/all_components";
@@ -16,17 +14,27 @@ const datasource = await getStoryblokApi().get(`cdn/datasource_entries`, {
   version: "draft",
 });
 
-export default function RootLayout({ children, navigationLinks }) {
+const links = await getStoryblokApi().get("cdn/links/", {
+  version: "draft",
+});
+
+const navigation = links.data?.links || {};
+
+// const { data } = await getStoryblokApi().get("cdn/stories/main-menu", {
+//   version: "draft", // or 'published'
+// });
+
+// console.log(data.story.content);
+
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <StoryblokProvider>
-          <div>
-            <Navigation navigationLinks={navigationLinks} />
-            {children}
-            <Footer datasource={datasource} />
-          </div>
-        </StoryblokProvider>
+        <div>
+          <Navigation navigation={navigation} />
+          {children}
+          <Footer datasource={datasource} navigation={navigation} />
+        </div>
       </body>
     </html>
   );

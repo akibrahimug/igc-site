@@ -1,3 +1,4 @@
+import { modifyNavLinks } from "@/utils";
 import Link from "next/link";
 import {
   FaTwitter,
@@ -7,7 +8,7 @@ import {
   FaMailBulk,
 } from "react-icons/fa";
 
-export default async function Footer({ datasource }) {
+export default async function Footer({ datasource, navigation }) {
   // 1) Helper to parse each value string into JSON:
   function parseValue(str) {
     // Remove trailing commas before a closing bracket (like ", ]")
@@ -21,7 +22,7 @@ export default async function Footer({ datasource }) {
     return JSON.parse(str);
   }
 
-  const navigation = datasource.data.datasource_entries.reduce((acc, item) => {
+  const data = datasource.data.datasource_entries.reduce((acc, item) => {
     let parsedArray;
     try {
       parsedArray = parseValue(item.value);
@@ -70,8 +71,8 @@ export default async function Footer({ datasource }) {
           <div className="space-y-4">
             <h3 className="text-xl font-bold text-amber-500">Quick Links</h3>
             <ul className="space-y-2">
-              {navigation.company.map((item) => (
-                <li key={item.name}>
+              {data.company.map((item, id) => (
+                <li key={id}>
                   <Link
                     href={item.href}
                     className="hover:text-brown-100 transition-colors"

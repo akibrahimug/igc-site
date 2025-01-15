@@ -1,11 +1,17 @@
 import React from "react";
-import PagesHero from "../Bloks/PagesHero";
+import PagesHero from "@/components/Bloks/PagesHero";
 import Image from "next/image";
+import { getNestedVals } from "@/utils";
+// atom in this case means a single event page
 
-function Template6({ title, description, image }) {
+function EventAtomTamplate({ story }) {
+  const pages_hero = getNestedVals(story, ["content", "pages_hero"], null);
+  const description = getNestedVals(story, ["content", "Description"], null);
+  const images = getNestedVals(story, ["content", "event_images"], null);
+
   return (
     <div className="bg-black text-white">
-      <PagesHero title={title} image={image} />
+      <PagesHero story={pages_hero} />
       <div className="p-2 md:p-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-24">
           <div className="md:col-span-4">
@@ -19,7 +25,7 @@ function Template6({ title, description, image }) {
           <div className="md:col-span-4" />
           <div className="md:col-span-4">
             <Image
-              src="https://igcfashion.africa/images/home5.png"
+              src={images[0]["filename"]}
               alt="Fashion showcase"
               width={600}
               height={600}
@@ -28,7 +34,7 @@ function Template6({ title, description, image }) {
           </div>
           <div className="md:col-span-8">
             <Image
-              src="https://igcfashion.africa/images/home3.png"
+              src={images[1]["filename"]}
               alt="Fashion event"
               width={1600}
               height={1200}
@@ -37,7 +43,7 @@ function Template6({ title, description, image }) {
           </div>
           <div className="md:col-span-4">
             <Image
-              src="https://igcfashion.africa/images/folio/sample/IMG_3219.JPG"
+              src={images[2]["filename"]}
               alt="Fashion portfolio sample"
               width={600}
               height={670}
@@ -50,4 +56,4 @@ function Template6({ title, description, image }) {
   );
 }
 
-export default Template6;
+export default EventAtomTamplate;

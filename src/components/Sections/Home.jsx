@@ -3,7 +3,7 @@ import { useIgcData } from "@/app/ContextProvider";
 import Hero from "@/components/Bloks/Hero";
 import Gallery from "@/components/Bloks/Gallery";
 import ScrollIndicator from "@/components/Bloks/Indicators";
-import { StoryblokComponent, storyblokEditable } from "@storyblok/react";
+import { storyblokEditable } from "@storyblok/react";
 import HomeLastSection from "@/components/Bloks/HomelastSection";
 export default function Home() {
   const { story } = useIgcData();

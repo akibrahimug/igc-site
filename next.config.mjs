@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["picsum.photos", "fastly.picsum.photos", "a.storyblok.com", "igcfashion.africa"],
+    domains: [
+      "picsum.photos",
+      "fastly.picsum.photos",
+      "a.storyblok.com",
+      "igcfashion.africa",
+    ],
   },
   trailingSlash: true,
   swcMinify: true,
@@ -17,7 +22,7 @@ const nextConfig = {
   },
   eslint: {
     ignoreDuringBuilds: true,
-  }
+  },
 };
 
 export default nextConfig;

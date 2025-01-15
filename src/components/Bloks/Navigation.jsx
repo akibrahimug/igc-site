@@ -7,85 +7,9 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getStoryblokApi } from "@storyblok/react/rsc";
-export async function getStaticProps() {
-  let { data } = await getStoryblokApi().get("cdn/links/", {
-    version: "draft",
-  });
-  const links = data.links;
-  return {
-    props: { links },
-    // Re-generate the post at most once per second
-    // if a request comes in
-    revalidate: 1,
-  };
-}
-const SIDENAV_ITEMS = [
-  {
-    title: "HOME",
-    path: "/",
-  },
-  {
-    title: "BRAND PRINCIPLES",
-    submenu: true,
-    subMenuItems: [
-      { title: "Environment", path: "/brand-principles/environment" },
-      { title: "Culture", path: "/brand-principles/web-design/culture" },
-      { title: "Community", path: "/brand-principles/community" },
-    ],
-  },
-  {
-    title: "SERVICES",
-    path: "/services",
-  },
-  {
-    title: "PORTFOLIO",
-    path: "/portfolio",
-  },
-  {
-    title: "SHOP",
-    submenu: true,
-    subMenuItems: [
-      { title: "Shop all", path: "/shop/account" },
-      { title: "Shipping and Returns", path: "/shop/privacy" },
-      { title: "Size Guide", path: "/shop/size-guide" },
-      { title: "Terms and Conditions", path: "/shop/terms and conditions" },
-    ],
-  },
-  {
-    title: "FASHION CYPHER",
-    submenu: true,
-    subMenuItems: [
-      { title: "Workshops", path: "/fashion-cypher/workshops" },
-      { title: "Kazo", path: "/fashion-cypher/kazo" },
-      { title: "Gugumuka Mu Kazo", path: "/fashion-cypher/gugumuka" },
-      { title: "Networking", path: "/fashion-cypher/networking" },
-    ],
-  },
-  {
-    title: "KWETU KWANZA",
-    path: "/kwetu-kwanza",
-  },
-  {
-    title: "EVENTS",
-    path: "/events",
-  },
-  {
-    title: "PRESS",
-    path: "/press",
-  },
-  {
-    title: "ABOUT US",
-    path: "/about",
-  },
-  {
-    title: "CONTACT US",
-    path: "/contact",
-  },
-];
-
-const Navigation = ({ links }) => {
-  // console.log(links, "params");
+import Image from "next/image";
+import { modifyNavLinks } from "@/utils";
+const Navigation = ({ navigation = {} }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setIsPageScrolled] = useState(false);
   const handleScroll = () => {
@@ -101,6 +25,25 @@ const Navigation = ({ links }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const cleanedNavs = modifyNavLinks(navigation)
+    .map((item) => {
+      if (item.title.toLowerCase() === "events") {
+        return {
+          ...item,
+          submenu: false,
+          subMenuItems: [],
+        };
+      }
+      return item;
+    })
+    // 2) Filter out any other items that have a path under "/events/"
+    .filter((item) => {
+      // If the path starts with '/events/' but is not exactly '/events', remove it
+      if (item.path.startsWith("/events/") && item.path !== "/events") {
+        return false; // exclude
+      }
+      return true; // keep
+    });
   return (
     <nav
       className={cn(
@@ -111,13 +54,15 @@ const Navigation = ({ links }) => {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-full">
-        <div>
-          <img
+        <Link href="/">
+          <Image
             className="h-12 w-auto md:h-[55px]"
             src="/images/igc-logo-white.PNG"
             alt="igc-logo"
+            width={100}
+            height={100}
           />
-        </div>
+        </Link>
         <div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="">
@@ -137,7 +82,7 @@ const Navigation = ({ links }) => {
               <div className="h-full flex flex-col mt-8">
                 <div className="flex flex-col space-y-6 w-full">
                   <div className="flex flex-col space-y-2 md:px-6">
-                    {SIDENAV_ITEMS.map((item, idx) => (
+                    {cleanedNavs.map((item, idx) => (
                       <MenuItem
                         key={idx}
                         item={item}
