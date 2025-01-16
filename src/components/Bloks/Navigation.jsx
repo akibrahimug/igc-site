@@ -27,7 +27,10 @@ const Navigation = ({ navigation = {} }) => {
 
   const cleanedNavs = modifyNavLinks(navigation)
     .map((item) => {
-      if (item.title.toLowerCase() === "events") {
+      if (
+        item.title.toLowerCase() === "events" ||
+        item.title.toLowerCase() === "portfolio"
+      ) {
         return {
           ...item,
           submenu: false,
@@ -36,10 +39,13 @@ const Navigation = ({ navigation = {} }) => {
       }
       return item;
     })
-    // 2) Filter out any other items that have a path under "/events/"
+    // 2) Filter out any other items that have a path under "/events/" | "portfolio"
     .filter((item) => {
-      // If the path starts with '/events/' but is not exactly '/events', remove it
-      if (item.path.startsWith("/events/") && item.path !== "/events") {
+      // If the path starts with '/events/' | 'portfolio' but is not exactly '/events' | 'portfolio', remove it
+      if (
+        (item.path.startsWith("/events/") && item.path !== "/events") ||
+        (item.path.startsWith("/portfolio/") && item.path !== "/portfolio")
+      ) {
         return false; // exclude
       }
       return true; // keep

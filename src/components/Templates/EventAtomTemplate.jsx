@@ -2,12 +2,12 @@ import React from "react";
 import PagesHero from "@/components/Bloks/PagesHero";
 import Image from "next/image";
 import { getNestedVals } from "@/utils";
-// atom in this case means a single event page
+// atom in this case means a single event|portfolio page
 
 function EventAtomTamplate({ story }) {
   const pages_hero = getNestedVals(story, ["content", "pages_hero"], null);
   const description = getNestedVals(story, ["content", "Description"], null);
-  const images = getNestedVals(story, ["content", "event_images"], null);
+  const images = getNestedVals(story, ["content", "images"], null);
 
   return (
     <div className="bg-black text-white">
@@ -16,9 +16,6 @@ function EventAtomTamplate({ story }) {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-24">
           <div className="md:col-span-4">
             <div className="flex flex-col gap-4 justify-between align-baseline">
-              <div className="h-1/2">
-                <p></p>
-              </div>
               <p className="text-justify">{description}</p>
             </div>
           </div>
