@@ -20,12 +20,6 @@ const links = await getStoryblokApi().get("cdn/links/", {
 
 const navigation = links.data?.links || {};
 
-// const { data } = await getStoryblokApi().get("cdn/stories/main-menu", {
-//   version: "draft", // or 'published'
-// });
-
-// console.log(data.story.content);
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
