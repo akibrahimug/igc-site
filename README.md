@@ -1,37 +1,135 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# IGC Mock App 2024
 
-## Getting Started
+A modern web application built with Next.js and integrated with Storyblok CMS.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black)
+![React](https://img.shields.io/badge/React-18-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.4.1-38B2AC)
+![Storyblok](https://img.shields.io/badge/Storyblok-CMS-09B3AF)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Features
+
+- Modern Next.js 14 application with App Router
+- Storyblok CMS integration for content management
+- Responsive design with Tailwind CSS
+- Material UI components integration
+- Dynamic routing and page generation
+- Rich text rendering with Storyblok
+- Image optimization and lazy loading
+- Interactive carousels and galleries
+- Social media embeds support
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14
+- **UI Library:** React 18
+- **Styling:**
+  - Tailwind CSS
+  - Material UI
+  - Emotion
+- **CMS:** Storyblok
+- **Development Tools:**
+  - ESLint
+  - Prettier
+  - Husky
+  - Commitlint
+- **Additional Libraries:**
+  - Embla Carousel
+  - React Icons
+  - Swiper
+  - Axios
+
+## 📦 Prerequisites
+
+- Node.js (LTS version recommended)
+- Yarn or pnpm package manager
+- Storyblok account and API keys
+
+## 🚀 Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone [repository-url]
+   cd igc-mock-app-2024
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. **Set up environment variables**
+   Create a `.env` file in the root directory:
+
+   ```env
+   STORYBLOK_API_TOKEN=your_api_token_here
+   ```
+
+4. **Run development server**
+
+   ```bash
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+   The application will start on `https://localhost:3010`
+
+5. **Build for production**
+   ```bash
+   yarn build
+   yarn start
+   ```
+
+## 🔧 Available Scripts
+
+- `yarn dev` - Run development server with HTTPS
+- `yarn build` - Build for production
+- `yarn start` - Start production server
+- `yarn lint` - Run ESLint
+- `yarn prettier` - Format code
+- `yarn create:https` - Create HTTPS certificates
+- `yarn commit` - Interactive commit tool
+
+## 📁 Project Structure
+
+```
+src/
+├── app/           # Next.js App Router pages
+├── components/    # React components
+│   ├── Bloks/    # Storyblok components
+│   ├── Sections/ # Page sections
+│   └── Templates/# Page templates
+├── lib/          # Utility libraries
+├── utils/        # Helper functions
+└── hooks/        # Custom React hooks
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔐 HTTPS Development
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+The project supports HTTPS in development. To set up:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. Run `yarn create:https` to generate certificates
+2. Start the development server with `yarn dev`
 
-## Learn More
+## 🤝 Contributing
 
-To learn more about Next.js, take a look at the following resources:
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes using conventional commits (`yarn commit`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 License
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is private and proprietary.
 
-## Deploy on Vercel
+## 🙏 Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# igc-site
+- Next.js team for the amazing framework
+- Storyblok for the headless CMS
+- All contributors and maintainers
