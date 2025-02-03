@@ -1,6 +1,6 @@
 # IGC Mock App 2024
 
-A modern web application built with Next.js and integrated with Storyblok CMS.
+A modern web application for a ugandan based sustainable fashion brand built with Next.js and integrated with Storyblok CMS.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.2.5-black)
 ![React](https://img.shields.io/badge/React-18-blue)
