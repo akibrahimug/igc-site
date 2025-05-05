@@ -6,6 +6,7 @@ import Events from "@/components/Sections/Events";
 import EventAtom from "@/components/Sections/EventAtom";
 import Portfolio from "@/components/Sections/Portfolio";
 import PortfolioAtom from "@/components/Sections/PortfolioAtom";
+import Services from "@/components/Sections/Services";
 export const components = {
   Home: Home,
   environment: Environment,
@@ -15,4 +16,5 @@ export const components = {
   eventAtom: EventAtom,
   portfolio: Portfolio,
   portfolioAtom: PortfolioAtom,
+  services: Services,
 };

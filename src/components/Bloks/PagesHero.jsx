@@ -16,8 +16,10 @@ function PagesHero({ story }) {
               src={story[0]["hero_image"]["filename"]}
               alt="Banner 1"
               className="h-full w-full object-cover"
-              width={100}
-              height={100}
+              quality={100}
+              priority
+              layout="fill"
+              objectFit="cover"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
               <div className="text-center text-white">
