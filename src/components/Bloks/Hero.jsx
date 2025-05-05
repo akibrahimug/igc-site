@@ -24,7 +24,7 @@ const Hero = (props) => {
           alt={blok.hero_image.alt}
           layout="fill"
           objectFit="cover"
-          quality={85}
+          quality={100}
           priority
           onLoadingComplete={() => setImageLoaded(true)}
         />
