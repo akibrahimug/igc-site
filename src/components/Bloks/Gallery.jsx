@@ -11,7 +11,11 @@ const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
       alt={alt}
       className={className}
     />
-    {caption && <p className="text-sm mt-2 text-left">{caption}</p>}
+    {caption && (
+      <p className="text-xl lg:text-lg mt-2 text-left leading-relaxed">
+        {caption}
+      </p>
+    )}
   </div>
 );
 function Gallery(props) {
@@ -75,7 +79,7 @@ function Gallery(props) {
               )}
             </div>
             <div>
-              <p className="text-xl lg:text-lg text-left absolute bottom-0  xl:bottom-[1rem] 2xl:bottom-[5rem] left-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px]">
+              <p className="text-xl lg:text-lg text-left absolute bottom-0  xl:bottom-[1rem] 2xl:bottom-[5rem] left-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
                 {blok.gallery_text_one}
               </p>
             </div>
@@ -157,7 +161,7 @@ function Gallery(props) {
               )}
             </div>
             <div>
-              <p className="text-lg  md:mb-4 text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px]">
+              <p className="text-lg  md:mb-4 text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
                 {blok.gallery_text_two}
               </p>
             </div>

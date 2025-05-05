@@ -32,9 +32,9 @@ export const Banner = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
-            <div className="text-center text-white">
+            <div className="text-center text-brown-100">
               <h2 className="text-4xl font-bold">Discover the Future</h2>
-              <p className="mt-2 text-lg">
+              <p className=" mt-2 text-lg leading-relaxed">
                 Innovative solutions for your business
               </p>
             </div>
@@ -58,9 +58,9 @@ export const Banner = () => {
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
-            <div className="text-center text-white">
+            <div className="text-center text-brown-100">
               <h2 className="text-4xl font-bold">Discover the Future</h2>
-              <p className="mt-2 text-lg">
+              <p className="mt-2 text-lg leading-relaxed">
                 Innovative solutions for your business
               </p>
             </div>

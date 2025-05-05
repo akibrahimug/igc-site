@@ -22,8 +22,8 @@ function PagesHero({ story }) {
               objectFit="cover"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
-              <div className="text-center text-white">
-                <h1 className="text-5xl text-center md:text-[200px] mb-6 tracking-widest font-igc">
+              <div className="text-center text-brown-100">
+                <h1 className="text-center md:text-[150px] text-5xl lg:text-[200px] mb-6 font-igc">
                   {story[0]["hero_title"]}
                 </h1>
               </div>

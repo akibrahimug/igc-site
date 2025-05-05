@@ -1,12 +1,7 @@
-import { modifyNavLinks } from "@/utils";
 import Link from "next/link";
-import {
-  FaTwitter,
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaMailBulk,
-} from "react-icons/fa";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
 
 export default async function Footer({ datasource, navigation }) {
   // 1) Helper to parse each value string into JSON:
@@ -37,45 +32,98 @@ export default async function Footer({ datasource, navigation }) {
   }, {});
 
   return (
-    <footer className="bg-black-950 text-brown-100 py-12">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Company Info Section */}
+    <footer className="bg-black text-brown-100">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Brand Column */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-amber-500">IGC FASHION</h3>
-            <p className="text-sm">
-              We create amazing products that make your life easier and more
-              enjoyable.
+            <h2 className="text-2xl font-bold tracking-tighter font-igc">
+              IGC FASHION
+            </h2>
+            <p className=" lg:text-lg text-sm text-gray-400 max-w-xs leading-relaxed">
+              Timeless elegance for the modern individual. Crafted with
+              precision and passion.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:text-brown-100 transition-colors">
-                <FaFacebook size={20} />
-                <span className="sr-only">Facebook</span>
-              </Link>
-              <Link href="#" className="hover:text-brown-100 transition-colors">
-                <FaTwitter size={20} />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link href="#" className="hover:text-brown-100 transition-colors">
-                <FaInstagram size={20} />
+              <Link href="#" className="hover:text-gray-400 transition-colors">
+                <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="hover:text-brown-100 transition-colors">
-                <FaYoutube size={20} />
-                <span className="sr-only">Youtube</span>
+              <Link href="#" className="hover:text-gray-400 transition-colors">
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </Link>
+              <Link href="#" className="hover:text-gray-400 transition-colors">
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
+              </Link>
+              <Link href="#" className="hover:text-gray-400 transition-colors">
+                <Youtube className="h-5 w-5" />
+                <span className="sr-only">YouTube</span>
               </Link>
             </div>
           </div>
 
-          {/* Quick Links Section */}
+          {/* Shop Column */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-amber-500">Quick Links</h3>
+            <h3 className="text-sm font-medium uppercase tracking-wider">
+              Shop
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-brown-100 transition-colors"
+                >
+                  New Arrivals
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-brown-100 transition-colors"
+                >
+                  Collections
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-brown-100 transition-colors"
+                >
+                  Women
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-brown-100 transition-colors"
+                >
+                  Men
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="#"
+                  className="text-gray-400 hover:text-brown-100 transition-colors"
+                >
+                  Accessories
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Column */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-medium uppercase tracking-wider">
+              Company
+            </h3>
             <ul className="space-y-2">
               {data.company.map((item, id) => (
                 <li key={id}>
                   <Link
                     href={item.href}
-                    className="hover:text-brown-100 transition-colors"
+                    className="text-gray-400 hover:text-brown-100 transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -84,34 +132,63 @@ export default async function Footer({ datasource, navigation }) {
             </ul>
           </div>
 
-          {/* Newsletter Section */}
+          {/* Newsletter Column */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold text-amber-500">Stay Updated</h3>
-            <p className="text-sm">
-              Subscribe to our newsletter for the latest updates and offers.
+            <h3 className="text-sm font-medium uppercase tracking-wider">
+              Newsletter
+            </h3>
+            <p className="text-sm text-gray-400 leading-relaxed">
+              Subscribe to receive updates, access to exclusive deals, and more.
             </p>
-            <form className="flex">
-              <input
+            <form className="flex flex-col space-y-2">
+              <Input
                 type="email"
                 placeholder="Enter your email"
-                className="bg-gray-800 text-brown-100 px-4 py-2 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 flex-grow"
+                className="bg-gray-900 border-gray-800 text-brown-100 placeholder:text-gray-500 focus:ring-white"
               />
-              <button
+              <Button
                 type="submit"
-                className="bg-amber-500 text-brown-100 px-4 py-2 rounded-r-md hover:bg-amber-500 transition-colors"
+                className="bg-white text-black hover:bg-gray-200"
               >
-                <FaMailBulk size={20} />
-                <span className="sr-only">Subscribe</span>
-              </button>
+                Subscribe
+              </Button>
             </form>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} IGC FASHION AFRICA. All rights
-            reserved.
-          </p>
+        <div className="border-t border-gray-800 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p>
+              &copy; {new Date().getFullYear()} IGC FASHION AFRICA. All rights
+              reserved.
+            </p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link
+                href="#"
+                className="text-xs text-gray-400 hover:text-brown-100 transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-xs text-gray-400 hover:text-brown-100 transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="#"
+                className="text-xs text-gray-400 hover:text-brown-100 transition-colors"
+              >
+                Shipping Policy
+              </Link>
+              <Link
+                href="#"
+                className="text-xs text-gray-400 hover:text-brown-100 transition-colors"
+              >
+                Returns
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

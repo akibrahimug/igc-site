@@ -56,7 +56,7 @@ const HomeLastSection = ({ blok }) => {
                   <h3 className="pointer-events-none mt-4 block truncate text-lg text-brown-200 text-left">
                     {card.source}
                   </h3>
-                  <p className="pointer-events-none text-brown-100 text-left lg:mb-24">
+                  <p className="text-xl lg:text-lg pointer-events-none text-brown-100 text-left lg:mb-24 leading-relaxed">
                     {card.name}
                   </p>
                 </div>

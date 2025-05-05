@@ -31,12 +31,14 @@ export default function BrandPrinciplesPagesTemplate({ blok }) {
   );
 
   return (
-    <div className="bg-black text-white mt-0">
+    <div className="bg-black text-brown-100 mt-0">
       <PagesHero story={hero} />
       <div className="p-2 md:p-4  max-w-[1500px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
           <div className="flex items-center justify-between rounded-lg p-4">
-            <p className="md:max-w-xl text-justify">{desc1}</p>
+            <p className="text-xl lg:text-lg md:max-w-xl leading-relaxed">
+              {desc1}
+            </p>
           </div>
           <div className="relative h-96">
             <Image
@@ -57,12 +59,16 @@ export default function BrandPrinciplesPagesTemplate({ blok }) {
               height={800}
               className="h-128 w-full object-cover"
             />
-            <div className="md:col-span-3 text-white p-4">
-              <p className="md:max-w-xl text-justify">{desc2}</p>
+            <div className="md:col-span-3 text-brown-100 p-4">
+              <p className="text-xl lg:text-lg md:max-w-xl leading-relaxed">
+                {desc2}
+              </p>
             </div>
           </div>
-          <div className="md:col-span-3 flex items-center text-white p-4 -order-1 md:order-none">
-            <p className="text-lg md:text-5xl font-bold md:max-w-md">{desc3}</p>
+          <div className="md:col-span-3 flex items-center text-brown-100 p-4 -order-1 md:order-none">
+            <p className="text-lg md:text-5xl font-bold md:max-w-md leading-snug">
+              {desc3}
+            </p>
           </div>
           <div className="md:col-span-3">
             <Image
@@ -83,7 +89,9 @@ export default function BrandPrinciplesPagesTemplate({ blok }) {
             />
           </div>
           <div className="md:col-span-3">
-            <p className="md:max-w-md text-justify">{desc4}</p>
+            <p className="text-xl lg:text-lg md:max-w-md leading-relaxed">
+              {desc4}
+            </p>
           </div>
         </div>
 

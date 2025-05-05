@@ -48,7 +48,7 @@ export default function PortfolioAtomTemplate({ story }) {
     null
   );
   return (
-    <div className="bg-black text-white mt-0">
+    <div className="bg-black text-brown-100 mt-0">
       <div className="p-2 md:p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-24">
           {imageCards.map((project, index) => (
@@ -64,7 +64,9 @@ export default function PortfolioAtomTemplate({ story }) {
             </div>
           ))}
         </div>
-        <p className="my-6 max-w-3xl text-justify">{description_one}</p>
+        <p className="text-xl lg:text-lg my-6 max-w-3xl text-justify leading-relaxed">
+          {description_one}
+        </p>
         <div className="relative h-128 mb-6">
           <Image
             src={image1}
@@ -95,8 +97,8 @@ export default function PortfolioAtomTemplate({ story }) {
             />
             <div className="absolute inset-0 pointer-events-none"></div>
           </div>
-          <div className="col-span-3 flex items-center bg-black text-white p-4">
-            <p className="text-lg md:text-5xl font-bold justify-center">
+          <div className="col-span-3 flex items-center bg-black text-brown-100 p-4">
+            <p className=" text-lg md:text-5xl font-bold justify-center leading-relaxed">
               {description_two}
             </p>
           </div>
@@ -109,8 +111,8 @@ export default function PortfolioAtomTemplate({ story }) {
               objectFit="cover"
               className="rounded-lg"
             />
-            <div className="col-span-3 flex items-center justify-center bg-black text-white p-4">
-              <p className="text-lg md:text-5xl font-bold text-right max-w-xl">
+            <div className="col-span-3 flex items-center justify-center bg-black text-brown-100 p-4">
+              <p className="text-lg md:text-5xl font-bold text-right max-w-xl leading-relaxed">
                 {description_three}
               </p>
             </div>

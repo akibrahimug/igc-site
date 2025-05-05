@@ -4,7 +4,7 @@ import Image from "next/image";
 
 function Template6({ title, description, image }) {
   return (
-    <div className="bg-black text-white">
+    <div className="bg-black text-brown-100">
       <PagesHero title={title} image={image} />
       <div className="p-2 md:p-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-24">
@@ -13,7 +13,9 @@ function Template6({ title, description, image }) {
               <div className="h-1/2">
                 <p></p>
               </div>
-              <p className="text-justify">{description}</p>
+              <p className="text-xl lg:text-lg text-justify leading-relaxed">
+                {description}
+              </p>
             </div>
           </div>
           <div className="md:col-span-4" />
