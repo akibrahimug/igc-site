@@ -19,7 +19,8 @@ function PortfolioAtom() {
       <PagesHero story={pages_hero} />
       {story.slug === "floor_moves_to_slow_fashion" ||
       story.slug === "mistaken_fabrics" ||
-      story.slug === "kampala_disaster" ? (
+      story.slug === "kampala_disaster" ||
+      story.slug === "clothed_with_protection" ? (
         <CustomPortfolioAtomTemplate
           blok={story.content["custom_portfolio_atom_template"]}
         />
