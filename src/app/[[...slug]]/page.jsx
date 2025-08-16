@@ -2,7 +2,9 @@ import { notFound } from "next/navigation";
 import { StoryblokComponent } from "@storyblok/react";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import IgcProvider from "@/app/ContextProvider";
-
+import StoryblokRenderer from "@/components/StoryblokRenderer";
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
 // Use generateStaticParams for static generation of routes
 export async function generateStaticParams() {
   const storyblokApi = getStoryblokApi();
@@ -40,7 +42,7 @@ export default async function Page({ params }) {
 
   return (
     <IgcProvider story={story}>
-      <StoryblokComponent blok={story.content} />
+      <StoryblokRenderer initialStory={story} />
     </IgcProvider>
   );
 }

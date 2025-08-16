@@ -4,6 +4,8 @@ import "../global.css";
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import { components } from "@/lib/storyblokComponents/all_components";
 import { getStoryblokApi } from "@storyblok/react/rsc";
+import StoryblokBridgeClient from "@/components/StoryblokBridgeClient";
+import StoryblokInitClient from "@/components/StoryblokInitClient";
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
@@ -22,13 +24,14 @@ const navigation = links.data?.links || {};
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <body>
-        <div>
+        <StoryblokInitClient>
           <Navigation navigation={navigation} />
           {children}
           <Footer datasource={datasource} navigation={navigation} />
-        </div>
+        </StoryblokInitClient>
+        <StoryblokBridgeClient />
       </body>
     </html>
   );
