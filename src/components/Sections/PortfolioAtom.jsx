@@ -15,7 +15,7 @@ function PortfolioAtom() {
   const pages_hero = story.content["pages_hero"];
 
   return (
-    <>
+    <div className="bg-black text-brown-100">
       <PagesHero story={pages_hero} />
       {story.slug === "floor_moves_to_slow_fashion" ||
       story.slug === "mistaken_fabrics" ||
@@ -27,7 +27,7 @@ function PortfolioAtom() {
       ) : (
         <PortfolioAtomTemplate story={story} />
       )}
-    </>
+    </div>
   );
 }
 

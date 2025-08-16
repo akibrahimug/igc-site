@@ -2,7 +2,8 @@ import React from "react";
 import PagesHero from "@/components/Bloks/PagesHero";
 import Image from "next/image";
 import { getNestedVals } from "@/utils";
-// atom in this case means a single event|portfolio page
+// TODO: Add dynamic image number mapping over images array
+// TODO: These images although dynamic, should still have different width and height values
 
 function EventAtomTamplate({ story }) {
   const pages_hero = getNestedVals(story, ["content", "pages_hero"], null);

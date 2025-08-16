@@ -1,4 +1,5 @@
 "use client";
+// TODO: Refactor this component to FIX the issue with the navigation links not being displayed correctly (Rearrange the items)
 import React, { useState, useEffect } from "react";
 import { MenuIcon } from "lucide-react";
 import { Button } from "../ui/button";

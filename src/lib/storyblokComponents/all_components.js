@@ -18,3 +18,4 @@ export const components = {
   portfolioAtom: PortfolioAtom,
   services: Services,
 };
+// TODO: Add about us section
