@@ -7,6 +7,9 @@ import EventAtom from "@/components/Sections/EventAtom";
 import Portfolio from "@/components/Sections/Portfolio";
 import PortfolioAtom from "@/components/Sections/PortfolioAtom";
 import Services from "@/components/Sections/Services";
+import AboutUs from "@/components/Sections/AboutUs";
+import Banner from "@/components/Bloks/Banner";
+
 export const components = {
   Home: Home,
   environment: Environment,
@@ -17,5 +20,7 @@ export const components = {
   portfolio: Portfolio,
   portfolioAtom: PortfolioAtom,
   services: Services,
+  aboutUs: AboutUs,
+  banner: Banner,
 };
-// TODO: Add about us section
+// TODO: Add about us section - IMPLEMENTED

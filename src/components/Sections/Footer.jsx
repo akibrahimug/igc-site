@@ -1,10 +1,19 @@
+"use client";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Instagram, Facebook, Youtube } from "lucide-react";
-// TODO: Activate the social media links (Add ticktok and linkedin)
-// TODO: Change the navigation items
+import { Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+// TODO: Change the navigation items - IMPLEMENTED
 // Plug into storyblok datasource for dynamic content
-export default async function Footer({ datasource, navigation }) {
+export default function Footer({ datasource, navigation }) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
   // 1) Helper to parse each value string into JSON:
   function parseValue(str) {
     // Remove trailing commas before a closing bracket (like ", ]")
@@ -33,9 +42,19 @@ export default async function Footer({ datasource, navigation }) {
   }, {});
 
   return (
-    <footer className="bg-black text-brown-100">
+    <motion.footer
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="bg-black text-brown-100"
+    >
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {/* Brand Column */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">IGC FASHION</h2>
@@ -43,17 +62,51 @@ export default async function Footer({ datasource, navigation }) {
               Rooted in culture. Centred on climate. Powered by community.
             </p>
             <div className="flex space-x-4">
-              <Link href="#" className="hover:text-gray-400 transition-colors">
+              <Link
+                href="https://instagram.com/igc_fashion"
+                target="_blank"
+                className="hover:text-gray-400 transition-colors"
+              >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
               </Link>
-              <Link href="#" className="hover:text-gray-400 transition-colors">
+              <Link
+                href="https://facebook.com/igcfashion"
+                target="_blank"
+                className="hover:text-gray-400 transition-colors"
+              >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
               </Link>
-              <Link href="#" className="hover:text-gray-400 transition-colors">
+              <Link
+                href="https://www.youtube.com/@igcfashionuganda4180"
+                target="_blank"
+                className="hover:text-gray-400 transition-colors"
+              >
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
+              </Link>
+              <Link
+                href="https://linkedin.com/company/igcfashion"
+                target="_blank"
+                className="hover:text-gray-400 transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </Link>
+              <Link
+                href="https://tiktok.com/@igcfashionug"
+                target="_blank"
+                className="hover:text-gray-400 transition-colors"
+              >
+                <svg
+                  className="h-5 w-5"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+                </svg>
+                <span className="sr-only">TikTok</span>
               </Link>
             </div>
           </div>
@@ -64,11 +117,11 @@ export default async function Footer({ datasource, navigation }) {
               Company
             </h6>
             <ul className="space-y-2">
-              {data.company.map((item, id) => (
+              {data.company?.map((item, id) => (
                 <li key={id}>
                   <Link
                     href={item.href}
-                    className="lg:text-lg text-sm text-gray-400 max-w-xs leading-relaxed"
+                    className="lg:text-lg text-sm text-gray-400 max-w-xs leading-relaxed hover:text-white transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -77,7 +130,7 @@ export default async function Footer({ datasource, navigation }) {
             </ul>
           </div>
 
-          {/* Newsletter Column */}
+          {/* Contact Column */}
           <div className="space-y-4">
             <div className="bg-white text-black cursor-pointer hover:scale-105 transition-transform delay-100">
               <Button>Contact Us</Button>
@@ -92,14 +145,19 @@ export default async function Footer({ datasource, navigation }) {
               <strong>Office & Shop:</strong> 36 Kyadondo road, Kampala, Uganda
             </p>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="border-t border-gray-800 mt-12 pt-8">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: isVisible ? 1 : 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="border-t border-gray-800 mt-12 pt-8"
+        >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p>&copy; 2024 IGC FASHION AFRICA. All rights reserved.</p>
           </div>
-        </div>
+        </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

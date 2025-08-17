@@ -2,8 +2,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Skeleton from "@mui/material/Skeleton";
+import { motion } from "framer-motion";
+import TitleAnimation from "@/components/ui/title-animation";
+
 const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
-  <div>
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    viewport={{ once: true, margin: "-100px" }}
+  >
     <Image
       src={src}
       width={width}
@@ -16,13 +24,15 @@ const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
         {caption}
       </p>
     )}
-  </div>
+  </motion.div>
 );
+
 function Gallery(props) {
   const { blok } = props;
   const { HomePageGallary } = blok;
   const sectionRef = useRef(null);
   const [additionalSets, setAdditionalSets] = useState(0);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -56,10 +66,18 @@ function Gallery(props) {
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
       <div className="text-center mx-2">
         <div className="container mx-auto mt-60">
-          <h1 className="text-4xl font-bold mb-8">
-            {blok.home_gallery_section_title}
-          </h1>
-          <div className="grid grid-cols-1 ipad:grid-cols-[2fr_60px_0px_3fr]  md:grid-cols-[1fr_65px_0px_3fr] lg:grid-cols-[1.5fr_10px_0px_6fr] gap-10 mb-10 relative md:ml-2 lg:ml-8 ipad:h-[700px] lg:h-auto">
+          <TitleAnimation delay={0.2} duration={0.8} y={40}>
+            <h1 className="text-5xl font-bold mb-8">
+              {blok.home_gallery_section_title}
+            </h1>
+          </TitleAnimation>
+          <motion.div
+            className="grid grid-cols-1 ipad:grid-cols-[2fr_60px_0px_3fr]  md:grid-cols-[1fr_65px_0px_3fr] lg:grid-cols-[1.5fr_10px_0px_6fr] gap-10 mb-10 relative md:ml-2 lg:ml-8 ipad:h-[700px] lg:h-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            viewport={{ once: true, margin: "-50px" }}
+          >
             <div>
               {HomePageGallary[0].filename ? (
                 <ImageWithCaption
@@ -101,7 +119,7 @@ function Gallery(props) {
                 />
               )}
             </div>
-          </div>
+          </motion.div>
 
           <div className="md:grid md:grid-cols-1 md:grid-rows-2 mb-10">
             <div className="md:col-span-2 space-y-4 md:row-span-2">
@@ -161,7 +179,7 @@ function Gallery(props) {
               )}
             </div>
             <div>
-              <p className="text-lg  md:mb-4 text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
+              <p className="text-lg  md:mb-[-2px] text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
                 {blok.gallery_text_two}
               </p>
             </div>

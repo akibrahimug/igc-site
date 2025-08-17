@@ -10,6 +10,7 @@ import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { modifyNavLinks } from "@/utils";
+import { motion } from "framer-motion";
 const Navigation = ({ navigation = {} }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setIsPageScrolled] = useState(false);
@@ -52,7 +53,10 @@ const Navigation = ({ navigation = {} }) => {
       return true; // keep
     });
   return (
-    <nav
+    <motion.nav
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className={cn(
         "fixed left-0 right-0 z-50  transition-all duration-300",
         scrolled
@@ -61,15 +65,21 @@ const Navigation = ({ navigation = {} }) => {
       )}
     >
       <div className="container mx-auto px-4 md:px-8 flex items-center justify-between h-full">
-        <Link href="/">
-          <Image
-            className="h-12 w-auto md:h-[55px]"
-            src="/images/igc-logo-white.PNG"
-            alt="igc-logo"
-            width={100}
-            height={100}
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+        >
+          <Link href="/">
+            <Image
+              className="h-12 w-auto md:h-[55px]"
+              src="/images/igc-logo-white.PNG"
+              alt="igc-logo"
+              width={100}
+              height={100}
+            />
+          </Link>
+        </motion.div>
         <div>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="">
@@ -94,6 +104,7 @@ const Navigation = ({ navigation = {} }) => {
                         key={idx}
                         item={item}
                         onClose={() => setIsOpen(false)}
+                        index={idx}
                       />
                     ))}
                   </div>
@@ -103,18 +114,22 @@ const Navigation = ({ navigation = {} }) => {
           </Sheet>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
 export default Navigation;
 
-const MenuItem = ({ item, onClose }) => {
+const MenuItem = ({ item, onClose, index = 0 }) => {
   const pathname = usePathname();
   const [subMenuOpen, setSubMenuOpen] = useState(false);
 
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+    >
       {item.submenu ? (
         <>
           <button
@@ -168,6 +183,6 @@ const MenuItem = ({ item, onClose }) => {
           </span>
         </Link>
       )}
-    </div>
+    </motion.div>
   );
 };
