@@ -179,7 +179,7 @@ function Gallery(props) {
               )}
             </div>
             <div>
-              <p className="text-lg  md:mb-[-2px] text-right md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
+              <p className="text-lg  md:mb-[-2px] text-left md:absolute bottom-0 xl:bottom-[9rem] right-0 mx-8  md:mx-0 md:max-w-[350px] lg:max-w-[400px] leading-relaxed">
                 {blok.gallery_text_two}
               </p>
             </div>

@@ -18,11 +18,8 @@ storyblokInit({
 });
 
 const datasource = await getStoryblokApi().get(`cdn/datasource_entries`, {
-  version: "draft",
+  version: "published",
 });
-
-const links = await getStoryblokApi().get("cdn/links/", { version: "draft" });
-const navigation = links.data?.links || {};
 
 export default function RootLayout({ children }) {
   return (
@@ -31,9 +28,9 @@ export default function RootLayout({ children }) {
         {/* Register components & SDK on the CLIENT so the Bridge can use them */}
         <StoryblokInitClient>
           <AppEntryAnimation>
-            <Navigation navigation={navigation} />
+            <Navigation navigation={datasource} />
             <PageTransition>{children}</PageTransition>
-            <Footer datasource={datasource} navigation={navigation} />
+            <Footer datasource={datasource} />
           </AppEntryAnimation>
         </StoryblokInitClient>
 

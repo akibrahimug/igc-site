@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import PagesHero from "@/components/Bloks/PagesHero";
 import { getNestedVals } from "@/utils";
 export default function BrandPrinciplesPagesTemplate({ blok }) {
-  const data = blok.enviroment[0];
+  const data = blok.environment[0];
   const hero = getNestedVals(data, ["Hero"], null);
   const desc1 = getNestedVals(data, ["first_description"], null);
   const desc2 = getNestedVals(data, ["second_description"], null);

@@ -3,7 +3,7 @@ import React from "react";
 import { useIgcData } from "@/app/ContextProvider";
 import BrandPrinciplesPagesTemplate from "@/components/Templates/BrandPrinciplesPagesTemplate";
 
-const Enviroment = () => {
+const Environment = () => {
   const { story } = useIgcData();
 
   if (!story.content) {
@@ -14,4 +14,4 @@ const Enviroment = () => {
   return <BrandPrinciplesPagesTemplate blok={blok} />;
 };
 
-export default Enviroment;
+export default Environment;

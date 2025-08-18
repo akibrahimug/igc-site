@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { storyblokEditable } from "@storyblok/react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Banner({ blok }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);

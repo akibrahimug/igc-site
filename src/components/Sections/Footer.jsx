@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 // TODO: Change the navigation items - IMPLEMENTED
 // Plug into storyblok datasource for dynamic content
-export default function Footer({ datasource, navigation }) {
+export default function Footer({ datasource }) {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -53,7 +53,7 @@ export default function Footer({ datasource, navigation }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: isVisible ? 1 : 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
           {/* Brand Column */}
           <div className="space-y-4">
@@ -132,9 +132,14 @@ export default function Footer({ datasource, navigation }) {
 
           {/* Contact Column */}
           <div className="space-y-4">
-            <div className="bg-white text-black cursor-pointer hover:scale-105 transition-transform delay-100">
-              <Button>Contact Us</Button>
-            </div>
+            <Link
+              href={"mailto:igcommunityfashion@gmail.com"}
+              className="group relative inline-flex items-center justify-center px-8 py-3 text-brown-100 font-medium tracking-wider border-2 border-brown-100 bg-transparent hover:bg-brown-100 hover:text-black transition-all duration-300 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brown-100 focus:ring-offset-2 focus:ring-offset-black"
+              prefetch={false}
+            >
+              <span className="relative z-10">Contact Us</span>
+              <div className="absolute inset-0 bg-brown-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></div>
+            </Link>
             <h6 className="text-md font-medium uppercase tracking-wide">
               Address
             </h6>
@@ -154,7 +159,10 @@ export default function Footer({ datasource, navigation }) {
           className="border-t border-gray-800 mt-12 pt-8"
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p>&copy; 2024 IGC FASHION AFRICA. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} IGC FASHION AFRICA. All rights
+              reserved.
+            </p>
           </div>
         </motion.div>
       </div>

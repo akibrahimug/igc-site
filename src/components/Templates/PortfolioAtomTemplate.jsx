@@ -112,7 +112,7 @@ export default function PortfolioAtomTemplate({ story }) {
               className="rounded-lg"
             />
             <div className="col-span-3 flex items-center justify-center bg-black text-brown-100 p-4">
-              <p className="text-lg md:text-5xl font-bold text-right max-w-xl leading-relaxed">
+              <p className="text-lg md:text-5xl font-bold text-left max-w-xl leading-relaxed">
                 {description_three}
               </p>
             </div>

@@ -9,11 +9,12 @@ import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { modifyNavLinks } from "@/utils";
 import { motion } from "framer-motion";
-const Navigation = ({ navigation = {} }) => {
+
+const Navigation = ({ navigation = [] }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setIsPageScrolled] = useState(false);
+
   const handleScroll = () => {
     if (window.scrollY > 150) {
       setIsPageScrolled(true);
@@ -27,31 +28,37 @@ const Navigation = ({ navigation = {} }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const cleanedNavs = modifyNavLinks(navigation)
-    .map((item) => {
-      if (
-        item.title.toLowerCase() === "events" ||
-        item.title.toLowerCase() === "portfolio"
-      ) {
-        return {
-          ...item,
-          submenu: false,
-          subMenuItems: [],
-        };
+  function parseValue(str) {
+    const cleaned = str
+      .trim()
+      // strip JS comments
+      .replace(/\/\/.*$/gm, "")
+      .replace(/\/\*[\s\S]*?\*\//g, "")
+      // remove "export default ..." or "const x ="
+      .replace(/^(?:export\s+default\s+)?(?:const|let|var)\s+\w+\s*=\s*/i, "")
+      // strip trailing semicolons
+      .replace(/;+\s*$/, "")
+      // remove trailing commas before } or ]
+      .replace(/,\s*([\]}])/g, "$1")
+      // quote unquoted object keys
+      .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
+
+    return JSON.parse(cleaned);
+  }
+
+  const navigationLinks = navigation.data.datasource_entries.reduce(
+    (acc, item) => {
+      try {
+        acc[item.name] = parseValue(item.value);
+      } catch (e) {
+        console.error(`Error parsing value for "${item.name}":`, e);
+        acc[item.name] = [];
       }
-      return item;
-    })
-    // 2) Filter out any other items that have a path under "/events/" | "portfolio"
-    .filter((item) => {
-      // If the path starts with '/events/' | 'portfolio' but is not exactly '/events' | 'portfolio', remove it
-      if (
-        (item.path.startsWith("/events/") && item.path !== "/events") ||
-        (item.path.startsWith("/portfolio/") && item.path !== "/portfolio")
-      ) {
-        return false; // exclude
-      }
-      return true; // keep
-    });
+      return acc;
+    },
+    {}
+  );
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -99,7 +106,7 @@ const Navigation = ({ navigation = {} }) => {
               <div className="h-full flex flex-col mt-8">
                 <div className="flex flex-col space-y-6 w-full">
                   <div className="flex flex-col space-y-2 md:px-6">
-                    {cleanedNavs.map((item, idx) => (
+                    {navigationLinks?.navigation?.map((item, idx) => (
                       <MenuItem
                         key={idx}
                         item={item}

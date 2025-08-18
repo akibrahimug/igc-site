@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import { StoryblokComponent } from "@storyblok/react";
 import { getStoryblokApi } from "@storyblok/react/rsc";
 import IgcProvider from "@/app/ContextProvider";
 import StoryblokRenderer from "@/components/StoryblokRenderer";

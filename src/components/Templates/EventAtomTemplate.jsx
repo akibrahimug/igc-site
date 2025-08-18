@@ -14,19 +14,19 @@ function EventAtomTamplate({ story }) {
       width: 1200,
       height: 600,
       className: "rounded-lg w-full h-auto object-cover",
-      colSpan: "md:col-span-5",
+      colSpan: "md:col-span-6",
     },
     {
       width: 1200,
       height: 600,
       className: "rounded-lg w-full h-auto object-cover",
-      colSpan: "md:col-span-5",
+      colSpan: "md:col-span-6",
     },
     {
       width: 1600,
       height: 1200,
       className: "w-full h-auto object-cover",
-      colSpan: "md:col-span-6",
+      colSpan: "md:col-span-5",
     },
     {
       width: 600,
@@ -38,7 +38,7 @@ function EventAtomTamplate({ story }) {
       width: 800,
       height: 500,
       className: "w-full h-auto object-cover rounded-lg",
-      colSpan: "md:col-span-5",
+      colSpan: "md:col-span-6",
     },
     {
       width: 500,
@@ -64,11 +64,11 @@ function EventAtomTamplate({ story }) {
   return (
     <div className="bg-black text-brown-100 ">
       <PagesHero story={pages_hero} />
-      <div className="p-4 md:p-4 max-w-[1600px] mx-auto">
+      <div className="p-4  md:p-4 md:mt-6 max-w-[1600px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-14 lg:gap-20">
-          <div className="md:col-span-6 my-6 md:my-0">
-            <div className="flex flex-col gap-4 justify-between align-baseline">
-              <p className="text-lg md:mb-4 text-right md:mx-0  leading-relaxed">
+          <div className="md:col-span-6 my-6 md:my-0 flex items-center justify-center">
+            <div className="">
+              <p className="text-lg md:mb-4 mb-0 text-left md:mx-0 leading-relaxed max-w-[550px] ">
                 {description}
               </p>
             </div>
