@@ -9,8 +9,6 @@ import {
 } from "@storyblok/react/rsc";
 import StoryblokBridgeClient from "@/components/StoryblokBridgeClient";
 import StoryblokInitClient from "@/components/StoryblokInitClient";
-import AppEntryAnimation from "@/components/AppEntryAnimation";
-import PageTransition from "@/components/PageTransition";
 
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
@@ -27,11 +25,9 @@ export default function RootLayout({ children }) {
       <body>
         {/* Register components & SDK on the CLIENT so the Bridge can use them */}
         <StoryblokInitClient>
-          <AppEntryAnimation>
-            <Navigation navigation={datasource} />
-            <PageTransition>{children}</PageTransition>
-            <Footer datasource={datasource} />
-          </AppEntryAnimation>
+          <Navigation navigation={datasource} />
+          {children}
+          <Footer datasource={datasource} />
         </StoryblokInitClient>
 
         {/* Load the Bridge script once */}

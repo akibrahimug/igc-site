@@ -15,7 +15,7 @@ function Events() {
   const banner = blok.banner;
   const page_hero = blok.pages_hero;
   const portfolio_gallery = blok.portfolio_gallery_atom;
-
+  console.log(portfolio_gallery, "portfolio_gallery===>events");
   return (
     <motion.div
       className="bg-black"

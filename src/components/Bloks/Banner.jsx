@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { storyblokEditable } from "@storyblok/react";
@@ -9,8 +9,11 @@ export default function Banner({ blok }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Convert to array if it's a single object
-  const bannerItems = Array.isArray(blok) ? blok : [blok];
-
+  const bannerItems = useMemo(() => {
+    if (!blok) return [];
+    return Array.isArray(blok) ? blok : [blok];
+  }, [blok]);
+  console.log(bannerItems, "bannerItems");
   // Auto-advance images
   useEffect(() => {
     if (

@@ -4,25 +4,6 @@
 
 This application now features a comprehensive animation system that provides smooth, consistent, and engaging user experiences across all pages and components.
 
-## Animation Components
-
-### 1. AppEntryAnimation (`src/components/AppEntryAnimation.jsx`)
-
-- **Purpose**: Provides the initial loading screen and overall page entry animation
-- **Features**:
-  - Loading screen with IGC branding
-  - Smooth fade-in transition for the entire application
-  - Staggered children animations
-  - Configurable timing and easing
-
-### 2. PageTransition (`src/components/PageTransition.jsx`)
-
-- **Purpose**: Handles smooth transitions between different pages
-- **Features**:
-  - Route-based animations
-  - Exit animations for smooth page changes
-  - AnimatePresence for proper transition handling
-
 ### 3. Enhanced Navigation (`src/components/Bloks/Navigation.jsx`)
 
 - **Purpose**: Animated navigation bar with smooth interactions

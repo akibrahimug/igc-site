@@ -66,11 +66,11 @@ function Gallery(props) {
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
       <div className="text-center mx-2">
         <div className="container mx-auto mt-60">
-          <TitleAnimation delay={0.2} duration={0.8} y={40}>
-            <h1 className="text-5xl font-bold mb-8">
-              {blok.home_gallery_section_title}
-            </h1>
-          </TitleAnimation>
+          {/* <TitleAnimation delay={0.2} duration={0.8} y={40}> */}
+          <h1 className="text-5xl font-bold mb-8">
+            {blok.home_gallery_section_title}
+          </h1>
+          {/* </TitleAnimation> */}
           <motion.div
             className="grid grid-cols-1 ipad:grid-cols-[2fr_60px_0px_3fr]  md:grid-cols-[1fr_65px_0px_3fr] lg:grid-cols-[1.5fr_10px_0px_6fr] gap-10 mb-10 relative md:ml-2 lg:ml-8 ipad:h-[700px] lg:h-auto"
             initial={{ opacity: 0, y: 50 }}

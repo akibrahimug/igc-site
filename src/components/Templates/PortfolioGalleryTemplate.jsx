@@ -15,40 +15,17 @@ export default function PortfolioGalleryTemplate({ story }) {
     }
   }, [isContainerVisible]);
 
-  // Single animation variant for all cards
-  const cardVariant = {
-    hidden: { opacity: 0, y: 100, scale: 0.9 },
-    visible: { opacity: 1, y: 0, scale: 1 },
-  };
-
   return (
     <div className="bg-black text-brown-100" ref={containerRef}>
-      <motion.div
+      <div
         className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 p-4"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         {story.map((project, index) => {
-          // Random timing only - same animation for all cards
-          const randomDelay = Math.random() * 2; // Random delay between 0-4 seconds
-          const randomDuration = 0.8 + Math.random() * 0.6; // Random duration between 0.8-1.4 seconds
-
           return (
-            <motion.div
-              key={index}
-              variants={cardVariant}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              transition={{
-                duration: randomDuration,
-                delay: randomDelay, // This makes each card appear at a random time
-                ease: [0.25, 0.46, 0.45, 0.94], // Custom easing
-                type: "spring",
-                stiffness: 100,
-                damping: 15,
-              }}
-            >
+            <div key={index}>
               <Link
                 href={project["project_link"]["cached_url"].split("/")[1]}
                 className="block h-full"
@@ -67,10 +44,10 @@ export default function PortfolioGalleryTemplate({ story }) {
                   </div>
                 </div>
               </Link>
-            </motion.div>
+            </div>
           );
         })}
-      </motion.div>
+      </div>
     </div>
   );
 }

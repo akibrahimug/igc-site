@@ -11,8 +11,7 @@ function CustomPortfolioAtomTemplate({ blok }) {
   const image3 = getNestedVals(blok, [[0], "image_three", "filename"], null);
   const image4 = getNestedVals(blok, [[0], "image_four", "filename"], null);
   const image5and6 = getNestedVals(blok, [[0], "last_two_images"], null);
-
-  return (
+  return blok.length > 0 ? (
     <div className="p-2 md:p-4  max-w-[1500px] mx-auto bg-black">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
         <div className="flex items-center justify-between rounded-lg p-4">
@@ -89,7 +88,7 @@ function CustomPortfolioAtomTemplate({ blok }) {
         ))}
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default CustomPortfolioAtomTemplate;
