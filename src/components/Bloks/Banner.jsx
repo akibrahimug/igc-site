@@ -13,7 +13,7 @@ export default function Banner({ blok }) {
     if (!blok) return [];
     return Array.isArray(blok) ? blok : [blok];
   }, [blok]);
-  console.log(bannerItems, "bannerItems");
+
   // Auto-advance images
   useEffect(() => {
     if (

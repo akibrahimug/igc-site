@@ -15,7 +15,6 @@ function Events() {
   const banner = blok.banner;
   const page_hero = blok.pages_hero;
   const portfolio_gallery = blok.portfolio_gallery_atom;
-  console.log(portfolio_gallery, "portfolio_gallery===>events");
   return (
     <motion.div
       className="bg-black"
@@ -25,7 +24,7 @@ function Events() {
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        anima be={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="relative"
       >
