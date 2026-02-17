@@ -33,7 +33,7 @@ function PagesHero({ story }) {
             <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
               <div className="text-center text-brown-100">
                 {/* <TitleAnimation delay={0.3} duration={1.2} y={80}> */}
-                <h1 className="text-center md:text-[150px] text-5xl lg:text-[200px] mb-6 font-igc">
+                <h1 className="text-center md:text-[150px] text-5xl lg:text-[200px] mb-6 font-bebas-neue">
                   {story[0]["hero_title"]}
                 </h1>
                 {/* </TitleAnimation> */}

@@ -10,14 +10,21 @@ import {
 import StoryblokBridgeClient from "@/components/StoryblokBridgeClient";
 import StoryblokInitClient from "@/components/StoryblokInitClient";
 
+const EMPTY_DATASOURCE = { data: { datasource_entries: [] } };
+
 storyblokInit({
   accessToken: process.env.NEXT_PUBLIC_STORYBLOK_TOKEN,
   use: [apiPlugin],
 });
 
-const datasource = await getStoryblokApi().get(`cdn/datasource_entries`, {
-  version: "published",
-});
+let datasource = EMPTY_DATASOURCE;
+try {
+  datasource = await getStoryblokApi().get(`cdn/datasource_entries`, {
+    version: "published",
+  });
+} catch (error) {
+  console.error("Failed to fetch Storyblok datasource entries", error);
+}
 
 export default function RootLayout({ children }) {
   return (

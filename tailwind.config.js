@@ -93,8 +93,6 @@ module.exports = {
         },
       },
       fontFamily: {
-        igc: ["IgcFont", "Bebas Neue", "sans-serif"],
-        ubuntu: ["Ubuntu", "sans-serif"],
         "bebas-neue": ["Bebas Neue", "sans-serif"],
       },
       textShadow: {

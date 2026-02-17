@@ -16,15 +16,25 @@ export default function Footer({ datasource }) {
   }, []);
   // 1) Helper to parse each value string into JSON:
   function parseValue(str) {
-    // Remove trailing commas before a closing bracket (like ", ]")
-    str = str.replace(/,\s*\]/, "]");
+    if (typeof str !== "string") return str ?? [];
+    const raw = str.trim();
+    if (!raw) return [];
 
-    // Convert name: -> "name": and href: -> "href":
-    // (This is a simplified approach and works for these key names.)
-    str = str.replace(/(\bname|\bhref)\s*:/g, '"$1":');
+    try {
+      return JSON.parse(raw);
+    } catch {
+      const cleaned = raw
+        .replace(/\/\*[\s\S]*?\*\//g, "")
+        .replace(
+          /^(?:export\s+default\s+)?(?:const|let|var)\s+\w+\s*=\s*/i,
+          "",
+        )
+        .replace(/;+\s*$/, "")
+        .replace(/,\s*([\]}])/g, "$1")
+        .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
 
-    // Now parse the cleaned string as JSON
-    return JSON.parse(str);
+      return JSON.parse(cleaned);
+    }
   }
 
   const data = datasource.data.datasource_entries.reduce((acc, item) => {
@@ -40,6 +50,7 @@ export default function Footer({ datasource }) {
     acc[item.name] = parsedArray;
     return acc;
   }, {});
+  const companyLinks = Array.isArray(data.company) ? data.company : [];
 
   return (
     <footer className="bg-black text-brown-100 text-[14px]">
@@ -107,7 +118,7 @@ export default function Footer({ datasource }) {
               Company
             </h6>
             <ul className="space-y-2">
-              {data.company?.map((item, id) => (
+              {companyLinks.map((item, id) => (
                 <li key={id}>
                   <Link
                     href={item.href}

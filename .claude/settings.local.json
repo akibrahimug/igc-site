@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(npx next build:*)",
+      "Bash(python3:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

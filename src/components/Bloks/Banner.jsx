@@ -98,7 +98,7 @@ export default function Banner({ blok }) {
               }}
             >
               <div className="backdrop-blur-md bg-gradient-to-b from-black/30 via-black/20 to-black/10 rounded-2xl p-8 md:p-10 border border-white/5 shadow-2xl">
-                <h2 className="text-3xl md:text-5xl font-igc font-bold tracking-wider mb-6">
+                <h2 className="text-3xl md:text-5xl font-bebas-neue font-bold tracking-wider mb-6">
                   {item.banner_title}
                 </h2>
                 <p className="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8">
