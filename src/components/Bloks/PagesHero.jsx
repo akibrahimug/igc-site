@@ -1,11 +1,5 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel";
 
 const normalizeImageSrc = (src) => {
   if (typeof src !== "string") return "";
@@ -16,58 +10,58 @@ const normalizeImageSrc = (src) => {
   return cleaned;
 };
 
-const resolveHero = (story) => {
-  const base =
-    Array.isArray(story) && story.length > 0 ? story[0] : story || {};
-
-  const imageField = base?.hero_image;
-  const filename =
-    typeof imageField === "string"
-      ? imageField
-      : imageField?.filename || base?.image?.filename || "";
-  const imageSrc = normalizeImageSrc(filename);
-  const imageAlt =
-    (typeof imageField === "object" && imageField?.alt) ||
-    base?.hero_title ||
-    base?.title ||
-    "Page hero";
-  const title = base?.hero_title || base?.title || "";
-
-  return { imageSrc, imageAlt, title };
+const getAssetSrc = (value) => {
+  if (typeof value === "string") return normalizeImageSrc(value);
+  if (!value || typeof value !== "object") return "";
+  return normalizeImageSrc(value.filename || value.url || value.src || "");
 };
 
-function PagesHero({ story }) {
-  const { imageSrc, imageAlt, title } = resolveHero(story);
+const pickFirstEntry = (value) => {
+  if (Array.isArray(value)) return value[0] || {};
+  if (value && typeof value === "object") return value;
+  return {};
+};
+
+const resolveHero = ({ story, title, image }) => {
+  const base = pickFirstEntry(story);
+  const imageField = base?.hero_image || base?.image || null;
+  const imageSrc = getAssetSrc(image) || getAssetSrc(imageField);
+  const resolvedTitle = title || base?.hero_title || base?.title || "";
+  const imageAlt =
+    (typeof imageField === "object" && imageField?.alt) || resolvedTitle || "Page hero";
+
+  return { imageSrc, imageAlt, title: resolvedTitle };
+};
+
+function PagesHero({ story, title, image }) {
+  const { imageSrc, imageAlt, title: resolvedTitle } = resolveHero({
+    story,
+    title,
+    image,
+  });
 
   return (
-    <Carousel className="w-full">
-      <CarouselContent>
-        <CarouselItem>
-          <div className="relative h-screen w-full">
-            {imageSrc ? (
-              <Image
-                src={imageSrc}
-                alt={imageAlt}
-                className="h-full w-full object-cover"
-                quality={100}
-                priority
-                fill
-                sizes="100vw"
-              />
-            ) : (
-              <div className="absolute inset-0 bg-black" />
-            )}
-            <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
-              <div className="text-center text-brown-100">
-                <h1 className="text-center md:text-[150px] text-5xl lg:text-[200px] mb-6 font-bebas-neue">
-                  {title}
-                </h1>
-              </div>
-            </div>
-          </div>
-        </CarouselItem>
-      </CarouselContent>
-    </Carousel>
+    <div className="relative h-screen w-full">
+      {imageSrc ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          className="absolute inset-0 h-full w-full object-cover"
+          loading="eager"
+          fetchPriority="high"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-black" />
+      )}
+      <div className="absolute inset-0 flex flex-col items-center justify-center space-y-4 bg-gradient-to-t from-[rgba(0,0,0,0.5)] to-[rgba(0,0,0,0.1)]">
+        <div className="text-center text-brown-100">
+          <h1 className="text-center md:text-[150px] text-5xl lg:text-[200px] mb-6 font-bebas-neue">
+            {resolvedTitle}
+          </h1>
+        </div>
+      </div>
+    </div>
   );
 }
 
