@@ -115,8 +115,7 @@ const Navigation = ({ navigation = [] }) => {
       navigation.data.datasource_entries.reduce((acc, item) => {
         try {
           acc[item.name] = parseValue(item.value);
-        } catch (e) {
-          console.error(`Error parsing value for "${item.name}":`, e);
+        } catch {
           acc[item.name] = [];
         }
         return acc;

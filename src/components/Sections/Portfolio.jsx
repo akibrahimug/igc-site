@@ -12,7 +12,6 @@ function Events() {
   const blok = story.content;
   const page_hero = blok.pages_hero;
   const portfolio_gallery = blok.portfolio_gallery_atom;
-  console.log(portfolio_gallery, "portfolio_gallery===>portfolio");
   return (
     <div className="bg-black">
       <PagesHero story={page_hero} />

@@ -41,9 +41,7 @@ export default function Footer({ datasource }) {
     let parsedArray;
     try {
       parsedArray = parseValue(item.value);
-    } catch (error) {
-      console.error(`Error parsing value for "${item.name}":`, error);
-      // Fallback to an empty array if parsing fails
+    } catch {
       parsedArray = [];
     }
 

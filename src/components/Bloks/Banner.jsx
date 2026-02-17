@@ -36,7 +36,6 @@ export default function Banner({ blok }) {
 
   // Handle case where blok might be undefined or not an array
   if (!blok) {
-    console.log("Banner: No blok data provided");
     return null;
   }
   return (
