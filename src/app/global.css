@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@400;500;600&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -34,8 +34,10 @@ body {
   }
 }
 
-* {
-  font-family: "Bebas Neue", sans-serif;
+/* Bebas Neue is a caps-only display face: reserve it for headings and
+   explicitly-tagged display text; long-form copy reads in Archivo. */
+body {
+  font-family: "Archivo", "Helvetica Neue", sans-serif;
 }
 
 @layer base {
@@ -70,6 +72,35 @@ body {
 
 .visible {
   opacity: 1;
+}
+
+/* Loading skeleton: warm near-black with a slow ivory sheen sweeping across.
+   Used by FadeImage while images load. */
+.skeleton-shimmer {
+  background-color: #161412;
+  background-image: linear-gradient(
+    100deg,
+    #161412 25%,
+    #211d18 37%,
+    #161412 63%
+  );
+  background-size: 400% 100%;
+  animation: skeleton-sweep 1.6s ease infinite;
+}
+
+@keyframes skeleton-sweep {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+  }
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

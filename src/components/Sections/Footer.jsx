@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { parseDatasourceEntries } from "@/utils";
 
 // TODO: Change the navigation items - IMPLEMENTED
 // Plug into storyblok datasource for dynamic content
@@ -14,40 +15,7 @@ export default function Footer({ datasource }) {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
   }, []);
-  // 1) Helper to parse each value string into JSON:
-  function parseValue(str) {
-    if (typeof str !== "string") return str ?? [];
-    const raw = str.trim();
-    if (!raw) return [];
-
-    try {
-      return JSON.parse(raw);
-    } catch {
-      const cleaned = raw
-        .replace(/\/\*[\s\S]*?\*\//g, "")
-        .replace(
-          /^(?:export\s+default\s+)?(?:const|let|var)\s+\w+\s*=\s*/i,
-          "",
-        )
-        .replace(/;+\s*$/, "")
-        .replace(/,\s*([\]}])/g, "$1")
-        .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
-
-      return JSON.parse(cleaned);
-    }
-  }
-
-  const data = datasource.data.datasource_entries.reduce((acc, item) => {
-    let parsedArray;
-    try {
-      parsedArray = parseValue(item.value);
-    } catch {
-      parsedArray = [];
-    }
-
-    acc[item.name] = parsedArray;
-    return acc;
-  }, {});
+  const data = parseDatasourceEntries(datasource);
   const companyLinks = Array.isArray(data.company) ? data.company : [];
 
   return (

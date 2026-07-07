@@ -16,7 +16,7 @@ function Events() {
     <div className="bg-black">
       <PagesHero story={page_hero} />
       <div className="mt-10 p-4">
-        <PortfolioGalleryTemplate story={portfolio_gallery} />
+        <PortfolioGalleryTemplate story={portfolio_gallery} eyebrow="Collection" />
       </div>
     </div>
   );

@@ -9,9 +9,12 @@ import PortfolioAtom from "@/components/Sections/PortfolioAtom";
 import Services from "@/components/Sections/Services";
 import AboutUs from "@/components/Sections/AboutUs";
 import Banner from "@/components/Bloks/Banner";
+import Page from "@/components/Bloks/Page";
 
 export const components = {
   Home: Home,
+  page: Page,
+  fashion_cypher: Page,
   environment: Environment,
   culture: Culture,
   community: Community,

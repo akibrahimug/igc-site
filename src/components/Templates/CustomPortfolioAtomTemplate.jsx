@@ -1,5 +1,5 @@
 import React from "react";
-import Image from "next/image";
+import FadeImage from "@/components/ui/fade-image";
 import { getNestedVals } from "@/utils";
 function CustomPortfolioAtomTemplate({ blok }) {
   const desc1 = getNestedVals(blok, [[0], "description_one"], null);
@@ -20,20 +20,20 @@ function CustomPortfolioAtomTemplate({ blok }) {
           </p>
         </div>
         <div className="relative h-96">
-          <Image
+          <FadeImage
             src={image1}
-            alt="image 1"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+            alt="Collection imagery 1"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
           />
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-8">
         <div className="md:col-span-3 row-span-2">
-          <Image
+          <FadeImage
             src={image2}
-            alt="image 2"
+            alt="Collection imagery 2"
             width={400}
             height={800}
             className="h-128 w-full object-cover"
@@ -50,18 +50,18 @@ function CustomPortfolioAtomTemplate({ blok }) {
           </p>
         </div>
         <div className="md:col-span-3">
-          <Image
+          <FadeImage
             src={image3}
-            alt="image 3"
+            alt="Collection imagery 3"
             width={400}
             height={400}
             className="w-full h-[900px] object-cover"
           />
         </div>
         <div className="md:col-span-3">
-          <Image
+          <FadeImage
             src={image4}
-            alt="image 4"
+            alt="Collection imagery 4"
             width={400}
             height={800}
             className="h-96 w-full object-cover"
@@ -77,9 +77,9 @@ function CustomPortfolioAtomTemplate({ blok }) {
       <div className="grid grid-cols-1 md:grid-cols-6 gap-8 my-6">
         {image5and6.map((image, id) => (
           <div className="relative h-96 md:col-span-3" key={id}>
-            <Image
+            <FadeImage
               src={image.filename}
-              alt="image 5"
+              alt="Collection imagery 5"
               width={400}
               height={800}
               className="h-96 w-full object-cover"

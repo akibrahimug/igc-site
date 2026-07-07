@@ -88,7 +88,7 @@ function Events() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
       >
-        <PortfolioGalleryTemplate story={portfolio_gallery} />
+        <PortfolioGalleryTemplate story={portfolio_gallery} eyebrow="Showcase" />
       </motion.div>
     </motion.div>
   );

@@ -15,8 +15,9 @@ const Hero = (props) => {
           <Image
             src={`${blok.hero_image.filename}`}
             alt={blok.hero_image.alt}
-            layout="fill"
-            objectFit="cover"
+            fill
+            sizes="100vw"
+            className="object-cover"
             quality={100}
             priority
           />

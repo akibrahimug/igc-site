@@ -1,7 +1,8 @@
 import React from "react";
 import PagesHero from "@/components/Bloks/PagesHero";
-import Image from "next/image";
+import FadeImage from "@/components/ui/fade-image";
 import { getNestedVals } from "@/utils";
+import { getAssetAlt } from "@/utils/storyblok";
 
 function EventAtomTamplate({ story }) {
   const pages_hero = getNestedVals(story, ["content", "pages_hero"], null);
@@ -13,13 +14,13 @@ function EventAtomTamplate({ story }) {
     {
       width: 1200,
       height: 600,
-      className: "rounded-lg w-full h-auto object-cover",
+      className: "w-full h-auto object-cover",
       colSpan: "md:col-span-6",
     },
     {
       width: 1200,
       height: 600,
-      className: "rounded-lg w-full h-auto object-cover",
+      className: "w-full h-auto object-cover",
       colSpan: "md:col-span-6",
     },
     {
@@ -37,13 +38,13 @@ function EventAtomTamplate({ story }) {
     {
       width: 800,
       height: 500,
-      className: "w-full h-auto object-cover rounded-lg",
+      className: "w-full h-auto object-cover",
       colSpan: "md:col-span-6",
     },
     {
       width: 500,
       height: 800,
-      className: "w-full h-auto object-cover lg:rounded-b-3xl",
+      className: "w-full h-auto object-cover",
       colSpan: "md:col-span-12",
     },
 
@@ -80,9 +81,9 @@ function EventAtomTamplate({ story }) {
               const config = imageConfigs[index % imageConfigs.length];
               return (
                 <div key={index} className={config.colSpan}>
-                  <Image
+                  <FadeImage
                     src={image.filename}
-                    alt={`Event image ${index + 1}`}
+                    alt={getAssetAlt(image, `Event photo ${index + 1}`)}
                     width={config.width}
                     height={config.height}
                     className={config.className}

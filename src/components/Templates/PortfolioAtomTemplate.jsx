@@ -1,7 +1,8 @@
-import Image from "next/image";
+import FadeImage from "@/components/ui/fade-image";
 import { getNestedVals } from "@/utils";
 
 export default function PortfolioAtomTemplate({ story }) {
+  const storyName = story?.name || "Collection";
   const description_one = getNestedVals(
     story,
     ["content", "portfolio_atom_template", [0], "description_one"],
@@ -53,13 +54,12 @@ export default function PortfolioAtomTemplate({ story }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-24">
           {imageCards.map((project, index) => (
             <div key={index} className="relative overflow-hidden mt-10">
-              <Image
+              <FadeImage
                 src={project["filename"]}
-                alt={project["filename"]}
+                alt={project["alt"] || `${storyName} — look ${index + 1}`}
                 width={600}
                 height={1200}
-                objectFit="cover"
-                className="rounded-lg"
+                className="w-full h-auto object-cover"
               />
             </div>
           ))}
@@ -68,19 +68,19 @@ export default function PortfolioAtomTemplate({ story }) {
           {description_one}
         </p>
         <div className="relative h-128 mb-6">
-          <Image
+          <FadeImage
             src={image1}
-            alt={image1}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
+            alt={`${storyName} — detail`}
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
         <div className="mx-auto grid md:grid-cols-6 gap-4 md:gap-24 md:mt-16">
           <div className="md:col-span-2">
-            <Image
+            <FadeImage
               src={image2}
-              alt={image2}
+              alt={`${storyName} — detail`}
               width={600}
               height={400}
               className="w-full h-auto object-cover"
@@ -88,9 +88,9 @@ export default function PortfolioAtomTemplate({ story }) {
           </div>
           <div className="md:col-span-2"></div>
           <div className="md:col-span-2 relative">
-            <Image
+            <FadeImage
               src={image3}
-              alt={image3}
+              alt={`${storyName} — detail`}
               width={400}
               height={400}
               className="w-full h-auto object-cover"
@@ -103,13 +103,12 @@ export default function PortfolioAtomTemplate({ story }) {
             </p>
           </div>
           <div className="col-span-3 row-span-2">
-            <Image
+            <FadeImage
               src={image4}
-              alt={image4}
+              alt={`${storyName} — detail`}
               width={900}
               height={1200}
-              objectFit="cover"
-              className="rounded-lg"
+              className="w-full h-auto object-cover"
             />
             <div className="col-span-3 flex items-center justify-center bg-black text-brown-100 p-4">
               <p className="text-lg md:text-5xl font-bold text-left max-w-xl leading-relaxed">
@@ -118,9 +117,9 @@ export default function PortfolioAtomTemplate({ story }) {
             </div>
           </div>
           <div className="col-span-3">
-            <Image
+            <FadeImage
               src={image5}
-              alt={image5}
+              alt={`${storyName} — detail`}
               width={400}
               height={400}
               className="w-full h-auto object-cover"

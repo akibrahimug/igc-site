@@ -4,7 +4,11 @@
       "Bash(ls:*)",
       "Bash(npx next build:*)",
       "Bash(python3:*)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(sed 's/=.*/=***/' /Users/akibrahim/dev/Programming/clients/IGC/igc-mock-app-2024/.env)",
+      "Bash(git -C /Users/akibrahim/dev/Programming/clients/IGC/igc-mock-app-2024 remote -v)",
+      "Bash(curl -s \"https://cdn.storyblok.com/v2/cdn/links/?token=cXSQrYYQLbPbqObNtplFcgtt&version=published\")",
+      "Bash(curl -s \"https://cdn.storyblok.com/v2/cdn/stories/home?token=cXSQrYYQLbPbqObNtplFcgtt&version=published\")"
     ]
   }
 }

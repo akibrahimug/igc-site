@@ -1,20 +1,6 @@
 "use client";
 import React from "react";
-
-const normalizeImageSrc = (src) => {
-  if (typeof src !== "string") return "";
-  const cleaned = src.trim();
-  if (!cleaned) return "";
-  if (cleaned.startsWith("//")) return `https:${cleaned}`;
-  if (cleaned.startsWith("http://")) return cleaned.replace(/^http:\/\//, "https://");
-  return cleaned;
-};
-
-const getAssetSrc = (value) => {
-  if (typeof value === "string") return normalizeImageSrc(value);
-  if (!value || typeof value !== "object") return "";
-  return normalizeImageSrc(value.filename || value.url || value.src || "");
-};
+import { getAssetSrc } from "@/utils/storyblok";
 
 const pickFirstEntry = (value) => {
   if (Array.isArray(value)) return value[0] || {};

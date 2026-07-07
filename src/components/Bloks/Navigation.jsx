@@ -10,6 +10,7 @@ import { Search, User, ShoppingBag, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { parseDatasourceEntries } from "@/utils";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -88,38 +89,8 @@ const Navigation = ({ navigation = [] }) => {
     setIsOpen(false);
   }, [pathname]);
 
-  function parseValue(str) {
-    if (typeof str !== "string") return str ?? [];
-    const raw = str.trim();
-    if (!raw) return [];
-
-    try {
-      return JSON.parse(raw);
-    } catch {
-      const cleaned = raw
-        .replace(/\/\*[\s\S]*?\*\//g, "")
-        .replace(
-          /^(?:export\s+default\s+)?(?:const|let|var)\s+\w+\s*=\s*/i,
-          "",
-        )
-        .replace(/;+\s*$/, "")
-        .replace(/,\s*([\]}])/g, "$1")
-        .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":');
-
-      return JSON.parse(cleaned);
-    }
-  }
-
   const navigationLinks = useMemo(
-    () =>
-      navigation.data.datasource_entries.reduce((acc, item) => {
-        try {
-          acc[item.name] = parseValue(item.value);
-        } catch {
-          acc[item.name] = [];
-        }
-        return acc;
-      }, {}),
+    () => parseDatasourceEntries(navigation),
     [navigation],
   );
 
@@ -474,7 +445,7 @@ const Navigation = ({ navigation = [] }) => {
               <Image
                 className="h-10 w-auto md:h-12"
                 src="/images/igc-logo-white.PNG"
-                alt="igc-logo"
+                alt="IGC Fashion logo"
                 width={80}
                 height={80}
               />

@@ -1,9 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import Image from "next/image";
-import Skeleton from "@mui/material/Skeleton";
 import { motion } from "framer-motion";
-import TitleAnimation from "@/components/ui/title-animation";
+import FadeImage from "@/components/ui/fade-image";
+import SectionHeading from "@/components/ui/section-heading";
 
 const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
   <motion.div
@@ -12,7 +11,7 @@ const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
     transition={{ duration: 0.8, ease: "easeOut" }}
     viewport={{ once: true, margin: "-100px" }}
   >
-    <Image
+    <FadeImage
       src={src}
       width={width}
       height={height}
@@ -25,6 +24,10 @@ const ImageWithCaption = ({ src, width, height, alt, className, caption }) => (
       </p>
     )}
   </motion.div>
+);
+
+const MissingImagePlate = ({ width, height }) => (
+  <div className="skeleton-shimmer" style={{ width, height }} />
 );
 
 function Gallery(props) {
@@ -66,11 +69,10 @@ function Gallery(props) {
       <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-transparent to-black-950 z-10"></div>
       <div className="text-center mx-2">
         <div className="container mx-auto mt-60">
-          {/* <TitleAnimation delay={0.2} duration={0.8} y={40}> */}
-          <h1 className="text-5xl font-bold mb-8">
-            {blok.home_gallery_section_title}
-          </h1>
-          {/* </TitleAnimation> */}
+          <SectionHeading
+            title={blok.home_gallery_section_title}
+            className="mb-12"
+          />
           <motion.div
             className="grid grid-cols-1 ipad:grid-cols-[2fr_60px_0px_3fr]  md:grid-cols-[1fr_65px_0px_3fr] lg:grid-cols-[1.5fr_10px_0px_6fr] gap-10 mb-10 relative md:ml-2 lg:ml-8 ipad:h-[700px] lg:h-auto"
             initial={{ opacity: 0, y: 50 }}
@@ -88,12 +90,7 @@ function Gallery(props) {
                   className="object-cover md:min-w-[250px] md:min-h-[300px] w-full lg:min-w-[350px] 2xl:w-[1200px] "
                 />
               ) : (
-                <Skeleton
-                  variant="rectangular"
-                  width={400}
-                  height={533}
-                  sx={{ bgColor: "grey.900" }}
-                />
+                <MissingImagePlate width={400} height={533} />
               )}
             </div>
             <div>
@@ -111,12 +108,7 @@ function Gallery(props) {
                   className="object-cover w-full md:w-[400px] ipad:w-full md:h-[600px] lg:w-full lg:h-[700px] h-auto 2xl:w-[800px] 2xl:h-[800px] mb-40 md:mb-0"
                 />
               ) : (
-                <Skeleton
-                  variant="rectangular"
-                  width={450}
-                  height={600}
-                  sx={{ bgColor: "grey.900" }}
-                />
+                <MissingImagePlate width={450} height={600} />
               )}
             </div>
           </motion.div>
@@ -150,12 +142,7 @@ function Gallery(props) {
                 className="object-cover w-full h-[500px]"
               />
             ) : (
-              <Skeleton
-                variant="rectangular"
-                width={1200}
-                height={400}
-                sx={{ bgColor: "grey.900" }}
-              />
+              <MissingImagePlate width={1200} height={400} />
             )}
           </div>
 
@@ -170,12 +157,7 @@ function Gallery(props) {
                   className="object-cover w-full h-auto 2xl:w-[900px] lg:h-[800px]"
                 />
               ) : (
-                <Skeleton
-                  variant="rectangular"
-                  width={1200}
-                  height={400}
-                  sx={{ bgColor: "grey.900" }}
-                />
+                <MissingImagePlate width={1200} height={400} />
               )}
             </div>
             <div>
@@ -193,12 +175,7 @@ function Gallery(props) {
                   className="object-cover w-full h-auto md:min-w-[250px] md:min-h-[300px] lg:min-w-[350px] lg:min-h-[470px]"
                 />
               ) : (
-                <Skeleton
-                  variant="rectangular"
-                  width={1200}
-                  height={400}
-                  sx={{ bgColor: "grey.900" }}
-                />
+                <MissingImagePlate width={1200} height={400} />
               )}
             </div>
           </div>
