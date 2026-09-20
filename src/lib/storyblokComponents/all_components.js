@@ -1,4 +1,5 @@
 import Home from "@/components/Sections/Home";
+import FashionCypher from "@/components/Sections/FashionCypher";
 import Culture from "@/components/Sections/BrandPrinciples/Culture";
 import Environment from "@/components/Sections/BrandPrinciples/Enviroment";
 import Community from "@/components/Sections/BrandPrinciples/Community";
@@ -14,7 +15,7 @@ import Page from "@/components/Bloks/Page";
 export const components = {
   Home: Home,
   page: Page,
-  fashion_cypher: Page,
+  fashion_cypher: FashionCypher,
   environment: Environment,
   culture: Culture,
   community: Community,
