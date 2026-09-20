@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { storyblokEditable } from "@storyblok/react";
 import { motion } from "framer-motion";
+import { getLinkHref } from "@/utils/storyblok";
 
 export default function Banner({ blok }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -114,7 +115,7 @@ export default function Banner({ blok }) {
                   }}
                 >
                   <Link
-                    href={item.button_link || "#"}
+                    href={getLinkHref(item.banner_link_button) || "#"}
                     className="group relative inline-flex items-center justify-center px-8 py-3 text-brown-100 font-medium tracking-wider border-2 border-brown-100 bg-transparent hover:bg-brown-100 hover:text-black transition-all duration-300 ease-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-brown-100 focus:ring-offset-2 focus:ring-offset-black"
                     prefetch={false}
                   >
