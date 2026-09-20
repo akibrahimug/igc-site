@@ -27,9 +27,9 @@ const MOBILE_DRAWER_TRANSITION = {
 };
 const SHOPIFY_STORE_URL = "https://igc-fashion-2.myshopify.com/";
 const MOBILE_MENU_TITLE_CLASS =
-  "text-white leading-[0.98] uppercase tracking-wide font-bebas-neue text-[1.6rem]";
+  "text-brown-100 leading-[0.98] uppercase tracking-wide font-bebas-neue text-[1.6rem]";
 const MOBILE_MENU_SUBLINK_CLASS =
-  "block text-white/95 hover:text-white leading-[1.05] uppercase tracking-wide font-bebas-neue text-[1.05rem]";
+  "block text-brown-100/95 hover:text-brown-100 leading-[1.05] uppercase tracking-wide font-bebas-neue text-[1.05rem]";
 
 const hasClickablePath = (path) =>
   typeof path === "string" && path.trim() !== "" && path !== "#";
@@ -363,7 +363,7 @@ const Navigation = ({ navigation = [] }) => {
                   <button
                     data-more-btn
                     className={cn(
-                      "shrink-0 text-white hover:opacity-70 whitespace-nowrap",
+                      "shrink-0 text-brown-100 hover:opacity-70 whitespace-nowrap",
                       DESKTOP_MENU_TEXT_CLASS,
                     )}
                     onMouseEnter={() => setActivePanel("more")}
@@ -426,13 +426,13 @@ const Navigation = ({ navigation = [] }) => {
             {/* Shop icons (only on shop pages) */}
             {isShopPage && (
               <div className="hidden lg:flex items-center gap-5 ml-auto">
-                <button className="text-white hover:text-zinc-300">
+                <button className="text-brown-100 hover:text-brown-100/70">
                   <Search className="w-5 h-5" />
                 </button>
-                <button className="text-white hover:text-zinc-300">
+                <button className="text-brown-100 hover:text-brown-100/70">
                   <User className="w-5 h-5" />
                 </button>
-                <button className="text-white hover:text-zinc-300">
+                <button className="text-brown-100 hover:text-brown-100/70">
                   <ShoppingBag className="w-5 h-5" />
                 </button>
               </div>
@@ -485,7 +485,7 @@ const Navigation = ({ navigation = [] }) => {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="h-14 w-14 rounded-full border border-transparent text-white flex items-center justify-center hover:border-white/80 hover:opacity-80 transition-colors"
+                    className="h-14 w-14 rounded-full border border-transparent text-brown-100 flex items-center justify-center hover:border-white/80 hover:opacity-80 transition-colors"
                     aria-label="Close menu"
                   >
                     <X className="size-7" />
@@ -523,7 +523,7 @@ const Navigation = ({ navigation = [] }) => {
                 key={idx}
                 href={item.path}
                 className={cn(
-                  "block py-2 text-white hover:opacity-70",
+                  "block py-2 text-brown-100 hover:opacity-70",
                   DESKTOP_SUBLINK_TEXT_CLASS,
                 )}
               >
@@ -534,7 +534,7 @@ const Navigation = ({ navigation = [] }) => {
                 key={idx}
                 href={item.path}
                 className={cn(
-                  "block py-2 text-white hover:opacity-70",
+                  "block py-2 text-brown-100 hover:opacity-70",
                   DESKTOP_SUBLINK_TEXT_CLASS,
                   item.path === pathname && "opacity-70",
                 )}
@@ -560,11 +560,11 @@ const DesktopNavItem = ({ item, onHover }) => {
     "shrink-0 whitespace-nowrap",
     DESKTOP_MENU_TEXT_CLASS,
     hasSublinks
-      ? "text-white hover:opacity-70"
-      : "text-white/40 hover:text-white/70",
+      ? "text-brown-100 hover:opacity-70"
+      : "text-brown-100/40 hover:text-brown-100/70",
     !isExternal &&
       item.path === pathname &&
-      (hasSublinks ? "opacity-70" : "text-white/70"),
+      (hasSublinks ? "opacity-70" : "text-brown-100/70"),
   );
 
   if (hasSublinks) {

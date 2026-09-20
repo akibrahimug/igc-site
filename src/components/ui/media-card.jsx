@@ -48,7 +48,7 @@ export default function MediaCard({
       {variant === "overlay" && (
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent pt-16 px-4 pb-4 md:px-5 md:pb-5">
           {eyebrow && (
-            <p className="font-body text-[0.6875rem] uppercase tracking-[0.25em] text-brown-300 mb-1.5">
+            <p className="font-body text-[0.6875rem] uppercase tracking-[0.25em] text-brown-100/60 mb-1.5">
               {eyebrow}
             </p>
           )}
@@ -75,7 +75,7 @@ export default function MediaCard({
       {variant === "stacked" && (
         <div className="mt-4 border-t border-brown-100/25 pt-3 text-left">
           {eyebrow && (
-            <p className="font-body text-[0.6875rem] uppercase tracking-[0.25em] text-brown-300 mb-1.5">
+            <p className="font-body text-[0.6875rem] uppercase tracking-[0.25em] text-brown-100/60 mb-1.5">
               {eyebrow}
             </p>
           )}
@@ -85,7 +85,7 @@ export default function MediaCard({
             </h3>
           )}
           {caption && (
-            <p className="font-body mt-2 text-base leading-relaxed text-brown-200/90 line-clamp-3">
+            <p className="font-body mt-2 text-base leading-relaxed text-brown-100/80 line-clamp-3">
               {caption}
             </p>
           )}
