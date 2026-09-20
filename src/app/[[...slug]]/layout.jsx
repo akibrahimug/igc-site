@@ -1,5 +1,6 @@
 import Navigation from "@/components/Bloks/Navigation";
 import Footer from "@/components/Sections/Footer";
+import ScrollIndicator from "@/components/Bloks/Indicators";
 import "../global.css";
 
 import { getStoryblokApi } from "@/lib/storyblok";
@@ -118,6 +119,7 @@ export default async function RootLayout({ children }) {
           <Navigation navigation={datasource} />
           {children}
           <Footer datasource={datasource} />
+          <ScrollIndicator />
         </StoryblokInitClient>
 
         {/* Load the Bridge script once */}

@@ -25,14 +25,14 @@ export default function Footer({ datasource }) {
           {/* Brand Column */}
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">IGC FASHION</h2>
-            <p className="  text-gray-400 max-w-xs leading-relaxed">
+            <p className="  text-brown-100/70 max-w-xs leading-relaxed">
               Rooted in culture. Centred on climate. Powered by community.
             </p>
             <div className="flex space-x-4">
               <Link
                 href="https://instagram.com/igc_fashion"
                 target="_blank"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-brown-100/60 transition-colors"
               >
                 <Instagram className="h-5 w-5" />
                 <span className="sr-only">Instagram</span>
@@ -40,7 +40,7 @@ export default function Footer({ datasource }) {
               <Link
                 href="https://facebook.com/igcfashion"
                 target="_blank"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-brown-100/60 transition-colors"
               >
                 <Facebook className="h-5 w-5" />
                 <span className="sr-only">Facebook</span>
@@ -48,7 +48,7 @@ export default function Footer({ datasource }) {
               <Link
                 href="https://www.youtube.com/@igcfashionuganda4180"
                 target="_blank"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-brown-100/60 transition-colors"
               >
                 <Youtube className="h-5 w-5" />
                 <span className="sr-only">YouTube</span>
@@ -56,7 +56,7 @@ export default function Footer({ datasource }) {
               <Link
                 href="https://linkedin.com/company/igcfashion"
                 target="_blank"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-brown-100/60 transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
@@ -64,7 +64,7 @@ export default function Footer({ datasource }) {
               <Link
                 href="https://tiktok.com/@igcfashionug"
                 target="_blank"
-                className="hover:text-gray-400 transition-colors"
+                className="hover:text-brown-100/60 transition-colors"
               >
                 <svg
                   className="h-5 w-5"
@@ -88,7 +88,7 @@ export default function Footer({ datasource }) {
                 <li key={id}>
                   <Link
                     href={item.href}
-                    className=" text-gray-400 max-w-xs leading-relaxed hover:text-white transition-colors"
+                    className=" text-brown-100/70 max-w-xs leading-relaxed hover:text-brown-100 transition-colors"
                   >
                     {item.name}
                   </Link>
@@ -110,7 +110,7 @@ export default function Footer({ datasource }) {
             <h6 className="text-md font-medium uppercase tracking-wide">
               Address
             </h6>
-            <p className="  text-gray-400 max-w-xs leading-relaxed">
+            <p className="  text-brown-100/70 max-w-xs leading-relaxed">
               <strong>Studio:</strong> Nyabinghi street, Kazo, Kampala, Uganda{" "}
               <br />
               <br />

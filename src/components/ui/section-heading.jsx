@@ -6,10 +6,12 @@ import { cn } from "@/lib/utils";
  * Bebas title, and a hairline rule running to the container edge.
  */
 export default function SectionHeading({ eyebrow, title, className }) {
+  if (!eyebrow && !title) return null;
+
   return (
     <header className={cn("text-left", className)}>
       {eyebrow && (
-        <p className="font-body text-xs uppercase tracking-[0.25em] text-brown-300 mb-2">
+        <p className="font-body text-xs uppercase tracking-[0.25em] text-brown-100/60 mb-2">
           {eyebrow}
         </p>
       )}

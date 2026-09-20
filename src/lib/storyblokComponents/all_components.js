@@ -10,11 +10,10 @@ import PortfolioAtom from "@/components/Sections/PortfolioAtom";
 import Services from "@/components/Sections/Services";
 import AboutUs from "@/components/Sections/AboutUs";
 import Banner from "@/components/Bloks/Banner";
-import Page from "@/components/Bloks/Page";
 
 export const components = {
   Home: Home,
-  page: Page,
+  page: FashionCypher,
   fashion_cypher: FashionCypher,
   environment: Environment,
   culture: Culture,
