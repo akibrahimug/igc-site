@@ -7,17 +7,19 @@ export default function Template3({ projects, title, description, image }) {
     <div className="bg-black text-brown-100">
       <PagesHero title={title} image={image} />
 
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 mt-10 p-4">
         {projects.map((project, index) => (
           <Link href={project.href} key={index}>
-            <div key={index} className="relative overflow-hidden group">
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={600}
-                height={1200}
-                className="w-full h-auto object-cover rounded-lg transition-transform duration-500 group-hover:scale-110"
-              />
+            <div className="relative aspect-[3/4] overflow-hidden group rounded-lg bg-neutral-900">
+              {project.image ? (
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              ) : null}
               <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center justify-center transition-all duration-500 group-hover:bg-opacity-10">
                 <h2 className="text-brown-100 text-2xl font-bold text-center px-4 transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 leading-relaxed">
                   {project.title}
