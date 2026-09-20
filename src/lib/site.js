@@ -4,7 +4,7 @@
  * NEXT_PUBLIC_SITE_URL (e.g. a preview deployment).
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://igcfashion.africa"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.igcfashion.africa"
 ).replace(/\/$/, "");
 
 export const SITE_NAME = "IGC Fashion";
